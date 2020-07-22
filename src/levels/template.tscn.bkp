@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
+
+[node name="level" type="Node2D"]
+
+[node name="foreground" type="Node" parent="."]
+
+[node name="fg_art" type="TileMap" parent="foreground"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="platforms" type="TileMap" parent="foreground"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="bg_art" type="TileMap" parent="foreground"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="background" type="Node" parent="."]
+
+[node name="fg_art" type="TileMap" parent="background"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="platforms" type="TileMap" parent="background"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="bg_art" type="TileMap" parent="background"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="audio" type="Node" parent="."]

@@ -1,0 +1,86 @@
+{ "frames": {
+   "enemy 0.aseprite": {
+    "frame": { "x": 1, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 200
+   },
+   "enemy 1.aseprite": {
+    "frame": { "x": 14, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "enemy 2.aseprite": {
+    "frame": { "x": 27, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "enemy 3.aseprite": {
+    "frame": { "x": 40, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "enemy 4.aseprite": {
+    "frame": { "x": 53, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "enemy 5.aseprite": {
+    "frame": { "x": 66, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "enemy 6.aseprite": {
+    "frame": { "x": 79, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "enemy 7.aseprite": {
+    "frame": { "x": 92, "y": 1, "w": 8, "h": 13 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 4, "y": 3, "w": 8, "h": 13 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 200
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.21",
+  "image": "shitball.png",
+  "format": "RGBA8888",
+  "size": { "w": 100, "h": 14 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "walk", "from": 0, "to": 7, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 3", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 5", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 4", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

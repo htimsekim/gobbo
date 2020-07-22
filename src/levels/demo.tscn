@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Objects/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=5]
+
+[node name="level" type="Node2D"]
+
+[node name="foreground" type="Node2D" parent="."]
+
+[node name="fg_art" type="TileMap" parent="foreground"]
+z_index = 35
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="platforms" type="TileMap" parent="foreground" groups=[
+"lvl",
+]]
+z_index = 15
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -655382, 7, 4, -655381, 7, 196609, -655380, 7, 196609, -655379, 7, 7, -589847, 7, 4, -589846, 7, 196615, -589843, 7, 65539, -524311, 7, 65539, -524308, 7, 4, -524307, 7, 196615, -458775, 7, 196612, -458774, 7, 196609, -458773, 7, 196609, -458772, 7, 196615, -458756, 7, 3, -393220, 7, 65539, -327684, 7, 131075, -393214, 7, 196611, -393212, 7, 196611, -393209, 7, 196611, -393207, 7, 196611, -393205, 7, 196611, -262157, 2, 196608, -262156, 2, 196609, -262155, 2, 196609, -262154, 2, 196609, -262153, 2, 196609, -262152, 2, 196609, -262151, 2, 196609, -262150, 2, 196609, -262149, 2, 196609, -262148, 2, 196609, -262147, 2, 196609, -262146, 2, 196609, -262145, 2, 196609, -327680, 2, 196609, -327679, 2, 196609, -327678, 2, 196609, -327677, 2, 196609, -327676, 2, 196609, -327675, 2, 196609, -327674, 2, 196609, -327673, 2, 196609, -327672, 2, 196609, -327671, 2, 196609, -327670, 2, 196609, -327669, 2, 196609, -327668, 2, 196609, -327667, 2, 196609, -327666, 2, 196610, -327661, 7, 3, -262126, 7, 0, -262125, 7, 131079, -131090, 7, 0, -131089, 7, 2, -196591, 7, 0, -196590, 7, 131078, -196589, 7, 65538, -65554, 7, 65536, -65553, 7, 65538, -131056, 7, 0, -131055, 7, 131078, -131054, 7, 65537, -131053, 7, 65538, -18, 7, 131072, -17, 7, 131074, -65520, 7, 131072, -65519, 7, 131073, -65518, 7, 131073, -65517, 7, 131074, 65513, 2, 196608, 65514, 2, 196609, 65515, 2, 196609, 65516, 2, 196609, 65517, 2, 196609, 65518, 2, 196609, 65519, 2, 196609, 65520, 2, 196609, 65521, 2, 196609, 65522, 2, 196609, 65523, 2, 196609, 65524, 2, 8, 65525, 2, 196610, 65530, 4, 0, 10, 2, 196608, 11, 2, 196609, 12, 2, 8, 13, 2, 196609, 14, 2, 196609, 15, 2, 196609, 16, 2, 196609, 17, 2, 196609, 18, 2, 196609, 19, 2, 196610, 131060, 2, 65539, 131066, 5, 0, 65548, 2, 65539, 196596, 2, 65539, 131075, 4, 0, 131081, 7, 3, 131084, 2, 65539, 262132, 2, 65539, 196611, 4, 131072, 196617, 7, 65539, 196620, 2, 65539, 327668, 2, 196612, 327669, 2, 196609, 327670, 2, 196609, 327671, 2, 196609, 327672, 2, 196609, 327673, 2, 196609, 327674, 2, 196609, 327675, 2, 196609, 327676, 2, 196609, 327677, 2, 196609, 327678, 2, 196609, 327679, 2, 196609, 262144, 2, 196609, 262145, 2, 196609, 262146, 2, 196609, 262147, 2, 196609, 262148, 2, 196609, 262149, 2, 196609, 262150, 2, 7, 262152, 7, 196608, 262153, 7, 196615, 262156, 2, 65539, 327686, 2, 196612, 327687, 2, 196609, 327688, 2, 196609, 327689, 2, 196609, 327690, 2, 196609, 327691, 2, 196609, 327692, 2, 196615 )
+
+[node name="bg_art" type="TileMap" parent="foreground"]
+z_index = -10
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="fg_art" type="TileMap" parent="background"]
+z_index = 35
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="platforms" type="TileMap" parent="background" groups=[
+"lvl",
+]]
+z_index = 15
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -655382, 7, 0, -655381, 7, 1, -655380, 7, 1, -655379, 7, 2, -589847, 7, 0, -589846, 7, 131078, -589845, 7, 65537, -589844, 7, 65537, -589843, 7, 65538, -524311, 7, 65536, -524310, 7, 65537, -524309, 7, 65537, -524308, 7, 65541, -524307, 7, 131074, -458775, 7, 131072, -458774, 7, 131073, -458773, 7, 131073, -458772, 7, 131074 )
+
+[node name="bg_art" type="TileMap" parent="background"]
+z_index = -10
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="audio" type="Node" parent="."]
+
+[node name="spawns" type="Node2D" parent="."]
+
+[node name="spawna" type="Node2D" parent="spawns"]
+position = Vector2( -331.632, -8.81385 )
+
+[node name="spawnb" type="Node2D" parent="spawns"]
+position = Vector2( 290.228, -87.0327 )
+
+[node name="links" type="Node2D" parent="."]
+
+[node name="ChangeStage" parent="links" instance=ExtResource( 5 )]
+position = Vector2( -359.841, -17.3634 )
+target_stage = "res://src/levels/caverna.tscn"
+target_spawn = "spawns/spawnb"
+
+[node name="ChangeStage2" parent="links" instance=ExtResource( 5 )]
+position = Vector2( 311.942, -97.5943 )
+target_stage = "res://src/levels/caverna.tscn"
+target_spawn = "spawns/spawna"
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 92.1309, 55.9238 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -6.81123, -87.4706 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 174.583, -7.88669 )

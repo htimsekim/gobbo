@@ -1,0 +1,12 @@
+background/parallax < 0 (-10 with relative z indices for components)
+
+
+player 21-30 (25 with relative z indices for components)
+
+enemies 1-10 (5 with relative z indices for components)
+
+
+platforms/bgtiles 11-20 (15 with relative z indices for components)
+
+
+fgtiles 31+ (35 with relative z indices for components)

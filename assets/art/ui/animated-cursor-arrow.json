@@ -1,0 +1,86 @@
+{ "frames": {
+   "animated-cursor-arrow 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 1.aseprite": {
+    "frame": { "x": 10, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 2.aseprite": {
+    "frame": { "x": 20, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 3.aseprite": {
+    "frame": { "x": 30, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 4.aseprite": {
+    "frame": { "x": 40, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 5.aseprite": {
+    "frame": { "x": 50, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 6.aseprite": {
+    "frame": { "x": 60, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   },
+   "animated-cursor-arrow 7.aseprite": {
+    "frame": { "x": 70, "y": 0, "w": 10, "h": 10 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 3, "w": 10, "h": 10 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 250
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.18",
+  "image": "animated-cursor-arrow.png",
+  "format": "RGBA8888",
+  "size": { "w": 80, "h": 10 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "up", "from": 0, "to": 1, "direction": "forward" },
+   { "name": "down", "from": 2, "to": 3, "direction": "forward" },
+   { "name": "left", "from": 4, "to": 5, "direction": "forward" },
+   { "name": "right", "from": 6, "to": 7, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "arrow", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
