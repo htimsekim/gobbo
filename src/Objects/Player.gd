@@ -45,7 +45,13 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 
 #	if Input.is_action_just_pressed("jump"):
 #		animation_player.play("crouch")	
-
+	var acceleration = .2
+	var friction = 1
+	if direction.x !=0:
+		_velocity.x = lerp(_velocity.x, direction.x * speed.x, acceleration)
+	else:
+		_velocity.x = lerp(_velocity.x, 0, friction)
+		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
 	if damagetaken:
 		print("damagetaken")
@@ -61,7 +67,7 @@ func get_direction(): #determine if player is moving right or left
 # Calculates new velocity. It allows you to interrupt jumps.
 func calculate_move_velocity(linear_velocity, direction, speed, is_jump_interrupted ):
 	var velocity = linear_velocity
-	velocity.x = speed.x * direction.x
+	#velocity.x = speed.x * direction.x
 	if direction.y != 0.0: velocity.y = speed.y * direction.y
 	if is_jump_interrupted: velocity.y = 0.0
 
