@@ -78,7 +78,7 @@ func calculate_move_velocity(linear_velocity, direction, speed, is_jump_interrup
 	#fall through one way collision items
 	if Input.is_action_pressed("jump") and Input.is_action_pressed("crouch") and is_on_floor(): 
 		velocity.y = 0.0
-		self.position = Vector2(self.position.x, self.position.y + 1)
+		self.position = Vector2(self.position.x, self.position.y + 2)
 		
 	return velocity
 
