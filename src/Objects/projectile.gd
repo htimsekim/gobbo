@@ -7,7 +7,7 @@ onready var plyrdir = Global.get_node("plyrInst/Sprite").scale.x
 
 func _physics_process(delta):
 	if (plyrspeed > 0 and plyrdir == 1) or (plyrspeed < 0 and plyrdir == -1): #moving same direction as facing
-		position += transform.x * (speed + abs(plyrspeed/2)) * delta
+		position += transform.x * (speed + abs(plyrspeed/2)) * delta #set bullet speed to half player speed
 	else:
 		position += transform.x * speed * delta
 
