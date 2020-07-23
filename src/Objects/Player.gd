@@ -45,12 +45,11 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 
 #	if Input.is_action_just_pressed("jump"):
 #		animation_player.play("crouch")	
-	var acceleration = .2
-	var friction = 1
-	if direction.x !=0:
-		_velocity.x = lerp(_velocity.x, direction.x * speed.x, acceleration)
+
+	if direction.x !=0: #apply friction(1) and acceleration(.2)
+		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
 	else:
-		_velocity.x = lerp(_velocity.x, 0, friction)
+		_velocity.x = lerp(_velocity.x, 0, 1)
 		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
 	if damagetaken:
