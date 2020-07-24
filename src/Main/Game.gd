@@ -1,6 +1,6 @@
 extends Node
 
-const levelResource = "res://src/levels/demo.tscn"
+const levelResource = "res://src/levels/home.tscn"
 
 func _ready():	
 	#OS.window_fullscreen = true

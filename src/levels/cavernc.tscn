@@ -22,26 +22,9 @@ z_as_relative = false
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
-collision_mask = 5
 format = 1
 
-[node name="bg_art" type="TileMap" parent="foreground"]
-z_index = -10
-z_as_relative = false
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
-
-[node name="background" type="Node2D" parent="."]
-
-[node name="fg_art" type="TileMap" parent="background"]
-z_index = 35
-z_as_relative = false
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
-
-[node name="platforms" type="TileMap" parent="background" groups=[
+[node name="lvl" type="TileMap" parent="foreground" groups=[
 "lvl",
 ]]
 z_index = 15
@@ -52,7 +35,7 @@ collision_layer = 2
 collision_mask = 5
 format = 1
 
-[node name="bg_art" type="TileMap" parent="background"]
+[node name="bg_art" type="TileMap" parent="foreground"]
 z_index = -10
 z_as_relative = false
 tile_set = ExtResource( 2 )
