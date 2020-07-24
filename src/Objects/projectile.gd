@@ -13,7 +13,14 @@ func _physics_process(delta):
 
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("lvl") or body.is_in_group("enemy") or body.is_in_group("Player"):
-		queue_free()
+	
+		if body.get_class() == "TileMap":
+			var tileindx = body.world_to_map(position)
+			if body.get_cellv(tileindx) != 5:
+				print(body.get_cellv(tileindx))
+				queue_free()
+		else:
+			queue_free()
 	
 	if body.is_in_group("enemy"):
 		body.damage(1)
