@@ -5,16 +5,16 @@
 
 [node name="level" type="Node2D"]
 
-[node name="foreground" type="Node2D" parent="."]
+[node name="tilemaps" type="Node2D" parent="."]
 
-[node name="fg_art" type="TileMap" parent="foreground"]
+[node name="fg_art" type="TileMap" parent="tilemaps"]
 z_index = 35
 z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
-[node name="platforms" type="TileMap" parent="foreground" groups=[
+[node name="platforms" type="TileMap" parent="tilemaps" groups=[
 "lvl",
 ]]
 z_index = 15
@@ -24,7 +24,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2
 format = 1
 
-[node name="lvl" type="TileMap" parent="foreground" groups=[
+[node name="lvl" type="TileMap" parent="tilemaps" groups=[
 "lvl",
 ]]
 z_index = 15
@@ -35,7 +35,7 @@ collision_layer = 2
 collision_mask = 5
 format = 1
 
-[node name="bg_art" type="TileMap" parent="foreground"]
+[node name="bg_art" type="TileMap" parent="tilemaps"]
 z_index = -10
 z_as_relative = false
 tile_set = ExtResource( 1 )
