@@ -305,7 +305,7 @@ tracks/1/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
-"Player",
+"plyr",
 ]]
 z_index = 25
 z_as_relative = false
@@ -332,7 +332,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 offset = Vector2( 6.5, -1.5 )
 region_enabled = true
-region_rect = Rect2( 145, 42, 29, 21 )
+region_rect = Rect2( 29, 21, 29, 21 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/airborne = SubResource( 2 )
@@ -379,10 +379,10 @@ autostart = true
 [node name="BlinkTimer" type="Timer" parent="."]
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
-margin_left = 17.3783
-margin_top = -28.0
-margin_right = 33.3783
-margin_bottom = 4.0
+margin_left = 18.3296
+margin_top = -32.0431
+margin_right = 34.3296
+margin_bottom = -0.0430603
 rect_rotation = 90.0
 value = 100.0
 texture_progress = ExtResource( 4 )

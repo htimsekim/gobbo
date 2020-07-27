@@ -117,9 +117,13 @@ func gundirection(): #point gun in direction of mouse pointer and the character 
 func _on_ProjectileTimer_timeout():
 	canshoot = true
 
-func damage(amount): #called from projectile amount is 1
-	health = health - amount
-	_set_health(health, maxplyrhealth)	
+func damage(amount): 
+	if $TextureProgress.value <= 0:
+		print("ewew")
+		get_tree().quit()
+	else:
+		$TextureProgress.value -= amount
+		print($TextureProgress.value)
 
 func _on_BlinkTimer_timeout():
 	if is_visible():
