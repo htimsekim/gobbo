@@ -26,7 +26,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var is_on_platform = platform_detector.is_colliding()
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	var is_shooting = false #to determine if gun needs to be out and which animation to play
-		
+
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
 		gundirection() #set direction of weapon to mouse pointer
 		is_shooting = true #we are shooting so be sure to play weapon animations
@@ -66,7 +66,7 @@ func get_direction(): #determine if player is moving right or left
 # Calculates new velocity. It allows you to interrupt jumps.
 func calculate_move_velocity(linear_velocity, direction, speed, is_jump_interrupted ):
 	var velocity = linear_velocity
-	#velocity.x = speed.x * direction.x
+
 	if direction.y != 0.0: velocity.y = speed.y * direction.y
 	if is_jump_interrupted: velocity.y = 0.0
 

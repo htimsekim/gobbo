@@ -37,6 +37,7 @@ tracks/1/keys = {
 ]]
 z_index = 3
 collision_layer = 8
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -51,3 +52,15 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 1.5 )
 region_enabled = true
 region_rect = Rect2( 1, 1, 8, 13 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+visible = false
+margin_left = -17.8267
+margin_top = -15.0605
+margin_right = 22.1733
+margin_bottom = -8.06047
+max_value = 200.0
+value = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
