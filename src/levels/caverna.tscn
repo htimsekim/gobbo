@@ -65,7 +65,7 @@ zoom = Vector2( 0.2, 0.2 )
 position = Vector2( -208.985, -15.9854 )
 z_index = 50
 target_stage = "res://src/levels/demo.tscn"
-target_spawn = "spawns/spawnb"
+target_spawn = "level/spawns/spawnb"
 
 [node name="ChangeStage2" parent="links" instance=ExtResource( 4 )]
 position = Vector2( 207.161, -15.7024 )

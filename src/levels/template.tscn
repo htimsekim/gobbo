@@ -12,6 +12,8 @@ z_index = 35
 z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
 format = 1
 
 [node name="platforms" type="TileMap" parent="tilemaps" groups=[
@@ -21,7 +23,8 @@ z_index = 15
 z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
-collision_layer = 2
+collision_layer = 16
+collision_mask = 9
 format = 1
 
 [node name="lvl" type="TileMap" parent="tilemaps" groups=[
@@ -32,7 +35,7 @@ z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 format = 1
 
 [node name="bg_art" type="TileMap" parent="tilemaps"]
@@ -40,6 +43,8 @@ z_index = -10
 z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
 format = 1
 
 [node name="audio" type="Node" parent="."]
