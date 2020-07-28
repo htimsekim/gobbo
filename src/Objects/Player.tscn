@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/art/player/goblin.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Player.gd" type="Script" id=2]
 [ext_resource path="res://src/Objects/Gun.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/ui/link.png" type="Texture" id=4]
+[ext_resource path="res://src/Objects/Hurttbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 7.5 )
@@ -304,6 +305,9 @@ tracks/1/keys = {
 "values": [ Vector2( 6.5, -1.5 ), Vector2( 6.5, -1.5 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 6.59232, 10 )
+
 [node name="Player" type="KinematicBody2D" groups=[
 "plyr",
 ]]
@@ -390,5 +394,14 @@ fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0.237823, 0 )
+shape = SubResource( 13 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]

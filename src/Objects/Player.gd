@@ -1,22 +1,13 @@
 class_name Player
 extends Character
 
-signal health_updated(health)
-signal killed()
-
 const FLOOR_DETECT_DISTANCE = 8.0 # < sprite height so player doesn't drop so fast from one block
 onready var platform_detector = $PlatformDetector
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var SpriteGunV = get_node("Gun/SpriteGun") 
-onready var facingright = true
-onready var timer = $ProjectileTimer
-onready var blinktimer = $BlinkTimer
 onready var canshoot = false
-export(float) var maxplyrhealth = 100
-export(float) var health = maxplyrhealth 
-var damagetaken
-onready var test = 0
+onready var timer = $ProjectileTimer
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	var direction = get_direction() #function determines if player is moving right or left
@@ -52,10 +43,6 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		_velocity.x = lerp(_velocity.x, 0, 1)
 		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
-	if damagetaken:
-		print("damagetaken")
-#		sprite.start_BlinkTimer(0.5)
-		damagetaken = false
 
 	if animation != animation_player.current_animation:
 		animation_player.play(animation)
@@ -117,24 +104,8 @@ func gundirection(): #point gun in direction of mouse pointer and the character 
 func _on_ProjectileTimer_timeout():
 	canshoot = true
 
-func damage(amount): 
+func _on_Hurtbox_area_entered(area):
 	if $TextureProgress.value <= 0:
-		print("ewew")
 		get_tree().quit()
 	else:
-		$TextureProgress.value -= amount
-		print($TextureProgress.value)
-
-func _on_BlinkTimer_timeout():
-	if is_visible():
-		hide()
-	else:
-		show()
-		
-func start_BlinkTimer(interval):
-	blinktimer.set_wait_time(interval)
-	blinktimer.start()
-	
-func stop_BlinkTimer():
-	show()
-	blinktimer.stop()
+		$TextureProgress.value -= area.get_node("../TextureProgress").step
