@@ -105,7 +105,15 @@ func _on_ProjectileTimer_timeout():
 	canshoot = true
 
 func _on_Hurtbox_area_entered(area):
+	var knockback = 1500
+#	move(Vector2(0,-1).rotated(get_global_pos().angle_to_point("INSERT_ENEMY_POSITION_HERE"))*speed*delta)
+
+	if sprite.scale.x == 1:
+		_velocity.x -= knockback
+	if sprite.scale.x == -1:
+		_velocity.x += knockback
+		
+	move_and_slide(_velocity, Vector2(0, -1))
+	$TextureProgress.value -= area.get_node("../TextureProgress").step
 	if $TextureProgress.value <= 0:
 		get_tree().quit()
-	else:
-		$TextureProgress.value -= area.get_node("../TextureProgress").step
