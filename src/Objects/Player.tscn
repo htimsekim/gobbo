@@ -315,7 +315,7 @@ z_index = 25
 z_as_relative = false
 collision_mask = 0
 script = ExtResource( 2 )
-speed = Vector2( 150, 300 )
+speed = Vector2( 150, 340 )
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
 position = Vector2( 0.693232, 8.01125 )

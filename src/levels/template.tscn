@@ -16,7 +16,7 @@ collision_layer = 0
 collision_mask = 0
 format = 1
 
-[node name="platforms" type="TileMap" parent="tilemaps" groups=[
+[node name="oneway" type="TileMap" parent="tilemaps" groups=[
 "lvl",
 ]]
 z_index = 15
@@ -27,7 +27,7 @@ collision_layer = 16
 collision_mask = 9
 format = 1
 
-[node name="lvl" type="TileMap" parent="tilemaps" groups=[
+[node name="collision" type="TileMap" parent="tilemaps" groups=[
 "lvl",
 ]]
 z_index = 15
