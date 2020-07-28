@@ -6,10 +6,18 @@
 
 [node name="level" parent="." instance=ExtResource( 1 )]
 
-[node name="oneway" parent="level/tilemaps" index="1"]
+[node name="collision" parent="level/tilemaps" index="2"]
 tile_data = PoolIntArray( 65520, 7, 196608, 65521, 7, 196609, 65522, 7, 196609, 65523, 7, 196609, 65524, 7, 196609, 65525, 7, 196609, 65526, 7, 196610, 327664, 7, 196608, 327665, 7, 196609, 327666, 7, 196609, 327667, 7, 196609, 327668, 7, 196609, 327669, 7, 196609, 327670, 7, 196609, 327671, 7, 196609, 327672, 7, 196610 )
 
 [node name="spawna" parent="level/spawns" index="0"]
 position = Vector2( -233.397, 58.1681 )
+
+[node name="ChangeStage" parent="level/links" index="0"]
+position = Vector2( -25.9675, -1.32038 )
+
+[node name="ChangeStage2" parent="level/links" index="1"]
+position = Vector2( -202.459, -16.7249 )
+target_stage = "res://src/levels/demo.tscn"
+target_spawn = "level/spawns/spawnb"
 
 [editable path="level"]

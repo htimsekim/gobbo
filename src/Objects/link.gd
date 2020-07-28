@@ -7,5 +7,7 @@ func _enter_tree():
 	self.visible = false
 
 func _on_ChangeStage_body_entered(body):
+	print("IM IN")
 	if "plyrInst" in body.name:
 		Global.goto_scene(target_stage, target_spawn)
+		get_tree().call_group("projectile","queue_free")
