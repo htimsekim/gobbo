@@ -383,6 +383,7 @@ autostart = true
 [node name="BlinkTimer" type="Timer" parent="."]
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
+visible = false
 margin_left = 18.3296
 margin_top = -32.0431
 margin_right = 34.3296
