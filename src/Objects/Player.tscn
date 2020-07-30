@@ -372,7 +372,7 @@ wait_time = 0.25
 one_shot = true
 
 [node name="ShootPoint" type="Position2D" parent="Gun"]
-position = Vector2( 24.986, -3.088 )
+position = Vector2( 14.9256, -1.80913 )
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 process_mode = 0
