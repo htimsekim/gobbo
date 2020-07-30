@@ -12,6 +12,7 @@ func _ready():
 		
 func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")
 	call_deferred("_deferred_goto_scene", path, spawn)
+	get_tree().call_group("projectile","queue_free")
 	
 func _deferred_goto_scene(path, spawn: String):
 	current_scene.free() # It is now safe to remove the current scene
