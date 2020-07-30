@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Objects/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Objects/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/enemy/shitball.png" type="Texture" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.54177, 5.46247 )
