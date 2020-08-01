@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 
 [node name="level" type="Node2D"]
 
@@ -24,6 +25,16 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 16
 collision_mask = 9
 format = 1
+
+[node name="onewayInvis" type="TileMap" parent="tilemaps"]
+z_index = 15
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 16
+collision_mask = 9
+format = 1
+script = ExtResource( 3 )
 
 [node name="collision" type="TileMap" parent="tilemaps" groups=[
 "lvl",
