@@ -73,3 +73,17 @@ z_index = 50
 
 [node name="ChangeStage2" parent="links" instance=ExtResource( 2 )]
 z_index = 50
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="bg" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/bg"]
+
+[node name="mg" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/mg"]
+
+[node name="fg" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/fg"]

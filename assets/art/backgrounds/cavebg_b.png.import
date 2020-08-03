@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/idfk.png-01aad11f843e6a52b4d9c105e953fb62.stex"
+path="res://.import/cavebg_b.png-169d8bd4c78d9cb8fdcc6e439e1d1725.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/backgrounds/idfk.png"
-dest_files=[ "res://.import/idfk.png-01aad11f843e6a52b4d9c105e953fb62.stex" ]
+source_file="res://assets/art/backgrounds/cavebg_b.png"
+dest_files=[ "res://.import/cavebg_b.png-169d8bd4c78d9cb8fdcc6e439e1d1725.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
-flags/filter=true
+flags/repeat=1
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
