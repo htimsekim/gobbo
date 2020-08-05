@@ -32,6 +32,14 @@ func _deferred_goto_scene(path, spawn: String):
 	camera.limit_right = map_limits.end.x * map_cellsize.x
 	camera.limit_top = map_limits.position.y * map_cellsize.y
 	camera.limit_bottom = map_limits.end.y * map_cellsize.y
+	
+	#print("camera.limit_left = ", camera.limit_left)
+	#print("camera.limit_right = ", camera.limit_right)
+	#print("camera.limit_top = ", camera.limit_top)
+	#print("camera.limit_bottom = ", camera.limit_bottom)
+	
+	if(camera.limit_right - camera.limit_left) > 384 and (camera.limit_bottom - camera.limit_top) > 224:
+		pass
 		
 	camera.current = true
 	

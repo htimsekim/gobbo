@@ -439,7 +439,7 @@ shape = SubResource( 14 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -60 )
-zoom = Vector2( 0.25, 0.25 )
+zoom = Vector2( 0.2, 0.2 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 
