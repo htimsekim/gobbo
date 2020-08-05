@@ -36,13 +36,15 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 
 #	if Input.is_action_just_pressed("jump"):
 #		animation_player.play("crouch")	
+	var targetpos = 20
+	var targetinc = .05
 
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
-	#	$Camera2D.offset = Vector2(_velocity.x, -60)
+		$Camera2D.offset.x = lerp(direction.x * _velocity.x, targetpos, targetinc)
 	else:
 		_velocity.x = lerp(_velocity.x, 0, 1)
-	#	$Camera2D.offset = Vector2(_velocity.x, -60) 
+		$Camera2D.offset.x = lerp($Camera2D.offset.x ,0, targetinc)
 		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
 
