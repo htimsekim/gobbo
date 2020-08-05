@@ -77,13 +77,19 @@ z_index = 50
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="bg" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.01 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/bg"]
+scale = Vector2( 2, 2 )
 
 [node name="mg" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.02 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mg"]
+scale = Vector2( 2, 2 )
 
 [node name="fg" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.03 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fg"]
+scale = Vector2( 2, 2 )

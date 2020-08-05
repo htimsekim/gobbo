@@ -28,5 +28,5 @@ func _deferred_goto_scene(path, spawn: String):
 		var camera = current_scene.get_node("stageCamera")
 		camera.current = true
 	else:
-		var camera = get_node("plyrInst/Camera")
+		var camera = get_node("plyrInst/Camera2D")
 		camera.current = true
