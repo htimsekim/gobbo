@@ -39,8 +39,10 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
+	#	$Camera2D.offset = Vector2(_velocity.x, -60)
 	else:
 		_velocity.x = lerp(_velocity.x, 0, 1)
+	#	$Camera2D.offset = Vector2(_velocity.x, -60) 
 		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
 

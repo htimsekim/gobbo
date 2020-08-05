@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
+[ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
 
 [node name="level" type="Node2D"]
 
 [node name="tilemaps" type="Node2D" parent="."]
+
+[node name="limits" type="TileMap" parent="tilemaps"]
+z_index = 35
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+script = ExtResource( 4 )
 
 [node name="fg_art" type="TileMap" parent="tilemaps"]
 z_index = 35

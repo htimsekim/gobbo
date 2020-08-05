@@ -23,10 +23,16 @@ func _deferred_goto_scene(path, spawn: String):
 	get_tree().set_current_scene(current_scene)
 	
 	get_node("plyrInst").position = current_scene.get_node(str(spawn)).position #set plyr spawn
+
+	var camera = get_node("plyrInst/Camera2D")
+	var map_limits = Global.current_scene.get_node("level/tilemaps/limits").get_used_rect()
+	var map_cellsize = Global.current_scene.get_node("level/tilemaps/limits").cell_size
 	
-	if current_scene.has_node("stageCamera"): #set camera
-		var camera = current_scene.get_node("stageCamera")
-		camera.current = true
-	else:
-		var camera = get_node("plyrInst/Camera2D")
-		camera.current = true
+	camera.limit_left = map_limits.position.x * map_cellsize.x
+	camera.limit_right = map_limits.end.x * map_cellsize.x
+	camera.limit_top = map_limits.position.y * map_cellsize.y
+	camera.limit_bottom = map_limits.end.y * map_cellsize.y
+		
+	camera.current = true
+	
+	
