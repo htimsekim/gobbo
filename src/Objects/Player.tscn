@@ -335,7 +335,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=14]
-radius = 5.0
+radius = 6.00994
 height = 8.0
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -416,6 +416,11 @@ one_shot = true
 autostart = true
 
 [node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 0.02
+
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 visible = false
@@ -442,5 +447,7 @@ offset = Vector2( 0, -60 )
 zoom = Vector2( 0.2, 0.2 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 
 [editable path="Hitbox"]

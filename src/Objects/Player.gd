@@ -8,8 +8,15 @@ onready var animation_player = $AnimationPlayer
 onready var SpriteGunV = get_node("Gun/SpriteGun") 
 onready var canshoot = false
 onready var timer = $ProjectileTimer
+onready var blinktimer = $BlinkTimer
+onready var knocktimer = $KnockbackTimer
+onready var knockback = false
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
+	if knockback == true and blinktimer.time_left == 0:
+		sprite.visible = false
+		blinktimer.start()
+	
 	var direction = get_direction() #function determines if player is moving right or left
 	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
@@ -40,7 +47,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		var targetpos = Global.map_limits.end.x - 10
-		
+		 
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
 		$Camera2D.offset.x = lerp($Camera2D.offset.x, direction.x * targetpos, targetinc)
 	else:
@@ -110,14 +117,25 @@ func _on_ProjectileTimer_timeout():
 	canshoot = true
 
 func _on_Hitbox_area_entered(area):
-	if sprite.scale.x == 1:
-		_velocity.x -= 500
-	if sprite.scale.x == -1:
-		_velocity.x += 500
-	_velocity.y -= 100
+	knockback = true #player hit, enable knockback effect
+	if sprite.scale.x == 1: #knockback code if player is right facing
+		_velocity.x -= 700 #knockback 700 to the right
+	if sprite.scale.x == -1: #knockback code if player is left facing
+		_velocity.x += 700 #knockback 700 to the left
+	_velocity.y -= 200 #height of knockback
 
-	move_and_slide(_velocity)
+	move_and_slide(_velocity) #knockback player
 	
-	$TextureProgress.value -= area.get_node("../TextureProgress").step
-	if $TextureProgress.value <= 0:
+	$TextureProgress.value -= area.get_node("../TextureProgress").step #decrease player health based on what it was hit by
+	if $TextureProgress.value <= 0: #if player health is 0, kill player
 		get_tree().quit()
+
+	knocktimer.start() #set timer for when enemy can't attack player
+
+func _on_BlinkTimer_timeout():
+	sprite.visible = true
+	blinktimer.stop()
+	
+func _on_KnockbackTimer_timeout():
+	knockback = false
+	knocktimer.stop()

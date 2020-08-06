@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/levels/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/art/backgrounds/cavebg_f.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/backgrounds/cavebg_m.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/backgrounds/cavebg_b.png" type="Texture" id=4]
+[ext_resource path="res://src/Objects/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/enemybat.tscn" type="PackedScene" id=6]
 
 [node name="goblintown" type="Node2D"]
 
@@ -41,5 +43,17 @@ region_rect = Rect2( 0, 0, 1920, 180 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1920, 180 )
+
+[node name="Enemy" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 20.3438, 55.7109 )
+
+[node name="Enemy2" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 211.195, 56.7968 )
+
+[node name="Enemy3" parent="level" instance=ExtResource( 5 )]
+position = Vector2( 565.291, 57.6542 )
+
+[node name="Enemy4" parent="level" instance=ExtResource( 6 )]
+position = Vector2( -58.3978, -57.2299 )
 
 [editable path="level"]
