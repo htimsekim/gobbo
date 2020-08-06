@@ -45,8 +45,8 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 #		animation_player.play("crouch")	
 	var targetinc = .05
 	
-	$Camera2D.position.x = clamp($Camera2D.position.x, $Camera2D.limit_left - $Camera2D.offset.x , $Camera2D.limit_right - $Camera2D.offset.x )
-	
+	#$Camera2D.position.x = clamp($Camera2D.position.x, $Camera2D.limit_left - $Camera2D.offset.x , $Camera2D.limit_right - $Camera2D.offset.x )
+	#print($Camera2D.position.x)
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		var targetpos = Global.map_limits.end.x - 10
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
