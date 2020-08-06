@@ -26,15 +26,12 @@ func _deferred_goto_scene(path, spawn: String):
 	get_node("plyrInst").position = current_scene.get_node(str(spawn)).position #set plyr spawn
 
 	var camera = get_node("plyrInst/Camera2D")
-	map_limits = Global.current_scene.get_node("level/tilemaps/limits").get_used_rect()
-	var map_cellsize = Global.current_scene.get_node("level/tilemaps/limits").cell_size
+	map_limits = current_scene.get_node("level/tilemaps/limits").get_used_rect()
+	var map_cellsize = current_scene.get_node("level/tilemaps/limits").cell_size
 	
-	camera.limit_left = map_limits.position.x * map_cellsize.x
-	camera.limit_right = map_limits.end.x * map_cellsize.x
-	camera.limit_top = map_limits.position.y * map_cellsize.y
-	camera.limit_bottom = map_limits.end.y * map_cellsize.y
-	
-	if(camera.limit_right - camera.limit_left) > 384 and (camera.limit_bottom - camera.limit_top) > 224:
-		pass
-		
+	camera.limit_left = map_limits.position.x * map_cellsize.x 
+	camera.limit_right = map_limits.end.x * map_cellsize.x 
+	camera.limit_top = map_limits.position.y * map_cellsize.y 
+	camera.limit_bottom = map_limits.end.y * map_cellsize.y 
+
 	camera.current = true
