@@ -7,8 +7,6 @@ func _ready():
 	Global.goto_scene(levelResource, "level/spawns/spawna")
 	#print(get_viewport().size)
 	
-
-
 func full_screen():
 	OS.set_current_screen(0)
 	OS.window_fullscreen = true

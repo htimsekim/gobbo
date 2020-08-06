@@ -38,5 +38,3 @@ func _deferred_goto_scene(path, spawn: String):
 		pass
 		
 	camera.current = true
-	
-	
