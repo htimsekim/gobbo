@@ -445,6 +445,11 @@ shape = SubResource( 14 )
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -60 )
 zoom = Vector2( 0.2, 0.2 )
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 0.75
+editor_draw_screen = false
+editor_draw_drag_margin = true
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]
