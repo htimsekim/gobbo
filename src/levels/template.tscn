@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 [ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
+[ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=5]
 
 [node name="level" type="Node2D"]
 
@@ -21,6 +22,15 @@ script = ExtResource( 4 )
 
 [node name="fg_art" type="TileMap" parent="tilemaps"]
 z_index = 35
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+
+[node name="fg_art2" type="TileMap" parent="tilemaps"]
+z_index = 34
 z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -67,6 +77,15 @@ collision_layer = 0
 collision_mask = 0
 format = 1
 
+[node name="bg_art2" type="TileMap" parent="tilemaps"]
+z_index = -11
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+
 [node name="audio" type="Node" parent="."]
 
 [node name="spawns" type="Node2D" parent="."]
@@ -84,6 +103,10 @@ z_index = 50
 
 [node name="ChangeStage2" parent="links" instance=ExtResource( 2 )]
 z_index = 50
+
+[node name="doors" type="Node2D" parent="."]
+
+[node name="Door" parent="doors" instance=ExtResource( 5 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
