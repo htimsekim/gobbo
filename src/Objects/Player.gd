@@ -46,9 +46,9 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var targetinc = 1
 
 	Global.camera.position = position
-	
-	if direction.y !=0:
-		Global.camera.smoothing_speed = 0
+
+	if _velocity.y !=0:
+		Global.camera.smoothing_speed = 2
 	else:
 		Global.camera.smoothing_speed = .75
 		
