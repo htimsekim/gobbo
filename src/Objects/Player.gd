@@ -46,11 +46,12 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var targetinc = 1
 
 	Global.camera.position = position
-
-	if _velocity.y !=0:
-		Global.camera.smoothing_speed = 2
+	#adjusts camera smoothing based on player speed (prevents player falling offscreen etc)
+	var activespeed = abs(max(_velocity.x, _velocity.y))
+	if activespeed !=0:
+		Global.camera.smoothing_speed = activespeed/100
 	else:
-		Global.camera.smoothing_speed = .75
+		Global.camera.smoothing_speed = 1
 		
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
