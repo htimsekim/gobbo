@@ -46,6 +46,12 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var targetinc = 1
 
 	Global.camera.position = position
+	
+	if direction.y !=0:
+		Global.camera.smoothing_speed = 0
+	else:
+		Global.camera.smoothing_speed = .75
+		
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)
 		Global.camera.offset_h = direction.x * targetinc

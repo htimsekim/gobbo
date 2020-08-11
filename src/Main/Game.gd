@@ -8,6 +8,6 @@ func _ready():
 	print(get_viewport().size)
 
 func full_screen():
-	OS.set_current_screen(0)
+	OS.set_current_screen(2)
 	OS.window_fullscreen = true
 	OS.set_borderless_window(true)
