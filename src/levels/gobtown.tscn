@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/levels/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/art/backgrounds/cavebg_b.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/backgrounds/cavebg_m.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/backgrounds/cavebg_f.png" type="Texture" id=5]
+[ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=6]
 
 [node name="gobtown" type="Node2D"]
 
 [node name="level" parent="." instance=ExtResource( 1 )]
 
 [node name="limits" parent="level/tilemaps" index="0"]
-tile_data = PoolIntArray( 65518, 1, 0, 655376, 1, 0 )
+tile_data = PoolIntArray( -131090, 1, 0, 655376, 1, 0 )
 
 [node name="oneway" parent="level/tilemaps" index="3"]
 tile_data = PoolIntArray( 131065, 8, 0, 131066, 8, 2, 131077, 8, 0, 131078, 8, 1, 131079, 8, 1, 131080, 8, 1, 131081, 8, 1, 131082, 8, 1, 131083, 8, 1, 131084, 8, 2, 262129, 8, 0, 262130, 8, 1, 262131, 8, 1, 262132, 8, 1, 262133, 8, 2, 196608, 8, 0, 196609, 8, 1, 196610, 8, 2, 327685, 8, 0, 327686, 8, 1, 327687, 8, 1, 327688, 8, 1, 327689, 8, 1, 327690, 8, 1, 327691, 8, 1, 327692, 8, 2 )
@@ -28,44 +29,39 @@ tile_data = PoolIntArray( -6, 9, 720898, 65530, 9, 786434, 131071, 9, 720897, 19
 [node name="bg_art2" parent="level/tilemaps" index="7"]
 tile_data = PoolIntArray( -131068, 1, 2, -131067, 1, 2, -14, 11, 196608, -7, 11, 65539, -6, 11, 65539, -5, 11, 65539, -2, 11, 65539, -1, 11, 65539, -65532, 1, 2, -65531, 1, 2, -65524, 1, 2, -65523, 1, 2, 65522, 11, 131072, 65523, 11, 196608, 65529, 11, 65539, 65530, 11, 65539, 65531, 11, 65539, 65532, 11, 65539, 65534, 11, 65539, 65535, 11, 65539, 4, 1, 2, 5, 1, 2, 8, 11, 3, 9, 11, 3, 12, 1, 2, 13, 1, 2, 131057, 11, 196609, 131058, 11, 131072, 131059, 11, 131072, 131060, 11, 196609, 131061, 11, 131072, 131062, 11, 196608, 131065, 11, 65539, 131066, 11, 65539, 131067, 11, 65539, 131068, 11, 65539, 131069, 11, 2, 131070, 11, 2, 131071, 11, 2, 65536, 11, 2, 65540, 1, 2, 65541, 1, 2, 65543, 11, 3, 65544, 11, 3, 65545, 11, 3, 65546, 11, 3, 65548, 1, 2, 65549, 1, 2, 196593, 11, 131072, 196594, 11, 131072, 196595, 11, 131072, 196596, 11, 131072, 196597, 11, 131072, 196598, 11, 131072, 196601, 11, 65539, 196602, 11, 65539, 196603, 11, 65539, 196604, 11, 65539, 196605, 11, 2, 196606, 11, 2, 196607, 11, 2, 131072, 11, 2, 131076, 1, 2, 131077, 1, 2, 131079, 11, 3, 131080, 11, 3, 131081, 11, 3, 131082, 11, 3, 131084, 1, 2, 131085, 1, 2, 262129, 11, 131073, 196608, 11, 131074, 196609, 11, 131074, 196612, 1, 2, 196613, 1, 2, 196615, 11, 3, 196616, 11, 3, 196617, 11, 3, 196618, 11, 3, 196620, 1, 2, 196621, 1, 2, 327664, 11, 131073, 327665, 11, 131073, 327666, 11, 65538, 327668, 11, 0, 327669, 11, 0, 327671, 11, 131073, 327672, 11, 131073, 327673, 11, 131073, 327674, 11, 131073, 327675, 11, 65537, 327676, 11, 65537, 327677, 11, 65537, 327678, 11, 65537, 327679, 11, 131074, 262144, 11, 131074, 262145, 11, 131074, 262148, 1, 2, 262149, 1, 2, 262151, 11, 3, 262152, 11, 3, 262153, 11, 3, 262154, 11, 3, 262156, 1, 2, 262157, 1, 2, 393200, 11, 131073, 393201, 11, 65538, 393202, 11, 65538, 393203, 11, 0, 393204, 11, 0, 393205, 11, 0, 393206, 11, 0, 393207, 11, 131073, 393208, 11, 131073, 393209, 11, 131073, 393210, 11, 131073, 393211, 11, 65537, 393212, 11, 65537, 393213, 11, 65537, 393214, 11, 65537, 393215, 11, 65537, 327680, 11, 131074, 327681, 11, 131074, 327682, 11, 131074, 327684, 1, 2, 327685, 1, 2, 327687, 11, 3, 327688, 11, 3, 327689, 11, 3, 327690, 11, 3, 327692, 1, 2, 327693, 1, 2, 458736, 11, 131073, 458737, 11, 65538, 458738, 11, 65538, 458739, 11, 0, 458740, 11, 0, 458741, 11, 0, 458742, 11, 0, 458743, 11, 131073, 458744, 11, 131073, 458745, 11, 131073, 458746, 11, 131073, 458747, 11, 65537, 458748, 11, 65537, 458749, 11, 65537, 458750, 11, 65537, 458751, 11, 65537, 393216, 11, 131074, 393217, 11, 131074, 393218, 11, 131074, 393220, 1, 2, 393221, 1, 2, 393223, 11, 3, 393224, 11, 3, 393225, 11, 3, 393226, 11, 3, 393228, 1, 2, 393229, 1, 2, 458759, 11, 3, 458760, 11, 3, 458761, 11, 3, 458762, 11, 3, 524296, 11, 3 )
 
-[node name="spawna" parent="level/spawns" index="0"]
-position = Vector2( -276.757, 108.708 )
+[node name="spawna" type="Node2D" parent="level/spawns" index="0"]
+position = Vector2( -285.077, 103.442 )
 
-[node name="spawnb" parent="level/spawns" index="1"]
-position = Vector2( 266.022, 107.39 )
+[node name="spawnb" type="Node2D" parent="level/spawns" index="1"]
+position = Vector2( 262.271, 100.999 )
 
 [node name="spawnc" type="Node2D" parent="level/spawns" index="2"]
-position = Vector2( -40.1124, 99.7256 )
+position = Vector2( 151.296, 72.0325 )
 
 [node name="spawnd" type="Node2D" parent="level/spawns" index="3"]
 position = Vector2( -87.5714, 7.96104 )
 
 [node name="spawne" type="Node2D" parent="level/spawns" index="4"]
-position = Vector2( 152.297, 72.2195 )
+position = Vector2( -39.9261, 103.985 )
 
-[node name="ChangeStage" parent="level/links" index="0"]
-position = Vector2( -300.28, 96.0319 )
-target_stage = "res://src/levels/gobtown.tscn"
-target_spawn = "level/spawns/spawnb"
-
-[node name="ChangeStage2" parent="level/links" index="1"]
-position = Vector2( 284.849, 96.5147 )
-target_stage = "res://src/levels/gobtown.tscn"
+[node name="ChangeStage" parent="level/links" index="0" instance=ExtResource( 6 )]
+position = Vector2( 279.375, 96.9261 )
+target_stage = "res://src/levels/ascent.tscn"
 target_spawn = "level/spawns/spawna"
 
-[node name="Door" parent="level/doors" index="0"]
-position = Vector2( -87.9868, 7.86787 )
-target_stage = "res://src/levels/gobhouse.tscn"
-target_spawn = "level/spawns/spawna"
-
-[node name="Door2" parent="level/doors" index="1" instance=ExtResource( 2 )]
+[node name="Door2" parent="level/doors" index="0" instance=ExtResource( 2 )]
 position = Vector2( -39.9441, 104.576 )
 target_stage = "res://src/levels/gobhouse.tscn"
 target_spawn = "level/spawns/spawnb"
 
-[node name="Door3" parent="level/doors" index="2" instance=ExtResource( 2 )]
+[node name="Door3" parent="level/doors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 151.423, 72.2672 )
 target_stage = "res://src/levels/gobbank.tscn"
+target_spawn = "level/spawns/spawna"
+
+[node name="Door" parent="level/doors" index="2" instance=ExtResource( 2 )]
+position = Vector2( -87.9665, 8.14505 )
+target_stage = "res://src/levels/gobhouse.tscn"
 target_spawn = "level/spawns/spawna"
 
 [node name="Sprite" parent="level/ParallaxBackground/bg" index="0"]
@@ -82,15 +78,5 @@ region_rect = Rect2( 0, 0, 960, 180 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 960, 180 )
-
-[node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( -328.336, -104.611 )
-target_stage = "res://src/levels/home.tscn"
-target_spawn = "level/spawns/spawnb"
-
-[node name="Door2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -24.038, -264.104 )
-target_stage = "res://src/levels/home.tscn"
-target_spawn = "level/spawns/spawnb"
 
 [editable path="level"]

@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 [ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
-[ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=5]
 
 [node name="level" type="Node2D"]
 
@@ -90,23 +88,9 @@ format = 1
 
 [node name="spawns" type="Node2D" parent="."]
 
-[node name="spawna" type="Node2D" parent="spawns"]
-position = Vector2( -215.329, 3.03645 )
-
-[node name="spawnb" type="Node2D" parent="spawns"]
-position = Vector2( 202.812, -0.814484 )
-
 [node name="links" type="Node2D" parent="."]
 
-[node name="ChangeStage" parent="links" instance=ExtResource( 2 )]
-z_index = 50
-
-[node name="ChangeStage2" parent="links" instance=ExtResource( 2 )]
-z_index = 50
-
 [node name="doors" type="Node2D" parent="."]
-
-[node name="Door" parent="doors" instance=ExtResource( 5 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
