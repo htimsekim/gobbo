@@ -31,13 +31,29 @@ func _deferred_goto_scene(path, spawn: String):
 	get_tree().set_current_scene(current_scene)
 	
 	get_node("plyrInst").position = current_scene.get_node(str(spawn)).position #set plyr spawn
-
-	map_limits = current_scene.get_node("level/tilemaps/limits").get_used_rect()
+	
+	map_limits = current_scene.get_node("level/tilemaps/limits").get_used_cells()
 	var map_cellsize = current_scene.get_node("level/tilemaps/limits").cell_size
 	
-	camera.limit_left = map_limits.position.x * map_cellsize.x 
-	camera.limit_right = map_limits.end.x * map_cellsize.x 
-	camera.limit_top = map_limits.position.y * map_cellsize.y 
-	camera.limit_bottom = map_limits.end.y * map_cellsize.y 
+	
+	
+	
+	camera.limit_left = map_limits[0].x * map_cellsize.x 
+	camera.limit_right = map_limits.back().x * map_cellsize.x 
+	camera.limit_top = map_limits[0].y * map_cellsize.y 
+	camera.limit_bottom = map_limits.back().y * map_cellsize.y 
+	
+	var camtop = camera.limit_top
+	var cambot = camera.limit_bottom
+	var camleft = camera.limit_left
+	var camright = camera.limit_right
+	
+	if abs(camtop - cambot) <= 224:
+		camera.limit_bottom = ((camtop + cambot)/2) + 108
+		camera.limit_top = ((camtop + cambot)/2) - 108
+
+	if abs(camleft - camright) <= 384:
+		camera.limit_right = ((camleft + camright)/2 + 192)
+		camera.limit_left = ((camleft + camright)/2 - 192)
 
 	camera.current = true
