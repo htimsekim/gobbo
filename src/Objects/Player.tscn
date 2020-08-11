@@ -441,14 +441,6 @@ __meta__ = {
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 1, -0.75 )
 shape = SubResource( 14 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -60 )
-zoom = Vector2( 0.2, 0.2 )
-smoothing_enabled = true
-smoothing_speed = 0.75
-editor_draw_screen = false
-editor_draw_drag_margin = true
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]

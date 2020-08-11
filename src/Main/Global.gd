@@ -1,12 +1,19 @@
 extends Node
 const playerResource = preload("res://src/Objects/Player.tscn")
+const cameraResource = preload("res://src/Objects/camera.tscn")
 var current_scene = null
 var map_limits = 0
+var camera
 
 func _ready():	
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1) # get current scene to remove/update
 
+	var cameraInstance = cameraResource.instance() #instance in camera
+	cameraInstance.set_name("camInst")
+	self.add_child(cameraInstance)
+	camera = get_node("camInst")
+	
 	var playerInstance = playerResource.instance() #instance in player 
 	playerInstance.set_name("plyrInst")
 	self.add_child(playerInstance)
@@ -25,7 +32,6 @@ func _deferred_goto_scene(path, spawn: String):
 	
 	get_node("plyrInst").position = current_scene.get_node(str(spawn)).position #set plyr spawn
 
-	var camera = get_node("plyrInst/Camera2D")
 	map_limits = current_scene.get_node("level/tilemaps/limits").get_used_rect()
 	var map_cellsize = current_scene.get_node("level/tilemaps/limits").cell_size
 	
