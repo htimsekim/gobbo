@@ -35,18 +35,10 @@ func _deferred_goto_scene(path, spawn: String):
 	map_limits = current_scene.get_node("level/tilemaps/limits").get_used_cells()
 	var map_cellsize = current_scene.get_node("level/tilemaps/limits").cell_size
 	
-	
-	
-	
-	camera.limit_left = map_limits[0].x * map_cellsize.x 
-	camera.limit_right = map_limits.back().x * map_cellsize.x 
-	camera.limit_top = map_limits[0].y * map_cellsize.y 
-	camera.limit_bottom = map_limits.back().y * map_cellsize.y 
-	
-	var camtop = camera.limit_top
-	var cambot = camera.limit_bottom
-	var camleft = camera.limit_left
-	var camright = camera.limit_right
+	var camleft = map_limits[0].x * map_cellsize.x 
+	var camright = map_limits.back().x * map_cellsize.x 
+	var camtop = map_limits[0].y * map_cellsize.y 
+	var cambot  = map_limits.back().y * map_cellsize.y 
 	
 	if abs(camtop - cambot) <= 224:
 		camera.limit_bottom = ((camtop + cambot)/2) + 108
