@@ -45,7 +45,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 #		animation_player.play("crouch")	
 	var targetinc = 1
 
-	Global.camera.position = position
+	Global.camera.transform = transform
 	#adjusts camera smoothing based on player speed (prevents player falling offscreen etc)
 	var activespeed = abs(max(_velocity.x, _velocity.y))
 	if activespeed !=0:

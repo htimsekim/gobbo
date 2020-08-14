@@ -1,8 +1,8 @@
 [gd_scene format=2]
 
 [node name="Camera2D" type="Camera2D"]
+current = true
 zoom = Vector2( 0.2, 0.2 )
-smoothing_enabled = true
 smoothing_speed = 0.75
 editor_draw_screen = false
 editor_draw_drag_margin = true

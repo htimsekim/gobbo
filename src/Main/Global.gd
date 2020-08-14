@@ -10,7 +10,7 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1) # get current scene to remove/update
 
 	var cameraInstance = cameraResource.instance() #instance in camera
-	cameraInstance.set_name("camInst")
+	camera = cameraInstance.set_name("camInst")
 	self.add_child(cameraInstance)
 	camera = get_node("camInst")
 	
@@ -19,6 +19,7 @@ func _ready():
 	self.add_child(playerInstance)
 		
 func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")
+	camera.smoothing_enabled = false
 	call_deferred("_deferred_goto_scene", path, spawn)
 	get_tree().call_group("projectile","queue_free")
 	
@@ -28,15 +29,12 @@ func _deferred_goto_scene(path, spawn: String):
 	current_scene = s.instance() # Instance the new scene.
 	get_tree().get_root().add_child(current_scene) # Add it to the active scene, as child of root.
 	#Optionally, to make it compatible with the SceneTree.change_scene() API.
-	get_tree().set_current_scene(current_scene)
+	get_tree().change_scene_to(current_scene)
 	
 	get_node("plyrInst").position = current_scene.get_node(str(spawn)).position #set plyr spawn
 	
 	map_limits = current_scene.get_node("level/tilemaps/limits").get_used_cells()
 	var map_cellsize = current_scene.get_node("level/tilemaps/limits").cell_size
-	
-	
-	
 	
 	camera.limit_left = map_limits[0].x * map_cellsize.x 
 	camera.limit_right = map_limits.back().x * map_cellsize.x 
@@ -56,4 +54,8 @@ func _deferred_goto_scene(path, spawn: String):
 		camera.limit_right = ((camleft + camright)/2 + 192)
 		camera.limit_left = ((camleft + camright)/2 - 192)
 
-	camera.current = true
+	#camera.current = true
+	print("enabled is ", camera.smoothing_enabled )
+	yield(get_tree().create_timer(1.5), "timeout")
+	camera.smoothing_enabled = true
+	print("now it is ", camera.smoothing_enabled )
