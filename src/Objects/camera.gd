@@ -25,11 +25,13 @@ func _ready():
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	position = get_node("../../../Global/plyrInst").position
 	#adjusts camera smoothing based on player speed (prevents player falling offscreen etc)
-	var activespeed = abs(Global.player._velocity.y)
-	if activespeed > 350:
-		smoothing_speed = .5
+	var activespeed = abs(max(Global.player._velocity.x, Global.player._velocity.y))
+	if abs(Global.player._velocity.y) > 350:
+		smoothing_speed = activespeed/200
 	else:
 		smoothing_speed = .75
+		
+		
 	print(Global.player._velocity.y)
 	var targetinc = 1
 	if Global.player.direction.x !=0 and smoothing_enabled == true: 

@@ -1,7 +1,7 @@
 extends Node
 
 #const levelResource = "res://src/levels/verttest.tscn"
-const levelResource = "res://src/levels/verttest.tscn"
+const levelResource = "res://src/levels/gobtown.tscn"
 
 func _ready():	
 	full_screen() #comment this code out to run the game in a window
