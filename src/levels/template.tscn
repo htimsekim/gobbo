@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Objects/camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 [ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
+[ext_resource path="res://src/Objects/camera.gd" type="Script" id=5]
 
 [node name="level" type="Node2D"]
 
@@ -111,3 +113,10 @@ motion_scale = Vector2( 0.5, 0.03 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fg"]
 scale = Vector2( 2, 2 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="tree_exited" from="Camera2D" to="Camera2D" method="_on_Camera2D_tree_exited"]
+[connection signal="timeout" from="Timer" to="Camera2D" method="_on_Timer_timeout"]
