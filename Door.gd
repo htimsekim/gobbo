@@ -7,7 +7,7 @@ var doorIndicator = Global.get_node("plyrInst/Sprite/DoorIndicator")
 var indicAnimation = Global.get_node("plyrInst/Sprite/DoorIndicator/AnimationPlayer")
 var in_door = false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("move_up") and in_door:
 		Global.goto_scene(target_stage, target_spawn)
 

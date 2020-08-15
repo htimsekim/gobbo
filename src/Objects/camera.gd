@@ -1,6 +1,5 @@
 extends Camera2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var map_limits = get_node("../tilemaps/limits").get_used_cells()
 	var map_cellsize = get_node("../tilemaps/limits").cell_size
@@ -23,16 +22,23 @@ func _ready():
 		limit_right = ((camleft + camright)/2 + 192)
 		limit_left = ((camleft + camright)/2 - 192)
 	
-
-
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	position = get_node("../../../Global/plyrInst").position
+	#adjusts camera smoothing based on player speed (prevents player falling offscreen etc)
+	var activespeed = abs(max(Global.player._velocity.x, Global.player._velocity.y))
+	if activespeed !=0:
+		smoothing_speed = activespeed/200
+	else:
+		smoothing_speed = .75
+	
+	var targetinc = 1
+	if Global.player.direction.x !=0: 
+		offset_h = Global.player.direction.x * targetinc
+	else:
+		offset_h = 0
 
 func _on_Camera2D_tree_exited():
 	smoothing_enabled = false
-#	yield(get_tree().create_timer(1.5), "timeout")
-	#$Timer.start()
-#	smoothing_enabled = true
 
 func _on_Timer_timeout():
 	smoothing_enabled = true
