@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Objects/enemybat.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/enemy/bat.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -31,7 +31,7 @@ tracks/1/keys = {
 "values": [ Vector2( 6.5, -2 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -59,23 +59,20 @@ tracks/1/keys = {
 "values": [ Vector2( 6.5, -2 ), Vector2( 6.5, -2 ), Vector2( 6.5, -2 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 4.5216
 height = 5.55834
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 7.94767
 height = 6.15006
 
-[node name="Enemy" type="RigidBody2D" groups=[
+[node name="Enemy" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 z_index = 3
 collision_layer = 8
 collision_mask = 7
-gravity_scale = 0.0
-contacts_reported = 1
-contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -86,12 +83,12 @@ region_rect = Rect2( 42, 0, 21, 18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/idle = SubResource( 4 )
-anims/move = SubResource( 5 )
+anims/idle = SubResource( 1 )
+anims/move = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5.86323, 0.65133 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 visible = false
@@ -111,6 +108,6 @@ __meta__ = {
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 6.23334, -2.82835 )
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [editable path="Hurtbox"]
