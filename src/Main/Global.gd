@@ -27,4 +27,3 @@ func _deferred_goto_scene(path, spawn: String):
 	camera = current_scene.get_node("level/Camera2D")
 	player.position = current_scene.get_node(str(spawn)).position #set plyr spawn
 	camera.position = current_scene.get_node(str(spawn)).position #set camera spawn
-	current_scene.get_node("level/Timer").start() #start camer timer for scene change pause

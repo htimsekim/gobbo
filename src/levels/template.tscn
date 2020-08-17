@@ -117,9 +117,3 @@ scale = Vector2( 2, 2 )
 [node name="Camera2D" parent="." instance=ExtResource( 2 )]
 process_mode = 0
 script = ExtResource( 5 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-[connection signal="tree_exited" from="Camera2D" to="Camera2D" method="_on_Camera2D_tree_exited"]
-[connection signal="timeout" from="Timer" to="Camera2D" method="_on_Timer_timeout"]
