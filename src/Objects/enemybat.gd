@@ -23,7 +23,7 @@ func _physics_process(delta): # Called every frame. _delta isn't used
 		follow = false
 	
 	if follow == true:
-		move_and_collide(direction.normalized() * speed * delta) #move enemy to player
+		move_and_collide(direction.normalized() * speed/2 * delta) #move enemy to player
 		$AnimationPlayer.play("move")
 		
 func damage(amount): #called from projectile amount is 1
