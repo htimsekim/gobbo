@@ -26,8 +26,6 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	var is_shooting = false #to determine if gun needs to be out and which animation to play
 
-	
-
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
 		gundirection() #set direction of weapon to mouse pointer
 		is_shooting = true #we are shooting so be sure to play weapon animations
@@ -112,8 +110,15 @@ func gundirection(): #point gun in direction of mouse pointer and the character 
 func _on_ProjectileTimer_timeout():
 	canshoot = true
 
-func _on_Hitbox_area_entered(area):
+func playerdamage(damage): #damage, blink, and knockback player
 	knockback = true #player hit, enable knockback effect
+
+	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
+		#get_tree().quit()
+		print("i died")
+	else: #decrease player health
+		$TextureProgress.value -= damage
+	
 	if sprite.scale.x == 1: #knockback code if player is right facing
 		_velocity.x -= 700 #knockback 700 to the right
 	if sprite.scale.x == -1: #knockback code if player is left facing
@@ -121,17 +126,7 @@ func _on_Hitbox_area_entered(area):
 	_velocity.y -= 200 #height of knockback
 
 	move_and_slide(_velocity) #knockback player
-	
-	$TextureProgress.value -= area.get_node("../TextureProgress").step #decrease player health based on what it was hit by
-	if $TextureProgress.value <= 0: #if player health is 0, kill player
-		get_tree().quit()
-	knocktimer.start() #set timer for when enemy can't attack player
 
-func _on_BlinkTimer_timeout():
+func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	sprite.visible = true
 	blinktimer.stop()
-	
-func _on_KnockbackTimer_timeout():
-	
-	knockback = false
-	knocktimer.stop()
