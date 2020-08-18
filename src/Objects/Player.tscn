@@ -411,7 +411,7 @@ one_shot = true
 autostart = true
 
 [node name="BlinkTimer" type="Timer" parent="."]
-wait_time = 0.02
+wait_time = 0.08
 
 [node name="KnockbackTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -432,4 +432,3 @@ __meta__ = {
 }
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
-[connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]
