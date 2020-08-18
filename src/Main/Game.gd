@@ -1,6 +1,6 @@
 extends Node
 
-const levelResource = "res://src/levels/verttest.tscn"
+const levelResource = "res://src/levels/forest.tscn"
 #const levelResource = "res://src/levels/gobtown.tscn"
 
 func _ready():	
