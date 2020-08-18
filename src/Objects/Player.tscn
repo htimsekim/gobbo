@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/art/player/goblin.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Player.gd" type="Script" id=2]
 [ext_resource path="res://src/Objects/Gun.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/ui/link.png" type="Texture" id=4]
-[ext_resource path="res://src/Objects/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/art/ui/animated-cursor-arrow.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -334,16 +333,12 @@ tracks/1/keys = {
 "values": [ Vector2( 6.5, -1.5 ), Vector2( 6.5, -1.5 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=14]
-radius = 6.00994
-height = 8.0
-
 [node name="Player" type="KinematicBody2D" groups=[
 "plyr",
 ]]
 z_index = 25
 z_as_relative = false
-collision_mask = 0
+collision_mask = 18
 script = ExtResource( 2 )
 speed = Vector2( 150, 340 )
 
@@ -435,15 +430,6 @@ fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Hitbox" parent="." instance=ExtResource( 5 )]
-
-[node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 1, -0.75 )
-shape = SubResource( 14 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 [connection signal="timeout" from="KnockbackTimer" to="." method="_on_KnockbackTimer_timeout"]
-[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
-
-[editable path="Hitbox"]

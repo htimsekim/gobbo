@@ -23,11 +23,26 @@ func _physics_process(delta): # Called every frame. _delta isn't used
 		follow = false
 		
 	if follow == true:
-		move_and_collide(direction.normalized() * 100 * delta) #move enemy to player
+		move_and_slide(direction.normalized() * 100) #move enemy to player
 		$AnimationPlayer.play("move")
+		for i in get_slide_count():
+			var collision = get_slide_collision(i)
+			#print("I collided with ", collision.collider.name)
+			if "plyr" in collision.collider.name:
+				damage(10)
+				set_collision_mask(6)
+				$Timer.start()
+				
 		
 func damage(amount): #called from projectile amount is 1
-	if $TextureProgress.value <= 0: #if enemy is dead, remove enemy
-		self.queue_free()
+	if player.get_node("TextureProgress").value <= 0: #if enemy is dead, remove enemy
+		print("i die")
 	else: #decrease enemy health
-		$TextureProgress.value -= amount
+		print("ouch")
+		player.get_node("TextureProgress").value -= amount
+		
+
+
+
+func _on_Timer_timeout():
+	set_collision_mask(7)

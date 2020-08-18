@@ -23,4 +23,4 @@ func _ready():
 		limit_left = ((camleft + camright)/2 - 192)
 	
 func _physics_process(_delta): # Called every frame. _delta isn't used
-	position = get_node("../../../Global/plyrInst").position
+	position = get_tree().get_root().get_node("Global/plyrInst").position

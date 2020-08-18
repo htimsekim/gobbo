@@ -15,4 +15,8 @@ func _on_Bullet_body_entered(body):
 		queue_free()
 	
 	if body.is_in_group("enemy"):
-		body.damage(10)
+		body.get_node("TextureProgress").value -= 10
+		print(body.get_node("TextureProgress").value)
+		if body.get_node("TextureProgress").value <= 0:
+			body.queue_free()
+

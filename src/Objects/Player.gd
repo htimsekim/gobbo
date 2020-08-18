@@ -26,6 +26,8 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	var is_shooting = false #to determine if gun needs to be out and which animation to play
 
+	
+
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
 		gundirection() #set direction of weapon to mouse pointer
 		is_shooting = true #we are shooting so be sure to play weapon animations
@@ -123,7 +125,6 @@ func _on_Hitbox_area_entered(area):
 	$TextureProgress.value -= area.get_node("../TextureProgress").step #decrease player health based on what it was hit by
 	if $TextureProgress.value <= 0: #if player health is 0, kill player
 		get_tree().quit()
-
 	knocktimer.start() #set timer for when enemy can't attack player
 
 func _on_BlinkTimer_timeout():
@@ -131,5 +132,6 @@ func _on_BlinkTimer_timeout():
 	blinktimer.stop()
 	
 func _on_KnockbackTimer_timeout():
+	
 	knockback = false
 	knocktimer.stop()
