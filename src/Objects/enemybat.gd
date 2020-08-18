@@ -17,13 +17,13 @@ func _physics_process(delta): # Called every frame. _delta isn't used
 	distance = sqrt(direction.x * direction.x + direction.y * direction.y) 	# calculate distance from player
 
 	# If distance less than 150 then start Enemy following player
-	if distance < 100 and player.knockback == false:
+	if distance < 190 and player.knockback == false:
 		follow = true
-	else:
+	if player.knockback == true:
 		follow = false
-	
+		
 	if follow == true:
-		move_and_collide(direction.normalized() * speed/2 * delta) #move enemy to player
+		move_and_collide(direction.normalized() * 100 * delta) #move enemy to player
 		$AnimationPlayer.play("move")
 		
 func damage(amount): #called from projectile amount is 1
