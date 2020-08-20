@@ -86,6 +86,13 @@ collision_layer = 0
 collision_mask = 0
 format = 1
 
+[node name="hazards" type="TileMap" parent="tilemaps"]
+z_index = 15
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
 [node name="audio" type="Node" parent="."]
 
 [node name="spawns" type="Node2D" parent="."]

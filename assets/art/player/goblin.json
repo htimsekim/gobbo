@@ -1,257 +1,233 @@
 { "frames": {
    "goblin 0.aseprite": {
-    "frame": { "x": 0, "y": 0, "w": 29, "h": 21 },
+    "frame": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 500
    },
    "goblin 1.aseprite": {
-    "frame": { "x": 29, "y": 0, "w": 29, "h": 21 },
+    "frame": { "x": 64, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 500
    },
    "goblin 2.aseprite": {
-    "frame": { "x": 58, "y": 0, "w": 29, "h": 21 },
+    "frame": { "x": 128, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 3.aseprite": {
-    "frame": { "x": 87, "y": 0, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 4.aseprite": {
-    "frame": { "x": 116, "y": 0, "w": 29, "h": 21 },
+    "frame": { "x": 256, "y": 0, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 5.aseprite": {
-    "frame": { "x": 145, "y": 0, "w": 29, "h": 21 },
+    "frame": { "x": 0, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 6.aseprite": {
-    "frame": { "x": 0, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 64, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 7.aseprite": {
-    "frame": { "x": 29, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 128, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 8.aseprite": {
-    "frame": { "x": 58, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 9.aseprite": {
-    "frame": { "x": 87, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 10.aseprite": {
-    "frame": { "x": 116, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 256, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 11.aseprite": {
-    "frame": { "x": 145, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 0, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 12.aseprite": {
-    "frame": { "x": 145, "y": 21, "w": 29, "h": 21 },
+    "frame": { "x": 64, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 13.aseprite": {
-    "frame": { "x": 0, "y": 42, "w": 29, "h": 21 },
+    "frame": { "x": 128, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 14.aseprite": {
-    "frame": { "x": 29, "y": 42, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 15.aseprite": {
-    "frame": { "x": 58, "y": 42, "w": 29, "h": 21 },
+    "frame": { "x": 256, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 16.aseprite": {
-    "frame": { "x": 87, "y": 42, "w": 29, "h": 21 },
+    "frame": { "x": 0, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 17.aseprite": {
-    "frame": { "x": 116, "y": 42, "w": 29, "h": 21 },
+    "frame": { "x": 64, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 18.aseprite": {
-    "frame": { "x": 145, "y": 42, "w": 29, "h": 21 },
+    "frame": { "x": 128, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 19.aseprite": {
-    "frame": { "x": 0, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 20.aseprite": {
-    "frame": { "x": 29, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 256, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 21.aseprite": {
-    "frame": { "x": 58, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 22.aseprite": {
-    "frame": { "x": 87, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 0, "y": 256, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
    "goblin 23.aseprite": {
-    "frame": { "x": 116, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 64, "y": 256, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
    },
    "goblin 24.aseprite": {
-    "frame": { "x": 87, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 128, "y": 256, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
    },
    "goblin 25.aseprite": {
-    "frame": { "x": 145, "y": 63, "w": 29, "h": 21 },
+    "frame": { "x": 192, "y": 256, "w": 64, "h": 64 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
-   },
-   "goblin 26.aseprite": {
-    "frame": { "x": 0, "y": 84, "w": 29, "h": 21 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 200
-   },
-   "goblin 27.aseprite": {
-    "frame": { "x": 29, "y": 84, "w": 29, "h": 21 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 200
-   },
-   "goblin 28.aseprite": {
-    "frame": { "x": 58, "y": 84, "w": 29, "h": 21 },
-    "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 24, "y": 20, "w": 29, "h": 21 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 200
    }
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.2.21",
+  "version": "1.2.25",
   "image": "goblin.png",
   "format": "RGBA8888",
-  "size": { "w": 174, "h": 105 },
+  "size": { "w": 320, "h": 320 },
   "scale": "1",
   "frameTags": [
    { "name": "idle", "from": 0, "to": 1, "direction": "forward" },
    { "name": "crouch", "from": 2, "to": 2, "direction": "forward" },
    { "name": "run", "from": 3, "to": 6, "direction": "forward" },
-   { "name": "airborne", "from": 7, "to": 10, "direction": "forward" },
-   { "name": "idle_armless", "from": 11, "to": 12, "direction": "forward" },
-   { "name": "crouch_armless", "from": 13, "to": 13, "direction": "forward" },
-   { "name": "run_armless", "from": 14, "to": 17, "direction": "forward" },
-   { "name": "airborne_armless", "from": 18, "to": 21, "direction": "forward" },
-   { "name": "aim", "from": 22, "to": 22, "direction": "forward" },
-   { "name": "shoot", "from": 23, "to": 24, "direction": "forward" },
-   { "name": "stab", "from": 25, "to": 26, "direction": "forward" },
-   { "name": "bullet", "from": 27, "to": 28, "direction": "forward" }
+   { "name": "airborne", "from": 7, "to": 7, "direction": "forward" },
+   { "name": "idle_armless", "from": 8, "to": 9, "direction": "forward" },
+   { "name": "crouch_armless", "from": 10, "to": 10, "direction": "forward" },
+   { "name": "run_armless", "from": 11, "to": 14, "direction": "forward" },
+   { "name": "airborne_armless", "from": 15, "to": 18, "direction": "forward" },
+   { "name": "aim", "from": 19, "to": 19, "direction": "forward" },
+   { "name": "shoot", "from": 20, "to": 21, "direction": "forward" },
+   { "name": "stab", "from": 22, "to": 23, "direction": "forward" },
+   { "name": "bullet", "from": 24, "to": 25, "direction": "forward" }
   ],
   "layers": [
    { "name": "projectiles", "opacity": 255, "blendMode": "normal" },
@@ -259,7 +235,8 @@
    { "name": "barm", "opacity": 255, "blendMode": "normal" },
    { "name": "body", "opacity": 255, "blendMode": "normal" },
    { "name": "farm", "opacity": 255, "blendMode": "normal" },
-   { "name": "head", "opacity": 255, "blendMode": "normal" }
+   { "name": "head", "opacity": 255, "blendMode": "normal" },
+   { "name": "detail", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
   ]
