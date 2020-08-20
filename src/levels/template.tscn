@@ -47,7 +47,7 @@ collision_layer = 16
 collision_mask = 9
 format = 1
 
-[node name="onewayInvis" type="TileMap" parent="tilemaps"]
+[node name="collisionInvis" type="TileMap" parent="tilemaps"]
 z_index = 15
 z_as_relative = false
 tile_set = ExtResource( 1 )
