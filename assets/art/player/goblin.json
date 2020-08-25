@@ -144,7 +144,7 @@
     "duration": 100
    },
    "goblin 18.aseprite": {
-    "frame": { "x": 128, "y": 192, "w": 64, "h": 64 },
+    "frame": { "x": 0, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -152,7 +152,7 @@
     "duration": 100
    },
    "goblin 19.aseprite": {
-    "frame": { "x": 192, "y": 192, "w": 64, "h": 64 },
+    "frame": { "x": 128, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -160,47 +160,23 @@
     "duration": 100
    },
    "goblin 20.aseprite": {
-    "frame": { "x": 256, "y": 192, "w": 64, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
-   },
-   "goblin 21.aseprite": {
     "frame": { "x": 192, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
     "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
+    "duration": 200
+   },
+   "goblin 21.aseprite": {
+    "frame": { "x": 256, "y": 192, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 200
    },
    "goblin 22.aseprite": {
     "frame": { "x": 0, "y": 256, "w": 64, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
-   },
-   "goblin 23.aseprite": {
-    "frame": { "x": 64, "y": 256, "w": 64, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 200
-   },
-   "goblin 24.aseprite": {
-    "frame": { "x": 128, "y": 256, "w": 64, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 200
-   },
-   "goblin 25.aseprite": {
-    "frame": { "x": 192, "y": 256, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -223,11 +199,11 @@
    { "name": "idle_armless", "from": 8, "to": 9, "direction": "forward" },
    { "name": "crouch_armless", "from": 10, "to": 10, "direction": "forward" },
    { "name": "run_armless", "from": 11, "to": 14, "direction": "forward" },
-   { "name": "airborne_armless", "from": 15, "to": 18, "direction": "forward" },
-   { "name": "aim", "from": 19, "to": 19, "direction": "forward" },
-   { "name": "shoot", "from": 20, "to": 21, "direction": "forward" },
-   { "name": "stab", "from": 22, "to": 23, "direction": "forward" },
-   { "name": "bullet", "from": 24, "to": 25, "direction": "forward" }
+   { "name": "airborne_armless", "from": 15, "to": 15, "direction": "forward" },
+   { "name": "aim", "from": 16, "to": 16, "direction": "forward" },
+   { "name": "shoot", "from": 17, "to": 18, "direction": "forward" },
+   { "name": "stab", "from": 19, "to": 20, "direction": "forward" },
+   { "name": "bullet", "from": 21, "to": 22, "direction": "forward" }
   ],
   "layers": [
    { "name": "projectiles", "opacity": 255, "blendMode": "normal" },
