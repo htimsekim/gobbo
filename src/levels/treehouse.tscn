@@ -9,7 +9,7 @@
 
 [node name="limits" parent="level/tilemaps" index="0"]
 z_index = 37
-tile_data = PoolIntArray( -1376255, 19, 0, -524280, 19, 0 )
+tile_data = PoolIntArray( -1310719, 19, 0, -524279, 19, 0 )
 
 [node name="fg_art" parent="level/tilemaps" index="1"]
 tile_data = PoolIntArray( -1048574, 18, 65536, -1048569, 18, 65538, -786430, 18, 65536, -786425, 18, 65538, -720888, 9, 65538, -655352, 9, 65538, -589816, 9, 65538 )
@@ -41,8 +41,8 @@ position = Vector2( 103.608, -263.623 )
 
 [node name="Door" parent="level/doors" index="0" instance=ExtResource( 2 )]
 position = Vector2( 56.1611, -145.503 )
-target_stage = "res://src/levels/treetops.tscn"
-target_spawn = "level/spawns/spawn1"
+target_stage = "res://src/levels/forest.tscn"
+target_spawn = "level/spawns/spawn4"
 
 [node name="Door2" parent="level/doors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 103.499, -261.974 )

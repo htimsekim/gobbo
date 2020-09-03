@@ -11,7 +11,7 @@
 [node name="tilemaps" type="Node2D" parent="."]
 
 [node name="limits" type="TileMap" parent="tilemaps"]
-z_index = 35
+z_index = 1000
 z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -125,12 +125,14 @@ format = 1
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="bg" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -2
 motion_scale = Vector2( 0.1, 0.01 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/bg"]
 scale = Vector2( 2, 2 )
 
 [node name="mg" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
 motion_scale = Vector2( 0.3, 0.02 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/mg"]

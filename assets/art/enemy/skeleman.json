@@ -1,0 +1,101 @@
+{ "frames": {
+   "skeleman 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 1.aseprite": {
+    "frame": { "x": 80, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 2.aseprite": {
+    "frame": { "x": 160, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 3.aseprite": {
+    "frame": { "x": 240, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 4.aseprite": {
+    "frame": { "x": 320, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 5.aseprite": {
+    "frame": { "x": 400, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 6.aseprite": {
+    "frame": { "x": 480, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 7.aseprite": {
+    "frame": { "x": 560, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   },
+   "skeleman 8.aseprite": {
+    "frame": { "x": 640, "y": 0, "w": 80, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 64 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 250
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.25",
+  "image": "skeleman.png",
+  "format": "RGBA8888",
+  "size": { "w": 720, "h": 64 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "walk", "from": 0, "to": 3, "direction": "forward" },
+   { "name": "idle", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "shoot", "from": 4, "to": 8, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "barm", "opacity": 255, "blendMode": "normal" },
+   { "name": "blegtop", "opacity": 255, "blendMode": "normal" },
+   { "name": "blegbot", "opacity": 255, "blendMode": "normal" },
+   { "name": "torso", "opacity": 255, "blendMode": "normal" },
+   { "name": "flegbot", "opacity": 255, "blendMode": "normal" },
+   { "name": "flegtop", "opacity": 255, "blendMode": "normal" },
+   { "name": "head", "opacity": 255, "blendMode": "normal" },
+   { "name": "gun", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
