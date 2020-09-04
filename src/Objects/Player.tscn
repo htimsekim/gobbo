@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/art/player/goblin.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Player.gd" type="Script" id=2]
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 128, 64, 64, 64 ) ]
+"values": [ Rect2( 87, 21, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -60,7 +60,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -102,7 +102,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 256, 128, 64, 64 ), Rect2( 0, 192, 64, 64 ) ]
+"values": [ Rect2( 29, 63, 29, 21 ), Rect2( 58, 63, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -114,7 +114,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -129,7 +129,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 128, 0, 64, 64 ) ]
+"values": [ Rect2( 87, 0, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -141,7 +141,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -172,6 +172,33 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=8]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 29, 42, 29, 21 ), Rect2( 58, 42, 29, 21 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ) ]
+}
+
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
@@ -182,7 +209,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 64, 64 ), Rect2( 64, 0, 64, 64 ) ]
+"values": [ Rect2( 0, 0, 29, 21 ), Rect2( 29, 0, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -194,10 +221,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -224,7 +251,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -236,7 +263,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 192, 0, 64, 64 ), Rect2( 256, 0, 64, 64 ), Rect2( 0, 64, 64, 64 ), Rect2( 64, 64, 64, 64 ) ]
+"values": [ Rect2( 116, 0, 29, 21 ), Rect2( 0, 21, 29, 21 ), Rect2( 29, 21, 29, 21 ), Rect2( 58, 21, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -248,10 +275,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -278,7 +305,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -290,7 +317,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 64, 128, 64, 64 ), Rect2( 128, 128, 64, 64 ), Rect2( 64, 128, 64, 64 ), Rect2( 192, 128, 64, 64 ) ]
+"values": [ Rect2( 87, 42, 29, 21 ), Rect2( 116, 42, 29, 21 ), Rect2( 87, 42, 29, 21 ), Rect2( 0, 63, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -302,10 +329,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -317,7 +344,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 192, 64, 64, 64 ) ]
+"values": [ Rect2( 58, 0, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -329,10 +356,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -344,7 +371,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 256, 64, 64, 64 ), Rect2( 0, 128, 64, 64 ) ]
+"values": [ Rect2( 116, 21, 29, 21 ), Rect2( 0, 42, 29, 21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -356,7 +383,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 6.5, 0.5 ), Vector2( 6.5, 0.5 ) ]
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -380,8 +407,9 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+offset = Vector2( 6.5, 0.5 )
 region_enabled = true
-region_rect = Rect2( 256, 128, 64, 64 )
+region_rect = Rect2( 87, 21, 29, 21 )
 
 [node name="DoorIndicator" type="Sprite" parent="Sprite"]
 visible = false
@@ -399,13 +427,14 @@ anims/airborne_armless = SubResource( 4 )
 anims/airborneshoot = SubResource( 5 )
 anims/crouch = SubResource( 6 )
 anims/crouch_armless = SubResource( 7 )
-anims/idle = SubResource( 8 )
-anims/idle_armless = SubResource( 9 )
-anims/run = SubResource( 10 )
-anims/run_armless = SubResource( 11 )
-anims/runshoot = SubResource( 12 )
-anims/stand = SubResource( 13 )
-anims/standshoot = SubResource( 14 )
+anims/crouchshoot = SubResource( 8 )
+anims/idle = SubResource( 9 )
+anims/idle_armless = SubResource( 10 )
+anims/run = SubResource( 11 )
+anims/run_armless = SubResource( 12 )
+anims/runshoot = SubResource( 13 )
+anims/stand = SubResource( 14 )
+anims/standshoot = SubResource( 15 )
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 process_mode = 0
