@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var speed = 200
+onready var speed = 300
 onready var plyrspeed = Global.get_node("plyrInst")._velocity.x
 onready var plyrdir = Global.get_node("plyrInst/Sprite").scale.x
 
