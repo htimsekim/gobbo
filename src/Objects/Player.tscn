@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/art/player/goblin.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Player.gd" type="Script" id=2]
-[ext_resource path="res://src/Objects/Gun.gd" type="Script" id=3]
 [ext_resource path="res://assets/art/ui/link.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/ui/animated-cursor-arrow.png" type="Texture" id=6]
 
@@ -92,6 +91,33 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=5]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 256, 128, 64, 64 ), Rect2( 0, 192, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -118,7 +144,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -145,7 +171,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
@@ -171,7 +197,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -198,7 +224,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -225,7 +251,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -252,10 +278,37 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Rect2( 64, 128, 64, 64 ), Rect2( 128, 128, 64, 64 ), Rect2( 64, 128, 64, 64 ), Rect2( 192, 128, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpriteGun:region_rect")
+tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -264,10 +317,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 0, 192, 64, 64 ) ]
+"values": [ Rect2( 192, 64, 64, 64 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpriteGun:offset")
+tracks/1/path = NodePath("Sprite:offset")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -279,10 +332,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=14]
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpriteGun:region_rect")
+tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -291,37 +344,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 64, 192, 64, 64 ), Rect2( 0, 192, 64, 64 ) ]
+"values": [ Rect2( 256, 64, 64, 64 ), Rect2( 0, 128, 64, 64 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpriteGun:offset")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=13]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("SpriteGun:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Rect2( 128, 192, 64, 64 ), Rect2( 192, 192, 64, 64 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("SpriteGun:offset")
+tracks/1/path = NodePath("Sprite:offset")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -355,7 +381,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 64, 64, 64 )
+region_rect = Rect2( 256, 128, 64, 64 )
 
 [node name="DoorIndicator" type="Sprite" parent="Sprite"]
 visible = false
@@ -370,37 +396,16 @@ anims/up = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/airborne = SubResource( 3 )
 anims/airborne_armless = SubResource( 4 )
-anims/crouch = SubResource( 5 )
-anims/crouch_armless = SubResource( 6 )
-anims/idle = SubResource( 7 )
-anims/idle_armless = SubResource( 8 )
-anims/run = SubResource( 9 )
-anims/run_armless = SubResource( 10 )
-
-[node name="Gun" type="Position2D" parent="."]
-position = Vector2( 3.622, -0.011 )
-z_index = -1
-script = ExtResource( 3 )
-
-[node name="AnimationPlayerGun" type="AnimationPlayer" parent="Gun"]
-anims/aim = SubResource( 11 )
-anims/shoot = SubResource( 12 )
-anims/stab = SubResource( 13 )
-
-[node name="SpriteGun" type="Sprite" parent="Gun"]
-position = Vector2( 4.365, 0 )
-z_index = -1
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 0, 192, 64, 64 )
-
-[node name="Cooldown" type="Timer" parent="Gun"]
-process_mode = 0
-wait_time = 0.25
-one_shot = true
-
-[node name="ShootPoint" type="Position2D" parent="Gun"]
-position = Vector2( 14.9256, -1.80913 )
+anims/airborneshoot = SubResource( 5 )
+anims/crouch = SubResource( 6 )
+anims/crouch_armless = SubResource( 7 )
+anims/idle = SubResource( 8 )
+anims/idle_armless = SubResource( 9 )
+anims/run = SubResource( 10 )
+anims/run_armless = SubResource( 11 )
+anims/runshoot = SubResource( 12 )
+anims/stand = SubResource( 13 )
+anims/standshoot = SubResource( 14 )
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 process_mode = 0
@@ -428,5 +433,8 @@ fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="shootpoint" type="Position2D" parent="."]
+position = Vector2( 7.99225, 0.507981 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]

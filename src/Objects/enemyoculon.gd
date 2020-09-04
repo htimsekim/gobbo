@@ -1,4 +1,4 @@
-class_name EnemyBat
+class_name EnemyOcu
 extends Character
 
 onready var player = Global.get_node("plyrInst")

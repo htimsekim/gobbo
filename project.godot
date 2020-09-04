@@ -30,9 +30,14 @@ _global_script_classes=[ {
 "path": "res://addons/aseprite_importer/classes/EditorTheme.gd"
 }, {
 "base": "Character",
-"class": "Enemy",
+"class": "EnemyBat",
 "language": "GDScript",
 "path": "res://src/Objects/enemybat.gd"
+}, {
+"base": "Character",
+"class": "EnemyOcu",
+"language": "GDScript",
+"path": "res://src/Objects/enemyoculon.gd"
 }, {
 "base": "Position2D",
 "class": "Gun",
@@ -49,7 +54,8 @@ _global_script_class_icons={
 "AsepriteImporter": "",
 "Character": "",
 "EditorTheme": "",
-"Enemy": "",
+"EnemyBat": "",
+"EnemyOcu": "",
 "Gun": "",
 "Player": ""
 }
