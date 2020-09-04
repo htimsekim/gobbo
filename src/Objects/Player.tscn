@@ -303,6 +303,9 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 192, 64, 64 )
 
+[node name="shootpoint" type="Position2D" parent="Sprite"]
+position = Vector2( 21.132, 1.72714 )
+
 [node name="DoorIndicator" type="Sprite" parent="Sprite"]
 visible = false
 position = Vector2( 1.61989, -14.4937 )
@@ -339,9 +342,6 @@ fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="shootpoint" type="Position2D" parent="."]
-position = Vector2( 7.99225, 0.507981 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/airborne = SubResource( 3 )

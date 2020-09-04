@@ -30,8 +30,8 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		is_shooting = true #we are shooting so be sure to play weapon animations
 		if canshoot: #is true when the timer ends
 			var b = Bullet.instance()
-			add_child(b)
-			b.global_position = $shootpoint.global_position
+			Global.add_child(b)
+			b.global_position = $Sprite/shootpoint.global_position
 			canshoot = false
 			timer.start() #cannot shoot until timer ends
 	
