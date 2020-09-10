@@ -1,0 +1,70 @@
+{ "frames": {
+   "goblin-npc 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 20, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 25, "y": 22, "w": 20, "h": 21 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "goblin-npc 1.aseprite": {
+    "frame": { "x": 20, "y": 0, "w": 20, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 25, "y": 22, "w": 20, "h": 21 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "goblin-npc 2.aseprite": {
+    "frame": { "x": 40, "y": 0, "w": 20, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 25, "y": 22, "w": 20, "h": 21 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "goblin-npc 3.aseprite": {
+    "frame": { "x": 60, "y": 0, "w": 20, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 25, "y": 22, "w": 20, "h": 21 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "goblin-npc 4.aseprite": {
+    "frame": { "x": 80, "y": 0, "w": 20, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 25, "y": 22, "w": 20, "h": 21 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   },
+   "goblin-npc 5.aseprite": {
+    "frame": { "x": 100, "y": 0, "w": 20, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 25, "y": 22, "w": 20, "h": 21 },
+    "sourceSize": { "w": 128, "h": 128 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.25",
+  "image": "goblin-npc.png",
+  "format": "RGBA8888",
+  "size": { "w": 120, "h": 21 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "mining-blue", "from": 0, "to": 1, "direction": "forward" },
+   { "name": "mining-red", "from": 2, "to": 3, "direction": "forward" },
+   { "name": "mining-purple", "from": 4, "to": 5, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "gob", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
