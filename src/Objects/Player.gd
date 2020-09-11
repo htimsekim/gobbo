@@ -35,6 +35,10 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			if Input.is_action_pressed("move_up"):
 				b.position = $Sprite/shootpointu.global_position
 				b.rotation_degrees = -90 * sprite.scale.x
+			elif Input.is_action_pressed("crouch") and not is_on_floor():
+				b.position = $Sprite/shootpointd.global_position
+				b.rotation_degrees = 90 * sprite.scale.x
+				_velocity.y = -150
 			elif Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointd.global_position
 				b.rotation_degrees = 90 * sprite.scale.x
@@ -56,7 +60,9 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	
 	if animation != animation_player.current_animation:
 		animation_player.play(animation)
-		
+	
+
+	
 func get_direction(): #determine if player is moving right or left
 	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), -1 if is_on_floor() and Input.is_action_just_pressed("jump") else 0)
 	

@@ -417,7 +417,7 @@ position = Vector2( 21.132, 1.72714 )
 position = Vector2( 2, -18.295 )
 
 [node name="shootpointd" type="Position2D" parent="Sprite"]
-position = Vector2( 2.5, 22.726 )
+position = Vector2( 3, 24 )
 
 [node name="DoorIndicator" type="Sprite" parent="Sprite"]
 visible = false
@@ -431,7 +431,7 @@ anims/up = SubResource( 2 )
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 process_mode = 0
-wait_time = 0.15
+wait_time = 0.3
 one_shot = true
 autostart = true
 
