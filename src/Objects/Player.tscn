@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/art/player/goblin.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Player.gd" type="Script" id=2]
@@ -75,7 +75,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 256, 128, 64, 64 ), Rect2( 320, 128, 64, 64 ) ]
+"values": [ Rect2( 0, 192, 64, 64 ), Rect2( 64, 192, 64, 64 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -102,7 +102,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 256, 64, 64 ), Rect2( 64, 256, 64, 64 ) ]
+"values": [ Rect2( 64, 256, 64, 64 ), Rect2( 128, 256, 64, 64 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -129,7 +129,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 256, 192, 64, 64 ), Rect2( 320, 192, 64, 64 ) ]
+"values": [ Rect2( 320, 192, 64, 64 ), Rect2( 0, 256, 64, 64 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -183,7 +183,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 320, 64, 64, 64 ), Rect2( 0, 128, 64, 64 ) ]
+"values": [ Rect2( 64, 128, 64, 64 ), Rect2( 128, 128, 64, 64 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -263,7 +263,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 64, 128, 64, 64 ), Rect2( 128, 128, 64, 64 ), Rect2( 64, 128, 64, 64 ), Rect2( 192, 128, 64, 64 ) ]
+"values": [ Rect2( 192, 128, 64, 64 ), Rect2( 256, 128, 64, 64 ), Rect2( 192, 128, 64, 64 ), Rect2( 320, 128, 64, 64 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -290,7 +290,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 192, 64, 64 ), Rect2( 64, 192, 64, 64 ), Rect2( 128, 192, 64, 64 ), Rect2( 192, 192, 64, 64 ) ]
+"values": [ Rect2( 128, 192, 64, 64 ), Rect2( 192, 192, 64, 64 ), Rect2( 320, 64, 64, 64 ), Rect2( 256, 192, 64, 64 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -359,6 +359,33 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=15]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 320, 64, 64, 64 ), Rect2( 0, 128, 64, 64 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=[
 "plyr",
 ]]
@@ -381,7 +408,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 256, 192, 64, 64 )
+region_rect = Rect2( 128, 64, 64, 64 )
 
 [node name="shootpointx" type="Position2D" parent="Sprite"]
 position = Vector2( 21.132, 1.72714 )
@@ -430,6 +457,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "airborne"
 anims/airborne = SubResource( 3 )
 anims/airborneshoot = SubResource( 4 )
 anims/airborneshootdown = SubResource( 5 )
@@ -442,5 +470,6 @@ anims/runshoot = SubResource( 11 )
 anims/runshootup = SubResource( 12 )
 anims/stand = SubResource( 13 )
 anims/standshoot = SubResource( 14 )
+anims/standshootup = SubResource( 15 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
