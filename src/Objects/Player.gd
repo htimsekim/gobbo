@@ -34,13 +34,13 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			
 			if Input.is_action_pressed("move_up"):
 				b.position = $Sprite/shootpointu.global_position
-				b.rotation = 80 * sprite.scale.x
+				b.rotation_degrees = 90 * sprite.scale.x
 			elif Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointd.global_position
-				b.rotation = -80 * sprite.scale.x
+				b.rotation_degrees = -90 * sprite.scale.x
 			else:
 				b.position = $Sprite/shootpointx.global_position
-				b.rotation = $Sprite/shootpointx.rotation
+				b.rotation_degrees = 0
 			canshoot = false
 			timer.start() #cannot shoot until timer ends
 #	else:
@@ -72,7 +72,7 @@ func calculate_move_velocity(linear_velocity, cdirection, speed, is_jump_interru
 			velocity.y = speed.y * cdirection.y
 			
 	#fall through one way collision items
-	if Input.is_action_pressed("jump") and Input.is_action_pressed("crouch") and is_on_floor(): 
+	if Input.is_action_just_pressed("jump") and Input.is_action_pressed("crouch") and is_on_floor(): 
 		velocity.y = 0.0
 		self.position = Vector2(self.position.x, self.position.y + 2)
 		
@@ -86,7 +86,7 @@ func get_new_animation(is_shooting = false):
 	else:
 		animation_new = "airborne"
 
-	if Input.is_action_pressed("crouch"): #and _velocity.y == 0.0: #only crouch while idle
+	if Input.is_action_pressed("crouch") and is_on_floor(): #only crouch while idle
 		if abs(_velocity.x) < 0.1: animation_new = "crouch"
 
 	if is_shooting: #add weapon animation to existing animation. ex run_armless
