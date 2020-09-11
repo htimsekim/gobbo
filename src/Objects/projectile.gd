@@ -5,10 +5,21 @@ onready var plyrspeed = Global.get_node("plyrInst")._velocity.x
 onready var plyrdir = Global.get_node("plyrInst/Sprite").scale.x
 
 func _physics_process(delta):
+	if Input.is_action_pressed("shootup"):
+		print("up")
+		position -= transform.y * speed * delta
+		return
+	if Input.is_action_pressed("shootdown"):
+		print("down")
+		position += transform.y * speed * delta		
+		return
 	if (plyrdir == -1): #moving same direction as facing
+		print("-")
 		position -= transform.x * speed * delta
 	else:
+		print("+")
 		position += transform.x * speed * delta
+		
 
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("lvl") or body.is_in_group("enemy"):
