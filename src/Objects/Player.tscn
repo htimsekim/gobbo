@@ -414,10 +414,10 @@ region_rect = Rect2( 128, 64, 64, 64 )
 position = Vector2( 21.132, 1.72714 )
 
 [node name="shootpointu" type="Position2D" parent="Sprite"]
-position = Vector2( -0.111042, -18.295 )
+position = Vector2( 2, -18.295 )
 
 [node name="shootpointd" type="Position2D" parent="Sprite"]
-position = Vector2( 0, 22.726 )
+position = Vector2( 2.5, 22.726 )
 
 [node name="DoorIndicator" type="Sprite" parent="Sprite"]
 visible = false

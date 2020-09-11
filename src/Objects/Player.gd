@@ -34,10 +34,10 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			
 			if Input.is_action_pressed("move_up"):
 				b.position = $Sprite/shootpointu.global_position
-				b.rotation_degrees = 90 * sprite.scale.x
+				b.rotation_degrees = -90 * sprite.scale.x
 			elif Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointd.global_position
-				b.rotation_degrees = -90 * sprite.scale.x
+				b.rotation_degrees = 90 * sprite.scale.x
 			else:
 				b.position = $Sprite/shootpointx.global_position
 				b.rotation_degrees = 0
