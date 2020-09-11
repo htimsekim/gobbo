@@ -32,10 +32,10 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			var b = Bullet.instance()
 			Global.add_child(b)
 			
-			if Input.is_action_pressed("shootup"):
+			if Input.is_action_pressed("move_up"):
 				b.position = $Sprite/shootpointu.global_position
 				b.rotation = 80 * sprite.scale.x
-			elif Input.is_action_pressed("shootdown"):
+			elif Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointd.global_position
 				b.rotation = -80 * sprite.scale.x
 			else:
@@ -91,9 +91,9 @@ func get_new_animation(is_shooting = false):
 
 	if is_shooting: #add weapon animation to existing animation. ex run_armless
 		animation_new += "shoot"		
-		if Input.is_action_pressed("shootup") and !Input.is_action_pressed("crouch"):
+		if Input.is_action_pressed("move_up") and !Input.is_action_pressed("crouch"):
 			animation_new += "up"
-		if Input.is_action_pressed("shootdown") and animation_new == "airborneshoot":
+		if Input.is_action_pressed("crouch") and animation_new == "airborneshoot":
 			animation_new += "down"
 
 	return animation_new
