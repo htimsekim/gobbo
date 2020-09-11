@@ -120,14 +120,6 @@
     "duration": 100
    },
    "goblin 15.aseprite": {
-    "frame": { "x": 64, "y": 128, "w": 64, "h": 64 },
-    "rotated": false,
-    "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
-    "sourceSize": { "w": 64, "h": 64 },
-    "duration": 100
-   },
-   "goblin 16.aseprite": {
     "frame": { "x": 192, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -135,8 +127,16 @@
     "sourceSize": { "w": 64, "h": 64 },
     "duration": 100
    },
-   "goblin 17.aseprite": {
+   "goblin 16.aseprite": {
     "frame": { "x": 256, "y": 128, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "goblin 17.aseprite": {
+    "frame": { "x": 192, "y": 128, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -184,7 +184,7 @@
     "duration": 100
    },
    "goblin 23.aseprite": {
-    "frame": { "x": 256, "y": 192, "w": 64, "h": 64 },
+    "frame": { "x": 320, "y": 64, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -192,7 +192,7 @@
     "duration": 100
    },
    "goblin 24.aseprite": {
-    "frame": { "x": 320, "y": 192, "w": 64, "h": 64 },
+    "frame": { "x": 256, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -200,7 +200,7 @@
     "duration": 100
    },
    "goblin 25.aseprite": {
-    "frame": { "x": 0, "y": 256, "w": 64, "h": 64 },
+    "frame": { "x": 320, "y": 192, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -208,7 +208,23 @@
     "duration": 100
    },
    "goblin 26.aseprite": {
+    "frame": { "x": 0, "y": 256, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "goblin 27.aseprite": {
     "frame": { "x": 64, "y": 256, "w": 64, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
+    "sourceSize": { "w": 64, "h": 64 },
+    "duration": 100
+   },
+   "goblin 28.aseprite": {
+    "frame": { "x": 128, "y": 256, "w": 64, "h": 64 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 64, "h": 64 },
@@ -230,12 +246,13 @@
    { "name": "run", "from": 4, "to": 7, "direction": "forward" },
    { "name": "airborne", "from": 8, "to": 8, "direction": "forward" },
    { "name": "standshoot", "from": 9, "to": 10, "direction": "forward" },
-   { "name": "crouchshoot", "from": 11, "to": 12, "direction": "forward" },
-   { "name": "runshoot", "from": 13, "to": 16, "direction": "forward" },
-   { "name": "airborneshoot", "from": 17, "to": 18, "direction": "forward" },
-   { "name": "runshootup", "from": 19, "to": 22, "direction": "forward" },
-   { "name": "airborneshootup", "from": 23, "to": 24, "direction": "forward" },
-   { "name": "airborneshootdown", "from": 25, "to": 26, "direction": "forward" }
+   { "name": "standshootup", "from": 11, "to": 12, "direction": "forward" },
+   { "name": "crouchshoot", "from": 13, "to": 14, "direction": "forward" },
+   { "name": "runshoot", "from": 15, "to": 18, "direction": "forward" },
+   { "name": "airborneshoot", "from": 19, "to": 20, "direction": "forward" },
+   { "name": "runshootup", "from": 21, "to": 24, "direction": "forward" },
+   { "name": "airborneshootup", "from": 25, "to": 26, "direction": "forward" },
+   { "name": "airborneshootdown", "from": 27, "to": 28, "direction": "forward" }
   ],
   "layers": [
    { "name": "barm", "opacity": 255, "blendMode": "normal" },
