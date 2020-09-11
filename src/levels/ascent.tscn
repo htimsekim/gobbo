@@ -26,6 +26,9 @@ position = Vector2( -117.067, 55.8894 )
 [node name="spawn2" type="Node2D" parent="level/spawns" index="1"]
 position = Vector2( 244.744, -619.719 )
 
+[node name="spawn3" type="Node2D" parent="level/spawns" index="2"]
+position = Vector2( -116.823, -218.496 )
+
 [node name="ChangeStage" parent="level/links" index="0" instance=ExtResource( 5 )]
 position = Vector2( -135.56, 39.9999 )
 target_stage = "res://src/levels/gobtown.tscn"
@@ -34,6 +37,11 @@ target_spawn = "level/spawns/spawn2"
 [node name="ChangeStage2" parent="level/links" index="1" instance=ExtResource( 5 )]
 position = Vector2( 263.975, -631.322 )
 target_stage = "res://src/levels/goblift.tscn"
+target_spawn = "level/spawns/spawn1"
+
+[node name="ChangeStage3" parent="level/links" index="2" instance=ExtResource( 5 )]
+position = Vector2( -140.747, -231.265 )
+target_stage = "res://src/levels/cavehall.tscn"
 target_spawn = "level/spawns/spawn1"
 
 [node name="bg" parent="level/ParallaxBackground" index="0"]
