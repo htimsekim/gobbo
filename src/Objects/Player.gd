@@ -36,7 +36,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 				b.position = $Sprite/shootpointu.global_position
 				b.rotation_degrees = -90 * sprite.scale.x
 			elif Input.is_action_pressed("crouch") and not is_on_floor():
-				b.position = $Sprite/shootpointd.global_position
+				b.position = $Sprite/shootpointj.global_position
 				b.rotation_degrees = 90 * sprite.scale.x
 				_velocity.y = -150
 			elif Input.is_action_pressed("crouch"):
