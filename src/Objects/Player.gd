@@ -88,7 +88,7 @@ func calculate_move_velocity(linear_velocity, cdirection, speed, is_jump_interru
 func get_new_animation(is_shooting = false):
 	var animation_new = ""
 	
-	if(playeridle == true):
+	if(playeridle == true and is_on_floor()):
 		animation_new = "idle"
 		return animation_new
 		
