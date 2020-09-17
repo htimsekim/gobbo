@@ -86,7 +86,11 @@ func calculate_move_velocity(linear_velocity, cdirection, speed, is_jump_interru
 
 func get_new_animation(is_shooting = false):
 	var animation_new = ""
-			
+	
+	if($IdleTimer.time_left > 0):
+		animation_new = "idle"
+		return animation_new
+		
 	if is_on_floor():
 		animation_new = "run" if abs(_velocity.x) > 0.1 else "stand"
 	else:
@@ -127,3 +131,10 @@ func playerdamage(damage): #damage, blink, and knockback player
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	sprite.visible = true
 	blinktimer.stop()
+
+func _input(event):
+	if(!event.is_pressed()):
+		if($IdleTimer.time_left <= 0):
+			$IdleTimer.start()
+	else:
+		$IdleTimer.stop()
