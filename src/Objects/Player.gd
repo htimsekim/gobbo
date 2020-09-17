@@ -20,11 +20,13 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		blinktimer.start()
 	
 	direction = get_direction() #function determines if player is moving right or left
-	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
-	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
-	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
-	var is_on_platform = platform_detector.is_colliding()
-	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
+	if !Input.is_action_pressed("crouch"): #don't move while crouching
+		var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
+		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+		var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
+		var is_on_platform = platform_detector.is_colliding()
+		_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
+	
 	var is_shooting = false #to determine if gun needs to be out and which animation to play
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
@@ -61,8 +63,6 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	
 	if animation != animation_player.current_animation:
 		animation_player.play(animation)
-	
-
 	
 func get_direction(): #determine if player is moving right or left
 	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), -1 if is_on_floor() and Input.is_action_just_pressed("jump") else 0)
