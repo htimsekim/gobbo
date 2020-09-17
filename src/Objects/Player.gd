@@ -37,7 +37,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			var b = Bullet.instance()
 			Global.add_child(b)
 			
-			if Input.is_action_pressed("move_up"):
+			if Input.is_action_pressed("move_up") and not Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointu.global_position
 				b.rotation_degrees = -90 * sprite.scale.x
 			elif Input.is_action_pressed("crouch") and not is_on_floor():
