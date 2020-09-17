@@ -20,14 +20,14 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		blinktimer.start()
 	
 	direction = get_direction() #function determines if player is moving right or left
+
+	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
+	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
+	var is_on_platform = platform_detector.is_colliding()
 	if Input.is_action_pressed("crouch") and is_on_floor(): #don't move while crouching
-		pass
-	else:
-		var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
-		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
-		var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
-		var is_on_platform = platform_detector.is_colliding()
-		_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
+		_velocity = Vector2(0,0)
+	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	
 	var is_shooting = false #to determine if gun needs to be out and which animation to play
 
@@ -52,8 +52,6 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 				b.rotation_degrees = 0
 			canshoot = false
 			timer.start() #cannot shoot until timer ends
-#	else:
-#		get_tree().call_group("projectile","queue_free")
 	
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		sprite.scale.x = 1 if direction.x > 0 else -1 #flip player if going left and vice versa
@@ -136,7 +134,7 @@ func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	blinktimer.stop()
 
 func _input(event):
-	if(event.is_pressed()):
+	if(event.is_action_type()):
 		$IdleTimer.stop()
 		playeridle = false
 	elif($IdleTimer.time_left <= 0):
