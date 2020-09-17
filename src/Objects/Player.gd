@@ -98,7 +98,7 @@ func get_new_animation(is_shooting = false):
 		animation_new = "airborne"
 
 	if Input.is_action_pressed("crouch") and is_on_floor(): #only crouch while idle
-		if abs(_velocity.x) < 0.1: animation_new = "crouch"
+		animation_new = "crouch"
 
 	if is_shooting: #add weapon animation to existing animation. ex run_armless
 		animation_new += "shoot"		
