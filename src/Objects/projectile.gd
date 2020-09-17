@@ -4,6 +4,9 @@ onready var speed = 300
 onready var plyrspeed = Global.get_node("plyrInst")._velocity.x
 onready var plyrdir = Global.get_node("plyrInst/Sprite").scale.x
 
+func _ready():
+	visible = false
+
 func _physics_process(delta):
 	if (plyrdir == -1): #moving same direction as facing
 		position -= transform.x * speed * delta
@@ -19,3 +22,8 @@ func _on_Bullet_body_entered(body):
 		print(body.get_node("TextureProgress").value)
 		if body.get_node("TextureProgress").value <= 0:
 			body.queue_free()
+
+
+func _on_invisTimer_timeout():
+	visible = true
+	print("gina shit her pants at wendy's")
