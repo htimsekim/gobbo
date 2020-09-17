@@ -12,6 +12,7 @@ onready var blinktimer = $BlinkTimer
 onready var knocktimer = $KnockbackTimer
 onready var knockback = false
 var direction
+var playeridle = false
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	if knockback == true and blinktimer.time_left == 0:
@@ -87,7 +88,7 @@ func calculate_move_velocity(linear_velocity, cdirection, speed, is_jump_interru
 func get_new_animation(is_shooting = false):
 	var animation_new = ""
 	
-	if($IdleTimer.time_left > 0):
+	if(playeridle == true):
 		animation_new = "idle"
 		return animation_new
 		
@@ -133,8 +134,11 @@ func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	blinktimer.stop()
 
 func _input(event):
-	if(!event.is_pressed()):
-		if($IdleTimer.time_left <= 0):
-			$IdleTimer.start()
-	else:
+	if(event.is_pressed()):
 		$IdleTimer.stop()
+		playeridle = false
+	elif($IdleTimer.time_left <= 0):
+		$IdleTimer.start()
+
+func _on_IdleTimer_timeout():
+	playeridle = true
