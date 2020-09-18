@@ -26,4 +26,3 @@ func _on_Bullet_body_entered(body):
 
 func _on_invisTimer_timeout():
 	visible = true
-	print("gina shit her pants at wendy's")
