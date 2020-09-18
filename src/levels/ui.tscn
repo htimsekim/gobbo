@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/levels/HBoxContainer.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/ui/heart.png" type="Texture" id=2]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HeartBarPlyr" type="HBoxContainer" parent="."]
+margin_left = 90.1012
+margin_top = 21.2003
+margin_right = 350.101
+margin_bottom = 61.2003
+custom_constants/separation = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="TextureRect" parent="HeartBarPlyr"]
+margin_right = 48.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="2" type="TextureRect" parent="HeartBarPlyr"]
+margin_left = 53.0
+margin_right = 101.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="3" type="TextureRect" parent="HeartBarPlyr"]
+margin_left = 106.0
+margin_right = 154.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="4" type="TextureRect" parent="HeartBarPlyr"]
+margin_left = 159.0
+margin_right = 207.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="5" type="TextureRect" parent="HeartBarPlyr"]
+margin_left = 212.0
+margin_right = 260.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3

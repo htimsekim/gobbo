@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/levels/ui.tscn" type="PackedScene" id=1]
 
 [node name="Camera2D" type="Camera2D"]
 current = true
@@ -6,3 +8,5 @@ zoom = Vector2( 0.2, 0.2 )
 smoothing_speed = 0.75
 editor_draw_screen = false
 editor_draw_drag_margin = true
+
+[node name="UI" parent="." instance=ExtResource( 1 )]
