@@ -119,9 +119,9 @@ func playerdamage(damage): #damage, blink, and knockback player
 		#get_tree().quit()
 		print("i died")
 	else: #decrease player health
-	#	Global.ui.update_health(damage)
-	#	Global.ui.get_node("HeartBar").update_health(damage)
-		get_node("../UI/HeartBarPlyr").update_health(damage)
+		$TextureProgress.value -= damage
+		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
+	
 	if sprite.scale.x == 1: #knockback code if player is right facing
 		_velocity.x -= 700 #knockback 700 to the right
 	if sprite.scale.x == -1: #knockback code if player is left facing
