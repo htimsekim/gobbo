@@ -14,6 +14,8 @@ func _physics_process(delta):
 		position += transform.x * speed * delta
 	
 func _on_Bullet_body_entered(body):
+	print(body.name)
+	print(self.name)
 	if body.is_in_group("lvl") or body.is_in_group("enemy"):
 		queue_free()
 	
@@ -22,7 +24,6 @@ func _on_Bullet_body_entered(body):
 		print(body.get_node("TextureProgress").value)
 		if body.get_node("TextureProgress").value <= 0:
 			body.queue_free()
-
 
 func _on_invisTimer_timeout():
 	visible = true

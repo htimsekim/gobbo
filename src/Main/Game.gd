@@ -1,6 +1,6 @@
 extends Node
 
-const levelResource = "res://src/levels/forest.tscn"
+const levelResource = "res://src/levels/demo.tscn"
 #const levelResource = "res://src/levels/gobtown.tscn"
 
 func _ready():	
@@ -8,6 +8,6 @@ func _ready():
 	Global.goto_scene(levelResource, "level/spawns/spawn1")
 
 func full_screen():
-	OS.set_current_screen(0)
+	OS.set_current_screen(2)
 	OS.window_fullscreen = true
 	OS.set_borderless_window(true)

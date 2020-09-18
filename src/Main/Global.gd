@@ -1,8 +1,10 @@
 extends Node
 const playerResource = preload("res://src/Objects/Player.tscn")
+const UIResource = preload("res://src/levels/ui.tscn")
 var current_scene = null
 var camera
 var player
+var ui
 
 func _ready():	
 	var root = get_tree().get_root()
@@ -11,6 +13,10 @@ func _ready():
 	playerInstance.set_name("plyrInst")
 	self.add_child(playerInstance)
 	player = get_node("plyrInst")
+	var UIInstance = UIResource.instance() #instance in player 
+#	UIInstance.set_name("UI")
+#	ui = get_node("UI")
+	self.add_child(UIInstance)
 		
 func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")
 	call_deferred("_deferred_goto_scene", path, spawn)
