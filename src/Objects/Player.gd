@@ -13,6 +13,7 @@ onready var knocktimer = $KnockbackTimer
 onready var knockback = false
 var direction
 var playeridle = false
+var is_shooting
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	if knockback == true and blinktimer.time_left == 0:
@@ -29,7 +30,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		_velocity = Vector2(0,0)
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	
-	var is_shooting = false #to determine if gun needs to be out and which animation to play
+	is_shooting = false #to determine if gun needs to be out and which animation to play
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
 		is_shooting = true #we are shooting so be sure to play weapon animations
@@ -53,7 +54,9 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 				b.rotation_degrees = 0
 			canshoot = false
 			timer.start() #cannot shoot until timer ends
+			
 		if $BulletHealth.value == 0: #no bullets so reload
+			is_shooting = false
 			get_node("../UI/BulletPlyr").update_bullet(-1)
 			
 	if direction.x !=0: #apply friction(1) and acceleration(.2)

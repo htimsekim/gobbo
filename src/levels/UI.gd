@@ -11,7 +11,7 @@ func update_health(value):
 			get_child(i).frame = 2 #empty
 
 func update_bullet(value):
-	if reload == true and get_node("../reloadTimer").time_left > 0: #if we need to reload and timer hasn't started, start it
+	if reload == true and get_node("../reloadTimer").time_left == 0: #if we need to reload and timer hasn't started, start it
 		get_node("../reloadTimer").start()
 		
 	for i in get_child_count():
@@ -21,10 +21,12 @@ func update_bullet(value):
 
 		if reload == false:
 			if value >= i + 1:
-				get_child(i).frame = 5
+				get_child(i).get_child(0).play("full")
 			else:
-				get_child(i).frame = 0
+				get_child(i).get_child(0).play("empty")
 
 func _on_reloadTimer_timeout():
-	Global.player.get_node($BulletHealth).value = Global.player.get_node($BulletHealth).max_value
+	print("stop reload")
+	Global.player.get_node("BulletHealth").value = Global.player.get_node("BulletHealth").max_value
 	reload = false
+	Global.player.is_shooting = true
