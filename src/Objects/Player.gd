@@ -33,10 +33,11 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
 		is_shooting = true #we are shooting so be sure to play weapon animations
-		if canshoot: #is true when the timer ends
+		if canshoot and $BulletHealth.value > 0: #is true when the timer ends
+			$BulletHealth.value -= $BulletHealth.step
+			get_node("../UI/BulletPlyr").update_bullet($BulletHealth.value)
 			var b = Bullet.instance()
 			Global.add_child(b)
-			
 			if Input.is_action_pressed("move_up") and not Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointu.global_position
 				b.rotation_degrees = -90 * sprite.scale.x
@@ -52,7 +53,9 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 				b.rotation_degrees = 0
 			canshoot = false
 			timer.start() #cannot shoot until timer ends
-	
+		if $BulletHealth.value == 0: #no bullets so reload
+			get_node("../UI/BulletPlyr").update_bullet(-1)
+			
 	if direction.x !=0: #apply friction(1) and acceleration(.2)
 		sprite.scale.x = 1 if direction.x > 0 else -1 #flip player if going left and vice versa
 		_velocity.x = lerp(_velocity.x, direction.x * speed.x, .2)

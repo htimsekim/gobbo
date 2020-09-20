@@ -14,8 +14,6 @@ func _ready():
 	self.add_child(playerInstance)
 	player = get_node("plyrInst")
 	var UIInstance = UIResource.instance() #instance in player 
-#	UIInstance.set_name("UI")
-#	ui = get_node("UI")
 	self.add_child(UIInstance)
 		
 func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")

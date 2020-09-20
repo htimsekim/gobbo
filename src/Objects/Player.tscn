@@ -456,9 +456,25 @@ margin_top = -32.0431
 margin_right = 34.3296
 margin_bottom = -0.0430603
 rect_rotation = 90.0
-max_value = 5.0
+max_value = 3.0
 step = 0.5
-value = 5.0
+value = 3.0
+texture_progress = ExtResource( 4 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BulletHealth" type="TextureProgress" parent="."]
+visible = false
+margin_left = 18.3296
+margin_top = -32.0431
+margin_right = 34.3296
+margin_bottom = -0.0430603
+rect_rotation = 90.0
+max_value = 3.0
+step = 1.0
+value = 3.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 __meta__ = {
