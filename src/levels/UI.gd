@@ -26,7 +26,6 @@ func update_bullet(value):
 				get_child(i).get_child(0).play("empty")
 
 func _on_reloadTimer_timeout():
-	print("stop reload")
 	Global.player.get_node("BulletHealth").value = Global.player.get_node("BulletHealth").max_value
 	reload = false
 	Global.player.is_shooting = true

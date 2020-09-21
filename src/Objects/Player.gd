@@ -33,8 +33,8 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	is_shooting = false #to determine if gun needs to be out and which animation to play
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
-		is_shooting = true #we are shooting so be sure to play weapon animations
 		if canshoot and $BulletHealth.value > 0: #is true when the timer ends
+			is_shooting = true #we are shooting so be sure to play weapon animations
 			$BulletHealth.value -= $BulletHealth.step
 			get_node("../UI/BulletPlyr").update_bullet($BulletHealth.value)
 			var b = Bullet.instance()
@@ -55,7 +55,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			canshoot = false
 			timer.start() #cannot shoot until timer ends
 			
-		if $BulletHealth.value == 0: #no bullets so reload
+		if $BulletHealth.value == 0 and get_node("../UI/reloadTimer").time_left == 0: #no bullets so reload
 			is_shooting = false
 			get_node("../UI/BulletPlyr").update_bullet(-1)
 			
