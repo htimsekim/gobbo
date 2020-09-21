@@ -5,7 +5,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 100
+    "duration": 250
    },
    "ui-bullet 1.aseprite": {
     "frame": { "x": 16, "y": 0, "w": 16, "h": 16 },
@@ -13,7 +13,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 100
+    "duration": 250
    },
    "ui-bullet 2.aseprite": {
     "frame": { "x": 32, "y": 0, "w": 16, "h": 16 },
@@ -21,7 +21,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 100
+    "duration": 250
    },
    "ui-bullet 3.aseprite": {
     "frame": { "x": 48, "y": 0, "w": 16, "h": 16 },
@@ -29,7 +29,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 100
+    "duration": 250
    },
    "ui-bullet 4.aseprite": {
     "frame": { "x": 64, "y": 0, "w": 16, "h": 16 },
@@ -37,7 +37,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 100
+    "duration": 250
    },
    "ui-bullet 5.aseprite": {
     "frame": { "x": 80, "y": 0, "w": 16, "h": 16 },
@@ -45,7 +45,7 @@
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 100
+    "duration": 250
    }
  },
  "meta": {
