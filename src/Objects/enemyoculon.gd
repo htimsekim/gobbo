@@ -25,7 +25,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		
 	if follow == true: #if following, move enemy
 		move_and_slide(direction.normalized() * 100) #move enemy to player
-		$AnimationPlayer.play("move")
+		$AnimationPlayer.play("hover")
 		
 		for i in get_slide_count(): #if player is colliding with enemy, 
 			var collision = get_slide_collision(i)

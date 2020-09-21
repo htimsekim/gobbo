@@ -122,7 +122,6 @@ func playerdamage(damage): #damage, blink, and knockback player
 	knockback = true #player hit, enable knockback effect
 
 	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
-		#get_tree().quit()
 		print("i died")
 	else: #decrease player health
 		$TextureProgress.value -= damage
@@ -141,7 +140,7 @@ func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	blinktimer.stop()
 
 func _input(event):
-	if(event.is_action_type()):
+	if event.is_pressed() or Input.is_mouse_button_pressed(1) or Input.is_mouse_button_pressed(2):
 		$IdleTimer.stop()
 		playeridle = false
 	elif($IdleTimer.time_left <= 0):
