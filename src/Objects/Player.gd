@@ -128,10 +128,10 @@ func playerdamage(damage): #damage, blink, and knockback player
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 	
 	if sprite.scale.x == 1: #knockback code if player is right facing
-		_velocity.x -= 700 #knockback 700 to the right
+		_velocity.x = -700 #knockback 700 to the right
 	if sprite.scale.x == -1: #knockback code if player is left facing
-		_velocity.x += 700 #knockback 700 to the left
-	_velocity.y -= 200 #height of knockback
+		_velocity.x = 700 #knockback 700 to the left
+	_velocity.y = -200 #height of knockback
 
 	move_and_slide(_velocity) #knockback player
 
