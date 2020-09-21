@@ -28,4 +28,3 @@ func update_bullet(value):
 func _on_reloadTimer_timeout():
 	Global.player.get_node("BulletHealth").value = Global.player.get_node("BulletHealth").max_value
 	reload = false
-	Global.player.is_shooting = true
