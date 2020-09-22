@@ -122,6 +122,12 @@ format = 1
 
 [node name="doors" type="Node2D" parent="."]
 
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="npcs" type="Node2D" parent="."]
+
+[node name="triggers" type="Node2D" parent="."]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="bg" type="ParallaxLayer" parent="ParallaxBackground"]

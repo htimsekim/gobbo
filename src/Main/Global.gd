@@ -5,6 +5,7 @@ var current_scene = null
 var camera
 var player
 var ui
+var earthquake_happened = [false, "-prequake", "-postquake"]
 
 func _ready():	
 	var root = get_tree().get_root()
