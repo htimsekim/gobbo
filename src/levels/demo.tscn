@@ -45,5 +45,6 @@ position = Vector2( -852.462, -49.8757 )
 
 [node name="Enemy" parent="level" instance=ExtResource( 3 )]
 position = Vector2( -453.495, 49.2363 )
+patrolDistance = 100
 
 [editable path="level"]

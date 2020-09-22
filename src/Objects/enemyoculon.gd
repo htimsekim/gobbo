@@ -2,41 +2,41 @@ class_name EnemyOcu
 extends Character
 
 onready var player = Global.get_node("plyrInst")
-onready var direction = Vector2()
-export var patroldistance = 1.1 # walking distance of enemy
+onready var direction = Vector2(1,0)
+export var patrolDistance = 10 # walking distance of enemy
 export var movespeed = 100 # walking distance of enemy
 export var faceright = 1
 var rgoal
 var lgoal
 var pos = Vector2()
+var start_pos = self.position
 
-func _ready():
-	pos = Vector2(abs(position.x),0)
-	lgoal = pos * patroldistance
-	rgoal = pos/patroldistance
-	print(rgoal)
-	print(pos)
-	print(lgoal)
+
+	
+	
+	
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	$AnimationPlayer.play("hover")
-	direction = player.position - position # get direction / distance of player
+	print(direction)
+	if direction.x == 1:
+		if self.position.x < start_pos.x + patrolDistance:
+			self.position.x += movespeed
+		else:
+			direction.x = -1
+	elif direction.x == -1:
+		if self.position.x > start_pos.x - patrolDistance:
+			self.position.x -= movespeed
+		else:
+			direction.x = 1
+	
+	
 	
 	if direction.x > 0: # Determine whether to flip enemy image to face player
 		$Sprite.flip_h = false # Set Enemy facing right
 	else:
 		$Sprite.flip_h = true # Set Enemy facing left
 		
-	pos = Vector2(abs(position.x),0)	
-	if pos > rgoal:
-		print(pos)
-	#	var target = pos * patroldistance
-		var velocity = rgoal.normalized() * movespeed
-		velocity = move_and_slide(velocity)
-	elif pos < lgoal:
-		print("posh")
-	#	var target = pos * patroldistance
-		var velocity = lgoal.normalized() * movespeed
-		velocity = move_and_slide(velocity)
+
 		
 	for i in get_slide_count(): #if player is colliding with enemy, 
 		var collision = get_slide_collision(i)
