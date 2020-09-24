@@ -35,11 +35,6 @@ _global_script_classes=[ {
 "path": "res://src/Objects/enemybat.gd"
 }, {
 "base": "Character",
-"class": "EnemyOcu",
-"language": "GDScript",
-"path": "res://src/Objects/enemyoculon.gd"
-}, {
-"base": "Character",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Objects/Player.gd"
@@ -50,7 +45,6 @@ _global_script_class_icons={
 "Character": "",
 "EditorTheme": "",
 "EnemyBat": "",
-"EnemyOcu": "",
 "Player": ""
 }
 
