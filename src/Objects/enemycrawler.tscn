@@ -35,7 +35,7 @@ tracks/1/keys = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 16, 0, 16, 16 )
+region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move"
