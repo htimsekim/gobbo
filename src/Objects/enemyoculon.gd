@@ -30,7 +30,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var col = move_and_collide(posv)		
 	if col: #if player is colliding with enemy, 
 		if "plyr" in col.collider.name and player.knockback == false:
-			player.playerdamage($TextureProgress.step) #call enemydamage to damage, blink, and knockback player
+			player.playerdamage($TextureProgress.step, position) #call enemydamage to damage, blink, and knockback player
 			set_collision_mask(6) #colliding, so turn collision off
 			$Timer.start() #turn collision on
 	

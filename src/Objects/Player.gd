@@ -118,7 +118,7 @@ func get_new_animation(is_shooting = false):
 func _on_ProjectileTimer_timeout():
 	canshoot = true
 
-func playerdamage(damage): #damage, blink, and knockback player
+func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 	knockback = true #player hit, enable knockback effect
 
 	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
@@ -127,14 +127,15 @@ func playerdamage(damage): #damage, blink, and knockback player
 		$TextureProgress.value -= damage
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 	
-	var velocity = Vector2(75, 75)
-	var collide = move_and_collide(velocity)
-	print(collide.collider.name)
-	if collide:
-		
-		velocity = velocity.bounce(collide.normal)
-		print(velocity)
-		move_and_collide(velocity)
+	var knockbackDirection = position.angle_to_point(enemyPosition)
+	var knockbackDestination = (enemyPosition + Vector2(50,0)).rotated(rad2deg(knockbackDirection))
+	print(enemyPosition, enemyPosition.rotated(rad2deg(knockbackDirection)))
+	move_and_slide(knockbackDestination)
+	print(enemyPosition)
+	print(rad2deg(knockbackDirection))
+	print(position, knockbackDestination)
+
+
 		
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	sprite.visible = true
