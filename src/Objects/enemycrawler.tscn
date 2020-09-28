@@ -33,7 +33,9 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 2 ), Vector2( 0, 2 ) ]
 }
 
-[node name="crawler" type="KinematicBody2D"]
+[node name="crawler" type="KinematicBody2D" groups=[
+"enemy",
+]]
 collision_layer = 8
 collision_mask = 7
 script = ExtResource( 2 )
