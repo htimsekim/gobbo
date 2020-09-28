@@ -14,6 +14,8 @@ onready var knockback = false
 var direction
 var playeridle = false
 var is_shooting
+var enemyPos
+var knocking = false
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	if knockback == true and blinktimer.time_left == 0:
@@ -28,6 +30,18 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var is_on_platform = platform_detector.is_colliding()
 	if Input.is_action_pressed("crouch") and is_on_floor(): #don't move while crouching
 		_velocity = Vector2(0,0)
+	if knocking == true:
+	#	var knockbackDirection = position.angle_to_point(enemyPos)
+	#	print(knockbackDirection)
+	#	_velocity = Vector2(600,-5)
+	#	_velocity = _velocity.rotated(rad2deg(knockbackDirection)) 
+
+		_velocity = (Vector2(1,0).rotated(position.angle_to_point(enemyPos))*500)
+		_velocity.y = _velocity.y/2
+		print(_velocity)
+		snap_vector = Vector2(0,0)
+		#move_and_slide(_velocity)
+	#else:
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	
 	is_shooting = false #to determine if gun needs to be out and which animation to play
@@ -120,25 +134,17 @@ func _on_ProjectileTimer_timeout():
 
 func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 	knockback = true #player hit, enable knockback effect
-
+	knocking = true
+	enemyPos = enemyPosition
 	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
 		print("i died")
 	else: #decrease player health
 		$TextureProgress.value -= damage
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
-	
-	var knockbackDirection = position.angle_to_point(enemyPosition)
-	var knockbackDestination = (enemyPosition + Vector2(50,0)).rotated(rad2deg(knockbackDirection))
-	print(enemyPosition, enemyPosition.rotated(rad2deg(knockbackDirection)))
-	move_and_slide(knockbackDestination)
-	print(enemyPosition)
-	print(rad2deg(knockbackDirection))
-	print(position, knockbackDestination)
-
-
 		
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	sprite.visible = true
+	knocking = false
 	blinktimer.stop()
 
 func _input(event):
