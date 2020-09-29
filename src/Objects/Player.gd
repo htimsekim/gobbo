@@ -9,7 +9,6 @@ onready var animation_player = $AnimationPlayer
 onready var canshoot = false
 onready var timer = $ProjectileTimer
 onready var blinktimer = $BlinkTimer
-onready var knocktimer = $KnockbackTimer
 onready var knockback = false
 var direction
 var playeridle = false
@@ -128,6 +127,7 @@ func _on_ProjectileTimer_timeout():
 func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 	knockback = true #player hit, enable knockback effect
 	knocking = true
+
 	enemyPos = enemyPosition
 	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
 		print("i died")

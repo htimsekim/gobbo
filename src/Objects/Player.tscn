@@ -446,10 +446,6 @@ autostart = true
 [node name="BlinkTimer" type="Timer" parent="."]
 wait_time = 0.08
 
-[node name="KnockbackTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
@@ -500,9 +496,9 @@ anims/stand = SubResource( 13 )
 anims/standshoot = SubResource( 14 )
 anims/standshootup = SubResource( 15 )
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0.732521, 0.12209 )
 scale = Vector2( 1.2, 1.2 )
 shape = SubResource( 16 )

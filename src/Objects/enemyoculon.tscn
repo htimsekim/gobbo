@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Objects/enemyoculon.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/enemy/oculon.png" type="Texture" id=2]
+[ext_resource path="res://src/Objects/Hurtbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.28762
@@ -36,10 +37,10 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 5.78663
-height = 6.41963
+radius = 6.5389
+height = 5.56809
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[node name="Oculon" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 z_index = 3
@@ -70,17 +71,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "hover"
 anims/hover = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -0.372037 )
 shape = SubResource( 3 )
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[editable path="Hurtbox"]

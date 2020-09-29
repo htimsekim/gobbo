@@ -26,17 +26,3 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	if follow == true: #if following, move enemy
 		move_and_slide(direction.normalized() * 100) #move enemy to player
 		$AnimationPlayer.play("move")
-		
-		for i in get_slide_count(): #if player is colliding with enemy, 
-			var collision = get_slide_collision(i)
-			if "plyr" in collision.collider.name and player.knockback == false:
-				player.playerdamage($TextureProgress.step, position) #call enemydamage to damage, blink, and knockback player
-				set_collision_mask(6) #colliding, so turn collision off
-				$Timer.start() #turn collision on
-				print("Timer On")
-
-func _on_Timer_timeout():
-	set_collision_mask(7)
-	player.knockback = false
-	$Timer.stop()
-	print("Timer Off")
