@@ -32,10 +32,12 @@ position = Vector2( 200.217, -39.8159 )
 position = Vector2( 40.3847, -183.722 )
 target_stage = "res://src/levels/gobtown.tscn"
 target_spawn = "level/spawns/spawn4"
+associated_trigger = "earthquake_happened"
 
 [node name="Door2" parent="level/doors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 199.799, -39.7214 )
 target_stage = "res://src/levels/gobtown.tscn"
 target_spawn = "level/spawns/spawn5"
+associated_trigger = "earthquake_happened"
 
 [editable path="level"]

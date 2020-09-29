@@ -35,5 +35,6 @@ position = Vector2( 152.523, 85.7377 )
 position = Vector2( 152.523, 88.0975 )
 target_stage = "res://src/levels/gobtown.tscn"
 target_spawn = "level/spawns/spawn3"
+associated_trigger = "earthquake_happened"
 
 [editable path="level"]
