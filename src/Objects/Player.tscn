@@ -406,8 +406,8 @@ cast_to = Vector2( 0, 6 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.837744, 0.385305 )
-scale = Vector2( 0.8, 1 )
+position = Vector2( 0.838, 0.3 )
+scale = Vector2( 0.8, 1.055 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
