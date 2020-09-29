@@ -16,12 +16,12 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	if direction.x == 1:
 		$Sprite.flip_h = false # Set Enemy facing right
 		if position.x < start_pos + patrolDistance:
-			var col := move_and_slide(Vector2(movespeed, 0))
+			move_and_slide(Vector2(movespeed, 0))
 		else:
 			direction.x = -1
 	elif direction.x == -1:
 		$Sprite.flip_h = true # Set Enemy facing left
 		if position.x > start_pos - patrolDistance:
-			var col := move_and_slide(Vector2(-movespeed, 0))
+			move_and_slide(Vector2(-movespeed, 0))
 		else:
 			direction.x = 1

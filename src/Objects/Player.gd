@@ -9,6 +9,7 @@ onready var animation_player = $AnimationPlayer
 onready var canshoot = false
 onready var timer = $ProjectileTimer
 onready var blinktimer = $BlinkTimer
+onready var idletimer = $IdleTimer
 onready var knockback = false
 var direction
 var playeridle = false
@@ -72,9 +73,15 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		_velocity.x = lerp(_velocity.x, 0, 1)
 		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
-	
-	if animation != animation_player.current_animation:
-		animation_player.play(animation)
+
+	if playeridle and animation == "stand":
+		animation_player.play("idle")
+	else:
+		playeridle = false
+		if idletimer.time_left > 0:
+			idletimer.stop()
+		if animation != animation_player.current_animation:
+			animation_player.play(animation)
 	
 func get_direction(): #determine if player is moving right or left
 	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), -1 if is_on_floor() and Input.is_action_just_pressed("jump") else 0)
@@ -97,28 +104,36 @@ func calculate_move_velocity(linear_velocity, cdirection, speed, is_jump_interru
 		
 	return velocity
 
-func get_new_animation(is_shooting = false):
+func get_new_animation(is_shooting):
 	var animation_new = ""
-	
-	if(playeridle == true and is_on_floor()):
-		animation_new = "idle"
-		return animation_new
+	var crouch = Input.is_action_pressed("crouch") or Input.is_action_just_pressed("crouch") 
+	var inputup = Input.is_action_pressed("move_up") or Input.is_action_just_pressed("move_up")
+
+	if _velocity.y > 0: #airborne
+		if !is_shooting: animation_new = "airborne" #airborne and not shooting
+		else: #shooting
+			if crouch: animation_new = "airborneshootdown"
+			elif inputup: animation_new = "airborneshootup"
+			else: animation_new = "airborneshoot"
+	else: # not airborne
+		if crouch:
+			if is_shooting: animation_new = "crouchshoot"
+			else: animation_new = "crouch"
+		elif _velocity.x == 0: #not moving left or right
+			if is_shooting: animation_new = "standshoot"
+			else: 
+				animation_new = "stand"
+				if idletimer.time_left == 0 and playeridle == false:
+					print("startingtimer")
+					idletimer.start()
+				
+		elif inputup and is_shooting:
+			if _velocity.x != 0: animation_new = "runshootup"
+			else: animation_new = "standshootup"
+		elif _velocity.x != 0:
+			if is_shooting: animation_new = "runshoot"
+			else: animation_new = "run"
 		
-	if is_on_floor():
-		animation_new = "run" if abs(_velocity.x) > 0.1 else "stand"
-	else:
-		animation_new = "airborne"
-
-	if Input.is_action_pressed("crouch") and is_on_floor(): #only crouch while idle
-		animation_new = "crouch"
-
-	if is_shooting: #add weapon animation to existing animation. ex run_armless
-		animation_new += "shoot"		
-		if Input.is_action_pressed("move_up") and !Input.is_action_pressed("crouch"):
-			animation_new += "up"
-		if Input.is_action_pressed("crouch") and animation_new == "airborneshoot":
-			animation_new += "down"
-
 	return animation_new
 
 func _on_ProjectileTimer_timeout():
@@ -139,13 +154,6 @@ func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	sprite.visible = true
 	knocking = false
 	blinktimer.stop()
-
-func _input(event):
-	if event.is_pressed() or Input.is_mouse_button_pressed(1) or Input.is_mouse_button_pressed(2):
-		$IdleTimer.stop()
-		playeridle = false
-	elif($IdleTimer.time_left <= 0):
-		$IdleTimer.start()
 
 func _on_IdleTimer_timeout():
 	playeridle = true
