@@ -31,8 +31,9 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	if Input.is_action_pressed("crouch") and is_on_floor(): #don't move while crouching
 		_velocity = Vector2(0,0)
 	if knocking == true: #knockback code to set velocity
-		_velocity = (Vector2(1,0).rotated(position.angle_to_point(enemyPos))*500)
+		_velocity = (Vector2(1,0).rotated(position.angle_to_point(enemyPos))*250)
 		_velocity.y = _velocity.y/2
+		_velocity.y -= 50
 		snap_vector = Vector2(0,0)
 		
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
