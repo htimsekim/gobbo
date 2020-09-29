@@ -16,9 +16,10 @@ func _physics_process(delta):
 	if col:
 		if "plyr" in col.collider.name:
 			if player.knockback == false: 
-				player.playerdamage($TextureProgress.step) #call enemydamage to damage, blink, and knockback player
+				player.playerdamage($TextureProgress.step, position) #call enemydamage to damage, blink, and knockback player
 				set_collision_mask(6) #colliding, so turn collision off
 				$Timer.start() #turn collision on
+				print("Timer On")
 			return
 		
 	if col and col.normal.rotated(PI/2).dot(move) < 0.5:
@@ -43,13 +44,8 @@ func _physics_process(delta):
 		move = col.normal.rotated(PI/2)
 		rotation = move.angle()
 
-func damage(amount): #called from projectile amount is 1
-	if player.get_node("TextureProgress").value <= 0: #if enemy is dead, remove enemy
-		print("i die")
-	else: #decrease enemy health
-		player.get_node("TextureProgress").value -= amount
-
 func _on_Timer_timeout():
 	set_collision_mask(7)
 	player.knockback = false
 	$Timer.stop()
+	print("Timer Off")

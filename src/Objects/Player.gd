@@ -30,26 +30,18 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var is_on_platform = platform_detector.is_colliding()
 	if Input.is_action_pressed("crouch") and is_on_floor(): #don't move while crouching
 		_velocity = Vector2(0,0)
-	if knocking == true:
-	#	var knockbackDirection = position.angle_to_point(enemyPos)
-	#	print(knockbackDirection)
-	#	_velocity = Vector2(600,-5)
-	#	_velocity = _velocity.rotated(rad2deg(knockbackDirection)) 
-
+	if knocking == true: #knockback code to set velocity
 		_velocity = (Vector2(1,0).rotated(position.angle_to_point(enemyPos))*500)
 		_velocity.y = _velocity.y/2
-		print(_velocity)
 		snap_vector = Vector2(0,0)
-		#move_and_slide(_velocity)
-	#else:
+		
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
-	
 	is_shooting = false #to determine if gun needs to be out and which animation to play
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
 		if get_node("../UI/reloadTimer").time_left == 0: 
 			is_shooting = true #we are shooting so be sure to play weapon animations
-		if canshoot and $BulletHealth.value > 0: #is true when the timer ends
+		if canshoot and $BulletHealth.value > 0: #is true when the timer ends (can shoot and have bullets)
 			$BulletHealth.value -= $BulletHealth.step
 			get_node("../UI/BulletPlyr").update_bullet($BulletHealth.value)
 			var b = Bullet.instance()
@@ -141,7 +133,7 @@ func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 	else: #decrease player health
 		$TextureProgress.value -= damage
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
-		
+
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	sprite.visible = true
 	knocking = false

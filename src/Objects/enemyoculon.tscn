@@ -4,8 +4,8 @@
 [ext_resource path="res://assets/art/enemy/oculon.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 6.0566
-height = 5.4556
+radius = 5.28762
+height = 5.70638
 
 [sub_resource type="Animation" id=2]
 length = 3.0

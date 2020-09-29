@@ -45,7 +45,7 @@ region_rect = Rect2( 0, 0, 1920, 180 )
 position = Vector2( -852.462, -49.8757 )
 
 [node name="Enemy" parent="level" instance=ExtResource( 3 )]
-position = Vector2( -453.127, 55.3092 )
+position = Vector2( -453.77, 55.8232 )
 patrolDistance = 100
 
 [node name="crawler" parent="level" instance=ExtResource( 8 )]

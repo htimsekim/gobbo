@@ -16,7 +16,7 @@ func _physics_process(delta):
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("lvl") or body.is_in_group("enemy"): #when bullet enters level or enemy, free it
 		queue_free()
-	print(body.get_node("TextureProgress").value)
+
 	if body.is_in_group("enemy"): #if bullet enters enemy, update enemy health
 		body.get_node("TextureProgress").value -= 10
 		
