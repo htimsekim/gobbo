@@ -74,14 +74,8 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		
 	var animation = get_new_animation(is_shooting) #determines which animation to play
 
-	if playeridle and animation == "stand":
-		animation_player.play("idle")
-	else:
-		playeridle = false
-		if idletimer.time_left > 0:
-			idletimer.stop()
-		if animation != animation_player.current_animation:
-			animation_player.play(animation)
+	if animation != animation_player.current_animation:
+		animation_player.play(animation)
 	
 func get_direction(): #determine if player is moving right or left
 	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), -1 if is_on_floor() and Input.is_action_just_pressed("jump") else 0)
@@ -123,7 +117,7 @@ func get_new_animation(is_shooting):
 			if is_shooting: animation_new = "standshoot"
 			else: 
 				animation_new = "stand"
-				if idletimer.time_left == 0 and playeridle == false:
+				if idletimer.time_left == 0 :
 					print("startingtimer")
 					idletimer.start()
 				
@@ -156,4 +150,4 @@ func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	blinktimer.stop()
 
 func _on_IdleTimer_timeout():
-	playeridle = true
+	animation_player.play("idle")
