@@ -11,9 +11,10 @@ func _ready():
 	Global.goto_scene(levelResource, "level/spawns/spawn1")
 
 func full_screen():
-	if IP.get_local_addresses()[4]=="192.168.37.3":
-		OS.set_current_screen(0)
-	else:
+
+	if IP.get_local_addresses()[0]=="192.168.37.34":
 		OS.set_current_screen(2)
+	else:
+		OS.set_current_screen(0)
 	OS.window_fullscreen = true
 	OS.set_borderless_window(true)
