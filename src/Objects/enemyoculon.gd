@@ -6,7 +6,6 @@ onready var direction = Vector2(1,0)
 export(int) var patrolDistance # walking distance of enemy
 export(int) var movespeed # walking distance of enemy
 var start_pos
-onready var posv = Vector2(0,0)
 
 func _ready():
 	start_pos = position.x
@@ -17,28 +16,31 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	if direction.x == 1:
 		$Sprite.flip_h = false # Set Enemy facing right
 		if position.x < start_pos + patrolDistance:
-			position.x += movespeed
+			var col := move_and_slide(Vector2(movespeed, 0))
 		else:
 			direction.x = -1
 	elif direction.x == -1:
 		$Sprite.flip_h = true # Set Enemy facing left
 		if position.x > start_pos - patrolDistance:
-			position.x -= movespeed
+			var col := move_and_slide(Vector2(-movespeed, 0))
 		else:
 			direction.x = 1
-
-	var col = move_and_collide(posv)
-
-	if col: #if player is colliding with enemy, 
-		print(col.collider.name)
-		if "plyr" in col.collider.name and player.knockback == false:
+			
+	for i in get_slide_count(): #if player is colliding with enemy, 
+		var collision = get_slide_collision(i)
+		if "plyr" in collision.collider.name and player.knockback == false:
 			player.playerdamage($TextureProgress.step, position) #call enemydamage to damage, blink, and knockback player
 			set_collision_mask(6) #colliding, so turn collision off
 			$Timer.start() #turn collision on
 			print("Timer On")
-
+			
 func _on_Timer_timeout():
 	set_collision_mask(7)
 	player.knockback = false
 	$Timer.stop()
-	print("Timer off")
+
+func _on_Area2D_area_entered(area):
+	if area.name == "Hurtbox" and player.knockback == false:
+		player.playerdamage($TextureProgress.step, position) #call enemydamage to damage, blink, and knockback player
+		set_collision_mask(6) #colliding, so turn collision off
+		$Timer.start() #turn collision on
