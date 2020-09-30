@@ -115,19 +115,24 @@ func get_new_animation(is_shooting):
 			else: animation_new = "crouch"
 		elif _velocity.x == 0: #not moving left or right
 			if is_shooting: animation_new = "standshoot"
-			else: 
-				animation_new = "stand"
-				if idletimer.time_left == 0 :
-					print("startingtimer")
-					idletimer.start()
-				
+			else: animation_new = "stand"				
 		elif inputup and is_shooting:
 			if _velocity.x != 0: animation_new = "runshootup"
 			else: animation_new = "standshootup"
 		elif _velocity.x != 0:
 			if is_shooting: animation_new = "runshoot"
 			else: animation_new = "run"
+	
+	if animation_new == "stand":
+		if $IdleTimer.time_left == 0 and playeridle == false:
+			$IdleTimer.start()
+			print("starting")
+	else:
+		$IdleTimer.stop()
+		print("stop")
+		playeridle = false
 		
+	if playeridle == true: animation_new = "idle"
 	return animation_new
 
 func _on_ProjectileTimer_timeout():
@@ -150,4 +155,4 @@ func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
 	blinktimer.stop()
 
 func _on_IdleTimer_timeout():
-	animation_player.play("idle")
+	playeridle = true

@@ -199,6 +199,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=9]
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
@@ -413,7 +414,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 64, 64, 64 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="shootpointx" type="Position2D" parent="Sprite"]
 position = Vector2( 17, 1.727 )
