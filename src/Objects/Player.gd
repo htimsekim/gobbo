@@ -102,8 +102,9 @@ func get_new_animation(is_shooting):
 	var animation_new = ""
 	var crouch = Input.is_action_pressed("crouch") or Input.is_action_just_pressed("crouch") 
 	var inputup = Input.is_action_pressed("move_up") or Input.is_action_just_pressed("move_up")
+	var inputleftright = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
 
-	if _velocity.y > 0: #airborne
+	if not is_on_floor(): #airborne
 		if !is_shooting: animation_new = "airborne" #airborne and not shooting
 		else: #shooting
 			if crouch: animation_new = "airborneshootdown"
@@ -113,13 +114,13 @@ func get_new_animation(is_shooting):
 		if crouch:
 			if is_shooting: animation_new = "crouchshoot"
 			else: animation_new = "crouch"
-		elif _velocity.x == 0: #not moving left or right
-			if is_shooting: animation_new = "standshoot"
-			else: animation_new = "stand"				
 		elif inputup and is_shooting:
-			if _velocity.x != 0: animation_new = "runshootup"
+			if inputleftright: animation_new = "runshootup"
 			else: animation_new = "standshootup"
-		elif _velocity.x != 0:
+		elif not inputleftright: #not moving left or right
+			if is_shooting : animation_new = "standshoot"
+			else: animation_new = "stand"				
+		elif inputleftright:
 			if is_shooting: animation_new = "runshoot"
 			else: animation_new = "run"
 	
