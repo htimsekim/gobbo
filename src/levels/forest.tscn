@@ -77,7 +77,7 @@ position = Vector2( -71.812, -88.0627 )
 target_stage = "res://src/levels/cavetree.tscn"
 target_spawn = "level/spawns/spawn1"
 
-[node name="ParallaxBackground" parent="level" index="5"]
+[node name="ParallaxBackground" parent="level" index="8"]
 offset = Vector2( 0, -300 )
 transform = Transform2D( 1, 0, 0, 1, 0, -300 )
 

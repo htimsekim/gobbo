@@ -3,6 +3,8 @@ extends Camera2D
 func _ready():
 	var map_limits = get_node("../tilemaps/limits").get_used_cells()
 	var map_cellsize = get_node("../tilemaps/limits").cell_size
+	print(map_limits)
+	
 	
 	limit_left = map_limits[0].x * map_cellsize.x 
 	limit_right = map_limits.back().x * map_cellsize.x 
@@ -13,6 +15,7 @@ func _ready():
 	var cambot = limit_bottom
 	var camleft = limit_left
 	var camright = limit_right
+	print("scene is ", abs(camleft-camright), " pixels wide and ", abs(camtop-cambot)+16, " pixels tall")
 	
 	if abs(camtop - cambot) <= 224:
 		limit_bottom = ((camtop + cambot)/2) + 108

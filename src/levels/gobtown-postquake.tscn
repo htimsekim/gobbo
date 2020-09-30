@@ -12,7 +12,7 @@
 [node name="level" parent="." instance=ExtResource( 3 )]
 
 [node name="limits" parent="level/tilemaps" index="0"]
-tile_data = PoolIntArray( -131090, 1, 0, 524305, 1, 0 )
+tile_data = PoolIntArray( -131090, 19, 0, 524305, 19, 0 )
 
 [node name="fg_art" parent="level/tilemaps" index="1"]
 tile_data = PoolIntArray( -196610, 9, 393225, -131080, 9, 393225, -196607, 9, 393225, -196601, 9, 393225, -196594, 9, 393225, -65553, 9, 393225, -65520, 9, 393225, 589806, 9, 393225, 589821, 9, 393225, 524303, 9, 393225, 655349, 9, 393225, 589824, 9, 393225, 589836, 9, 393225 )

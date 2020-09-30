@@ -53,7 +53,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 			elif Input.is_action_pressed("crouch") and not is_on_floor():
 				b.position = $Sprite/shootpointj.global_position
 				b.rotation_degrees = 90 * sprite.scale.x
-				_velocity.y = -105
+				_velocity.y = -150
 			elif Input.is_action_pressed("crouch"):
 				b.position = $Sprite/shootpointd.global_position
 				b.rotation_degrees = 90 * sprite.scale.x
@@ -127,10 +127,9 @@ func get_new_animation(is_shooting):
 	if animation_new == "stand":
 		if $IdleTimer.time_left == 0 and playeridle == false:
 			$IdleTimer.start()
-			print("starting")
+
 	else:
 		$IdleTimer.stop()
-		print("stop")
 		playeridle = false
 		
 	if playeridle == true: animation_new = "idle"
