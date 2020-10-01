@@ -15,7 +15,7 @@ func _ready():
 	var cambot = limit_bottom
 	var camleft = limit_left
 	var camright = limit_right
-	print("scene is ", abs(camleft-camright), " pixels wide and ", abs(camtop-cambot)+16, " pixels tall")
+	print("map ", max(24,abs(camleft-camright)/16), " x ", max(14,(abs(camtop-cambot)+16)/16))
 	
 	if abs(camtop - cambot) <= 224:
 		limit_bottom = ((camtop + cambot)/2) + 108

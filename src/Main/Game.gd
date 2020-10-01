@@ -1,6 +1,7 @@
 extends Node
 
-const levelResource = "res://src/levels/gobtown-prequake.tscn"
+const levelResource = "res://src/levels/treetops.tscn"
+#const levelResource = "res://src/levels/gobtown-prequake.tscn"
 #const levelResource = "res://src/levels/gobtown-prequake.tscn"
 
 var username
