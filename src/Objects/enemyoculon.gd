@@ -13,9 +13,6 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	$AnimationPlayer.play("hover")
 
 	if direction.x == 1:
-		print(position.x)
-		print(start_pos)
-		print(patrolDistance)
 		$Sprite.flip_h = false # Set Enemy facing right
 		if position.x < start_pos + patrolDistance:
 			move_and_slide(Vector2(movespeed, 0))

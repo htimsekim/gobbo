@@ -14,7 +14,7 @@ func _ready():
 func full_screen():
 
 	if IP.get_local_addresses()[0]=="192.168.37.34":
-		OS.set_current_screen(0)
+		OS.set_current_screen(2)
 	else:
 		OS.set_current_screen(0)
 	OS.window_fullscreen = true
