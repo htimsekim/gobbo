@@ -3,7 +3,6 @@ extends KinematicBody2D
 var move = Vector2(0,0)
 var rotating: int
 var speed = 50
-onready var player = Global.get_node("plyrInst")
 
 func _physics_process(delta):
 	if rotating:

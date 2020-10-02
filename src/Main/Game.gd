@@ -1,6 +1,6 @@
 extends Node
 
-const levelResource = "res://src/levels/treetops.tscn"
+const levelResource = "res://src/levels/demo.tscn"
 #const levelResource = "res://src/levels/gobtown-prequake.tscn"
 #const levelResource = "res://src/levels/gobtown-prequake.tscn"
 
@@ -14,7 +14,7 @@ func _ready():
 func full_screen():
 
 	if IP.get_local_addresses()[0]=="192.168.37.34":
-		OS.set_current_screen(2)
+		OS.set_current_screen(0)
 	else:
 		OS.set_current_screen(0)
 	OS.window_fullscreen = true
