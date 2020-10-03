@@ -21,7 +21,10 @@ func _on_Bullet_body_entered(body):
 		body.get_node("TextureProgress").value -= 10
 		
 		if body.get_node("TextureProgress").value <= 0: #if enemy health is 0, free it
-			body.queue_free()
+#			print(body.get_node("Hurtbox/Timer").name)
+			body.get_node("Hurtbox/Timer").stop()
+			print("dead")
+	#		body.queue_free()
 
 func _on_invisTimer_timeout():
 	visible = true

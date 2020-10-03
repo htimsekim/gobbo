@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character.gd"
 }, {
+"base": "Character",
+"class": "Crawler",
+"language": "GDScript",
+"path": "res://src/Objects/enemycrawler.gd"
+}, {
 "base": "Node",
 "class": "EditorTheme",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "AsepriteImportData": "",
 "AsepriteImporter": "",
 "Character": "",
+"Crawler": "",
 "EditorTheme": "",
 "EnemyBat": "",
 "Oculon": "",

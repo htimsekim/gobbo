@@ -4,10 +4,10 @@
 [ext_resource path="res://src/Objects/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/enemyskeleman.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.3841, 20.4817 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 length = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 length = 1.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -61,7 +61,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 0
@@ -87,7 +87,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 11.7819, 21.0046 )
 
 [node name="Skeleman" type="KinematicBody2D" groups=[
@@ -106,13 +106,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 80, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -8.3, 0.5 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 4 )
-anims/shoot = SubResource( 5 )
-anims/walk = SubResource( 6 )
+anims/idle = SubResource( 2 )
+anims/shoot = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 visible = false
@@ -130,7 +131,8 @@ __meta__ = {
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
+visible = false
 position = Vector2( -8.33759, 0.219012 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [editable path="Hurtbox"]

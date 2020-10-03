@@ -11,14 +11,14 @@ onready var timer = $ProjectileTimer
 onready var blinktimer = $BlinkTimer
 onready var idletimer = $IdleTimer
 onready var knockback = false
+onready var blink = false
 var direction
 var playeridle = false
 var is_shooting
 var enemyPos
-var knocking = false
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
-	if knockback == true and blinktimer.time_left == 0:
+	if blink == true and blinktimer.time_left == 0:
 		sprite.visible = false
 		blinktimer.start()
 	
@@ -30,7 +30,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	var is_on_platform = platform_detector.is_colliding()
 	if Input.is_action_pressed("crouch") and is_on_floor(): #don't move while crouching
 		_velocity = Vector2(0,0)
-	if knocking == true: #knockback code to set velocity
+	if knockback == true: #knockback code to set velocity
 		_velocity = (Vector2(1,0).rotated(position.angle_to_point(enemyPos))*250)
 		_velocity.y = _velocity.y/2
 		_velocity.y -= 50
@@ -127,7 +127,6 @@ func get_new_animation(is_shooting):
 	if animation_new == "stand":
 		if $IdleTimer.time_left == 0 and playeridle == false:
 			$IdleTimer.start()
-
 	else:
 		$IdleTimer.stop()
 		playeridle = false
@@ -139,8 +138,8 @@ func _on_ProjectileTimer_timeout():
 	canshoot = true
 
 func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
-	knockback = true #player hit, enable knockback effect
-	knocking = true
+	blink = true #player hit, enable knockback effect
+	knockback = true
 
 	enemyPos = enemyPosition
 	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
@@ -149,10 +148,10 @@ func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 		$TextureProgress.value -= damage
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 
-func _on_BlinkTimer_timeout(): #while knockback enabled, blink enemy
+func _on_BlinkTimer_timeout(): #while knockback enabled, blink player
 	sprite.visible = true
-	knocking = false
+	knockback = false
 	blinktimer.stop()
-
+	
 func _on_IdleTimer_timeout():
 	playeridle = true
