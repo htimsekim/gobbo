@@ -9,7 +9,6 @@ func _on_Hurtbox_area_entered(area):
 		player.playerdamage($"../TextureProgress".step, $"../".position) #call enemydamage to damage, blink, and knockback player
 
 func _on_Timer_timeout():
-	print("timerend")
 	$"../".set_collision_mask(7)
 	set_collision_mask(7)
 	player.blink = false

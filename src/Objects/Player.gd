@@ -140,8 +140,8 @@ func _on_ProjectileTimer_timeout():
 func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 	blink = true #player hit, enable knockback effect
 	knockback = true
-
 	enemyPos = enemyPosition
+	
 	if $TextureProgress.value <= 0: #if player is dead, end game DAMAGE
 		print("i died")
 	else: #decrease player health
