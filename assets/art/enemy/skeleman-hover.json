@@ -1,0 +1,73 @@
+{ "frames": {
+   "skeleman-hover 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 46, "h": 37 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 19, "y": 12, "w": 46, "h": 37 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 350
+   },
+   "skeleman-hover 1.aseprite": {
+    "frame": { "x": 46, "y": 0, "w": 46, "h": 37 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 19, "y": 12, "w": 46, "h": 37 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 350
+   },
+   "skeleman-hover 2.aseprite": {
+    "frame": { "x": 92, "y": 0, "w": 46, "h": 37 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 19, "y": 12, "w": 46, "h": 37 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 200
+   },
+   "skeleman-hover 3.aseprite": {
+    "frame": { "x": 138, "y": 0, "w": 46, "h": 37 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 19, "y": 12, "w": 46, "h": 37 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 200
+   },
+   "skeleman-hover 4.aseprite": {
+    "frame": { "x": 184, "y": 0, "w": 46, "h": 37 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 19, "y": 12, "w": 46, "h": 37 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 200
+   },
+   "skeleman-hover 5.aseprite": {
+    "frame": { "x": 230, "y": 0, "w": 46, "h": 37 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 19, "y": 12, "w": 46, "h": 37 },
+    "sourceSize": { "w": 80, "h": 64 },
+    "duration": 200
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.25",
+  "image": "skeleman-hover.png",
+  "format": "RGBA8888",
+  "size": { "w": 276, "h": 37 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "move", "from": 0, "to": 1, "direction": "forward" },
+   { "name": "shoot", "from": 2, "to": 5, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "barm", "opacity": 255, "blendMode": "normal" },
+   { "name": "gun", "opacity": 255, "blendMode": "normal" },
+   { "name": "torso", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 3", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "head", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
