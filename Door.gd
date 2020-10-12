@@ -22,13 +22,9 @@ func _process(_delta):
 			else:
 				Global.goto_scene(target_stage.trim_suffix(".tscn")+Global.get(associated_trigger)[2]+".tscn", target_spawn)
 
-	
-
 func _on_Door_body_entered(body):
 	if "plyrInst" in body.name:
-		in_door = true
-		
-	
+		in_door = true	
 
 func _on_Door_body_exited(body):
 	if "plyrInst" in body.name:

@@ -4,7 +4,7 @@ extends Character
 onready var direction = Vector2(1,0)
 export(int) var patrolDistance # walking distance of enemy
 export(int) var movespeed # walking distance of enemy
-var start_pos
+var start_pos = 0
 
 func _ready():
 	start_pos = position.x
@@ -12,7 +12,7 @@ func _ready():
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	$AnimationPlayer.play("walk")
 
-	if direction.x == 1:
+	if direction.x == 1: #flip character in right direction and patrol him
 		$Sprite.flip_h = false # Set Enemy facing right
 		if position.x < start_pos + patrolDistance:
 			move_and_slide(Vector2(movespeed, 0))
