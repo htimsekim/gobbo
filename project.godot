@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="gobbo"
-run/main_scene="res://src/Main/Game.tscn"
+run/main_scene="res://src/title/titleMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
