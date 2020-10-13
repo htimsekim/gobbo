@@ -8,6 +8,9 @@ var ui
 var earthquake_happened = [false, "-prequake", "-postquake"]
 
 func _ready():	
+	get_tree().paused = true
+
+func load_player():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1) # get current scene to remove/update
 	var playerInstance = playerResource.instance() #instance in player 
