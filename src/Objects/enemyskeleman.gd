@@ -10,7 +10,7 @@ func _ready():
 	start_pos = position.x
 	
 func _physics_process(_delta): # Called every frame. _delta isn't used
-	$AnimationPlayer.play("walk")
+	$AnimationPlayer.play("move")
 
 	if direction.x == 1: #flip character in right direction and patrol him
 		$Sprite.flip_h = false # Set Enemy facing right

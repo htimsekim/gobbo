@@ -56,6 +56,6 @@ position = Vector2( -453.77, 55.8232 )
 position = Vector2( -617.475, -24.0014 )
 
 [node name="skeleman-walker" parent="level" instance=ExtResource( 10 )]
-position = Vector2( -61.5849, 52.5724 )
+position = Vector2( -18.2751, 53.8241 )
 
 [editable path="level"]
