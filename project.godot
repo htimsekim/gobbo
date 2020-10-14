@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Objects/enemybat.gd"
 }, {
-"base": "enemypatrol",
+"base": "enemypatrolFLY",
 "class": "Oculon",
 "language": "GDScript",
 "path": "res://src/Objects/enemyoculon.gd"
@@ -59,10 +59,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Objects/enemyskeleman-walker.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Character",
 "class": "enemypatrol",
 "language": "GDScript",
 "path": "res://src/Objects/enemypatrol.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "enemypatrolFLY",
+"language": "GDScript",
+"path": "res://src/Objects/enemypatrolFLY.gd"
 } ]
 _global_script_class_icons={
 "AsepriteImportData": "",
@@ -75,7 +80,8 @@ _global_script_class_icons={
 "Player": "",
 "Skeleman": "",
 "SkelemanWalker": "",
-"enemypatrol": ""
+"enemypatrol": "",
+"enemypatrolFLY": ""
 }
 
 [application]

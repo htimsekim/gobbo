@@ -1,8 +1,7 @@
-class_name enemypatrol
-extends Character
+class_name enemypatrolFLY
+extends KinematicBody2D
 
 onready var direction = Vector2(1,0) #walking right or left
-onready var platform_detector = $Hurtbox.get_node("FloorDetector") #raycast to detect floor
 export(int) var patrolDistance # walking distance of enemy
 export(int) var movespeed # walking speed of enemy
 var start_pos = 0
@@ -10,25 +9,16 @@ var start_pos = 0
 func _ready():
 	start_pos = position.x
 	
-func _physics_process(delta): # Called every frame.
-	var snap_vector = Vector2.DOWN
-	_velocity.y += gravity * delta #set fall distance to ground
-	
-	var is_on_platform = platform_detector.is_colliding() #check if colliding with ground
-	if is_on_platform == false: #if not on ground turn enemy
-		direction.x *= -1
-		
+func _physics_process(_delta): # Called every frame. _delta isn't used
 	if direction.x == 1: #flip character in right direction and patrol him
 		$Sprite.flip_h = false # Set Enemy facing right
 		if position.x < start_pos + patrolDistance: #if haven't reached patrolDis 
-			_velocity.x = movespeed
-			move_and_slide_with_snap(_velocity, snap_vector) #move toward it
+			move_and_slide(Vector2(movespeed, 0)) #move toward it
 		else: #reached patrolDis so flip enemy
 			direction.x = -1
 	elif direction.x == -1: #flip character in right direction and patrol him
 		$Sprite.flip_h = true # Set Enemy facing left
 		if position.x > start_pos - patrolDistance: #if haven't reached patrolDis 
-			_velocity.x = -movespeed
-			move_and_slide_with_snap(_velocity, snap_vector) #move toward it
+			move_and_slide(Vector2(-movespeed, 0)) #move toward it
 		else: #reached patrolDis so flip enemy
 			direction.x = 1
