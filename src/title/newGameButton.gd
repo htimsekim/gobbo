@@ -1,7 +1,7 @@
 extends Button
 
-#const levelResource = "res://src/levels/demo.tscn"
-const levelResource = "res://src/levels/gobtown-prequake.tscn"
+const levelResource = "res://src/levels/DEMO.tscn"
+#const levelResource = "res://src/levels/gobtown-prequake.tscn"
 var username
 
 func _ready():	
@@ -16,6 +16,5 @@ func full_screen():
 	OS.set_borderless_window(true)
 
 func _on_newGameButton_toggled(button_pressed):
-	get_tree().paused = false
 	Global.load_player()
 	Global.goto_scene(levelResource, "level/spawns/spawn1")
