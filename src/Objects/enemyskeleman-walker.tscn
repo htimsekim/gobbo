@@ -79,4 +79,7 @@ anims/walk = SubResource( 2 )
 position = Vector2( -0.161987, -0.722967 )
 shape = SubResource( 3 )
 
+[node name="FloorDetector" parent="Hurtbox" index="2"]
+position = Vector2( -0.323978, 10 )
+
 [editable path="Hurtbox"]

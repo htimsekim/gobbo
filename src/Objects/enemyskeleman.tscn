@@ -108,4 +108,7 @@ visible = false
 position = Vector2( -8.33759, 0.219012 )
 shape = SubResource( 4 )
 
+[node name="FloorDetector" parent="Hurtbox" index="2"]
+position = Vector2( -8.3, 21.347 )
+
 [editable path="Hurtbox"]

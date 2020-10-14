@@ -82,4 +82,7 @@ anims/hover = SubResource( 2 )
 position = Vector2( 0, -0.372037 )
 shape = SubResource( 3 )
 
+[node name="FloorDetector" parent="Hurtbox" index="2"]
+position = Vector2( 0, 7.83405 )
+
 [editable path="Hurtbox"]

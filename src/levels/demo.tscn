@@ -53,7 +53,7 @@ position = Vector2( -154.21, 43.5192 )
 position = Vector2( -453.77, 55.8232 )
 
 [node name="Enemy2" parent="level" instance=ExtResource( 3 )]
-position = Vector2( -565.739, -37.3368 )
+position = Vector2( -565.708, -40.7979 )
 
 [node name="crawler" parent="level" instance=ExtResource( 8 )]
 position = Vector2( -617.475, -24.0014 )
