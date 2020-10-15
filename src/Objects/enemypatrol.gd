@@ -4,7 +4,6 @@ extends Character
 onready var direction = Vector2(1,0) #walking right or left
 onready var platform_detector = $Hurtbox.get_node("FloorDetector") #raycast to detect floor
 export(int) var patrolDistance # walking distance of enemy
-export(int) var movespeed # walking speed of enemy
 var start_pos = 0
 
 func _ready():
@@ -21,14 +20,14 @@ func _physics_process(delta): # Called every frame.
 	if direction.x == 1: #flip character in right direction and patrol him
 		$Sprite.flip_h = false # Set Enemy facing right
 		if position.x < start_pos + patrolDistance: #if haven't reached patrolDis 
-			_velocity.x = movespeed
+			_velocity.x = speed.x
 			move_and_slide_with_snap(_velocity, snap_vector) #move toward it
 		else: #reached patrolDis so flip enemy
 			direction.x = -1
 	elif direction.x == -1: #flip character in right direction and patrol him
 		$Sprite.flip_h = true # Set Enemy facing left
 		if position.x > start_pos - patrolDistance: #if haven't reached patrolDis 
-			_velocity.x = -movespeed
+			_velocity.x = -speed.x
 			move_and_slide_with_snap(_velocity, snap_vector) #move toward it
 		else: #reached patrolDis so flip enemy
 			direction.x = 1

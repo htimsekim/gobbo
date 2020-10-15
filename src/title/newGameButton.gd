@@ -1,6 +1,6 @@
 extends Button
 
-const levelResource = "res://src/levels/DEMO.tscn"
+const levelResource = "res://src/levels/demo.tscn"
 #const levelResource = "res://src/levels/gobtown-prequake.tscn"
 var username
 
