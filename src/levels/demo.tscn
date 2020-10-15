@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/art/backgrounds/cavebg_b.png" type="Texture" id=1]
 [ext_resource path="res://src/levels/template.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://src/Objects/enemycrawler.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/enemyskeleman.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/enemyskeleman-walker.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/heartbox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/bulletbox.tscn" type="PackedScene" id=12]
 
 [node name="demo" type="Node2D"]
 
@@ -63,5 +65,11 @@ position = Vector2( -18.2751, 53.8241 )
 
 [node name="skeleman-walker2" parent="level" instance=ExtResource( 10 )]
 position = Vector2( -566.432, -49.8757 )
+
+[node name="heartbox" parent="level" instance=ExtResource( 11 )]
+position = Vector2( -311.919, 55.4512 )
+
+[node name="bulletbox" parent="level" instance=ExtResource( 12 )]
+position = Vector2( -398.47, 55.8232 )
 
 [editable path="level"]
