@@ -23,7 +23,11 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		blinktimer.start()
 	
 	direction = get_direction() #function determines if player is moving right or left
-
+	if Input.is_action_pressed("menu"):
+		var confirm = load("res://src/UI/confirm.tscn").instance()
+		get_parent().call_deferred("add_child", confirm)
+		get_tree().paused = true
+		
 	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
