@@ -148,6 +148,9 @@ func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 		$TextureProgress.value -= damage
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 
+func updatehealth():
+	get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
+	
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink player
 	sprite.visible = true
 	knockback = false

@@ -68,6 +68,11 @@ _global_script_classes=[ {
 "class": "enemypatrolFLY",
 "language": "GDScript",
 "path": "res://src/Objects/enemypatrolFLY.gd"
+}, {
+"base": "Area2D",
+"class": "heartpickup",
+"language": "GDScript",
+"path": "res://src/Objects/heartpickup.gd"
 } ]
 _global_script_class_icons={
 "AsepriteImportData": "",
@@ -81,7 +86,8 @@ _global_script_class_icons={
 "Skeleman": "",
 "SkelemanWalker": "",
 "enemypatrol": "",
-"enemypatrolFLY": ""
+"enemypatrolFLY": "",
+"heartpickup": ""
 }
 
 [application]

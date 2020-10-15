@@ -17,7 +17,6 @@ func _physics_process(delta):
 		move = col.normal.rotated(PI/2)
 		return
 	
-	var pos := position
 	col = move_and_collide(move.rotated(PI/2) * 3.4)
 	if not col:
 		rotate(PI/32)
