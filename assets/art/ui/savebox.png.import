@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart_powerup.png-72b9525e6f4621abf17c95cd8ee02860.stex"
+path="res://.import/savebox.png-6d84668fa23112596bab3a74d85aa1fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/heart_powerup.png"
-dest_files=[ "res://.import/heart_powerup.png-72b9525e6f4621abf17c95cd8ee02860.stex" ]
+source_file="res://assets/art/ui/savebox.png"
+dest_files=[ "res://.import/savebox.png-6d84668fa23112596bab3a74d85aa1fc.stex" ]
 
 [params]
 
