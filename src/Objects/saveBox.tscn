@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/art/ui/savebox.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.00628, 10.9978 )
+extents = Vector2( 5.13012, 10.9978 )
 
 [node name="saveBox" type="Node2D"]
 z_index = 50
@@ -18,7 +18,7 @@ collision_mask = 13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=[
 "lvl",
 ]]
-position = Vector2( -22, 5 )
+position = Vector2( -20, 5 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
