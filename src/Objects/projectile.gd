@@ -23,6 +23,11 @@ func _on_Bullet_body_entered(body):
 		if body.get_node("TextureProgress").value <= 0: #if enemy health is 0, free it
 			body.get_node("Hurtbox")._on_Timer_timeout()
 			body.queue_free()
-
+			var percent = randf()
+			if percent > .5: #50% drop rate of heart regen
+				var heart = load("res://src/Objects/heartpickup.tscn").instance()
+				heart.position = body.position
+				get_parent().call_deferred("add_child", heart)
+				
 func _on_invisTimer_timeout():
 	visible = true
