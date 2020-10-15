@@ -69,7 +69,49 @@ position = Vector2( -566.432, -49.8757 )
 [node name="heartbox" parent="level" instance=ExtResource( 11 )]
 position = Vector2( -311.919, 55.4512 )
 
+[node name="heartbox2" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 177.112, 57.5674 )
+
+[node name="heartbox3" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 239.014, 57.5674 )
+
+[node name="heartbox4" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 280.799, 57.5674 )
+
+[node name="heartbox5" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 376.748, 57.5674 )
+
+[node name="heartbox6" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 324.904, 55.8232 )
+
+[node name="heartbox7" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 439.424, 55.8232 )
+
+[node name="heartbox8" parent="level" instance=ExtResource( 11 )]
+position = Vector2( 70.3297, 57.5674 )
+
 [node name="bulletbox" parent="level" instance=ExtResource( 12 )]
 position = Vector2( -398.47, 55.8232 )
+
+[node name="bulletbox2" parent="level" instance=ExtResource( 12 )]
+position = Vector2( -235.347, 55.4512 )
+
+[node name="bulletbox3" parent="level" instance=ExtResource( 12 )]
+position = Vector2( -350.804, 55.8232 )
+
+[node name="bulletbox4" parent="level" instance=ExtResource( 12 )]
+position = Vector2( -109.548, 57.5674 )
+
+[node name="bulletbox5" parent="level" instance=ExtResource( 12 )]
+position = Vector2( -198.19, 57.5674 )
+
+[node name="bulletbox6" parent="level" instance=ExtResource( 12 )]
+position = Vector2( -525.416, 57.5674 )
+
+[node name="bulletbox7" parent="level" instance=ExtResource( 12 )]
+position = Vector2( 22.4679, 55.4512 )
+
+[node name="bulletbox8" parent="level" instance=ExtResource( 12 )]
+position = Vector2( 101.394, 57.5674 )
 
 [editable path="level"]
