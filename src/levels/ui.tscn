@@ -820,168 +820,150 @@ tracks/1/keys = {
 margin_right = 48.0
 margin_bottom = 18.0
 rect_scale = Vector2( 5, 5 )
-custom_constants/separation = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 14
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="1" type="Control" parent="HeartBarPlyr"]
-margin_right = 4.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/1"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="2" type="Control" parent="HeartBarPlyr"]
-margin_left = 4.0
-margin_right = 8.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 14.0
+margin_right = 14.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/2"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="3" type="Control" parent="HeartBarPlyr"]
-margin_left = 8.0
-margin_right = 12.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 28.0
+margin_right = 28.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/3"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="4" type="Control" parent="HeartBarPlyr"]
-margin_left = 12.0
-margin_right = 16.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 42.0
+margin_right = 42.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/4"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="5" type="Control" parent="HeartBarPlyr"]
-margin_left = 16.0
-margin_right = 20.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 56.0
+margin_right = 56.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/5"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="6" type="Control" parent="HeartBarPlyr"]
-margin_left = 20.0
-margin_right = 24.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 70.0
+margin_right = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/6"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="7" type="Control" parent="HeartBarPlyr"]
-margin_left = 24.0
-margin_right = 28.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 84.0
+margin_right = 84.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/7"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="8" type="Control" parent="HeartBarPlyr"]
-margin_left = 28.0
-margin_right = 32.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 98.0
+margin_right = 98.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/8"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="9" type="Control" parent="HeartBarPlyr"]
-margin_left = 32.0
-margin_right = 36.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 112.0
+margin_right = 112.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/9"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="10" type="Control" parent="HeartBarPlyr"]
-margin_left = 36.0
-margin_right = 48.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 126.0
+margin_right = 126.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="1" type="Sprite" parent="HeartBarPlyr/10"]
 position = Vector2( 9, 9 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 3
 region_rect = Rect2( 20, 20, 45, 12 )
 
 [node name="BulletPlyr" type="HBoxContainer" parent="."]
-margin_left = 48.013
-margin_top = 106.315
-margin_right = 96.013
-margin_bottom = 124.315
+margin_left = 49.7278
+margin_top = 109.744
+margin_right = 139.728
+margin_bottom = 127.744
 rect_scale = Vector2( 5, 5 )
-custom_constants/separation = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+custom_constants/separation = 10
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="1" type="Control" parent="BulletPlyr"]
-margin_right = 4.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/1"]
 texture = ExtResource( 3 )
@@ -994,11 +976,10 @@ anims/full = SubResource( 2 )
 anims/reload = SubResource( 3 )
 
 [node name="2" type="Control" parent="BulletPlyr"]
-margin_left = 4.0
-margin_right = 8.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 10.0
+margin_right = 10.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/2"]
 texture = ExtResource( 3 )
@@ -1011,11 +992,10 @@ anims/full = SubResource( 5 )
 anims/reload = SubResource( 6 )
 
 [node name="3" type="Control" parent="BulletPlyr"]
-margin_left = 8.0
-margin_right = 12.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 20.0
+margin_right = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/3"]
 texture = ExtResource( 3 )
@@ -1028,11 +1008,10 @@ anims/full = SubResource( 8 )
 anims/reload = SubResource( 9 )
 
 [node name="4" type="Control" parent="BulletPlyr"]
-margin_left = 12.0
-margin_right = 16.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 30.0
+margin_right = 30.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/4"]
 texture = ExtResource( 3 )
@@ -1045,11 +1024,10 @@ anims/full = SubResource( 11 )
 anims/reload = SubResource( 12 )
 
 [node name="5" type="Control" parent="BulletPlyr"]
-margin_left = 16.0
-margin_right = 20.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 40.0
+margin_right = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/5"]
 texture = ExtResource( 3 )
@@ -1062,11 +1040,10 @@ anims/full = SubResource( 14 )
 anims/reload = SubResource( 15 )
 
 [node name="6" type="Control" parent="BulletPlyr"]
-margin_left = 20.0
-margin_right = 24.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 50.0
+margin_right = 50.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/6"]
 texture = ExtResource( 3 )
@@ -1079,11 +1056,10 @@ anims/full = SubResource( 17 )
 anims/reload = SubResource( 18 )
 
 [node name="7" type="Control" parent="BulletPlyr"]
-margin_left = 24.0
-margin_right = 28.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 60.0
+margin_right = 60.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/7"]
 texture = ExtResource( 3 )
@@ -1096,11 +1072,10 @@ anims/full = SubResource( 20 )
 anims/reload = SubResource( 21 )
 
 [node name="8" type="Control" parent="BulletPlyr"]
-margin_left = 28.0
-margin_right = 32.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 70.0
+margin_right = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/8"]
 texture = ExtResource( 3 )
@@ -1113,11 +1088,10 @@ anims/full = SubResource( 23 )
 anims/reload = SubResource( 24 )
 
 [node name="9" type="Control" parent="BulletPlyr"]
-margin_left = 32.0
-margin_right = 36.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 80.0
+margin_right = 80.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/9"]
 texture = ExtResource( 3 )
@@ -1130,11 +1104,10 @@ anims/full = SubResource( 26 )
 anims/reload = SubResource( 27 )
 
 [node name="10" type="Control" parent="BulletPlyr"]
-margin_left = 36.0
-margin_right = 48.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_left = 90.0
+margin_right = 90.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Sprite" type="Sprite" parent="BulletPlyr/10"]
 texture = ExtResource( 3 )

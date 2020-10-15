@@ -5,14 +5,16 @@ func update_maxhealth(maxvalue):
 	for h in 10:
 		get_child(h).visible = false
 	for h in maxvalue:
-		get_child(h).visible = true
+		if h < 10:
+			get_child(h).visible = true
 
 func update_maxbullet(maxvalue):
 	for h in 10:
 		get_child(h).visible = false
 		get_child(h).get_child(1).play("full")	
 	for h in maxvalue:
-		get_child(h).visible = true
+		if h < 10:
+			get_child(h).visible = true
 	reload = false
 	
 func update_health(value):
