@@ -1,6 +1,18 @@
 extends HBoxContainer
 var reload = false
 
+func update_maxhealth(maxvalue):
+	for h in 10:
+		get_child(h).visible = false
+	for h in maxvalue:
+		get_child(h).visible = true
+
+func update_maxbullet(maxvalue):
+	for h in 10:
+		get_child(h).visible = false
+	for h in maxvalue:
+		get_child(h).visible = true
+		
 func update_health(value):
 	for i in get_child_count():
 		if value >= i + 1 :
@@ -9,7 +21,7 @@ func update_health(value):
 			get_child(i).frame = 1 #half full
 		else:
 			get_child(i).frame = 2 #empty
-
+	
 func update_bullet(value):
 	if reload == true and get_node("../reloadTimer").time_left == 0: #if we need to reload and timer hasn't started, start it
 		get_node("../reloadTimer").start()

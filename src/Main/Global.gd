@@ -16,6 +16,8 @@ func load_player():
 	player = get_node("plyrInst")
 	var UIInstance = UIResource.instance() #instance in player 
 	self.add_child(UIInstance)
+	get_node("UI/HeartBarPlyr").update_maxhealth(get_node("plyrInst/TextureProgress").max_value)
+	get_node("UI/BulletPlyr").update_maxbullet(get_node("plyrInst/BulletHealth").max_value)
 		
 func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")
 	call_deferred("_deferred_goto_scene", path, spawn)

@@ -149,6 +149,7 @@ func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 
 func updatehealth():
+	get_node("../UI/HeartBarPlyr").update_maxhealth($TextureProgress.max_value)
 	get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 	
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink player
