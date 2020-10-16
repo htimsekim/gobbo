@@ -1,0 +1,51 @@
+{ "frames": {
+   "sleeping 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 65, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 65, "h": 12 },
+    "sourceSize": { "w": 65, "h": 12 },
+    "duration": 500
+   },
+   "sleeping 1.aseprite": {
+    "frame": { "x": 65, "y": 0, "w": 65, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 65, "h": 12 },
+    "sourceSize": { "w": 65, "h": 12 },
+    "duration": 500
+   },
+   "sleeping 2.aseprite": {
+    "frame": { "x": 130, "y": 0, "w": 65, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 65, "h": 12 },
+    "sourceSize": { "w": 65, "h": 12 },
+    "duration": 500
+   },
+   "sleeping 3.aseprite": {
+    "frame": { "x": 195, "y": 0, "w": 65, "h": 12 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 65, "h": 12 },
+    "sourceSize": { "w": 65, "h": 12 },
+    "duration": 500
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.25",
+  "image": "sleeping.png",
+  "format": "RGBA8888",
+  "size": { "w": 260, "h": 12 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "sleeping", "from": 0, "to": 3, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

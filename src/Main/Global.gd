@@ -34,6 +34,7 @@ func _deferred_goto_scene(path, spawn: String):
 	camera = current_scene.get_node("level/Camera2D")
 	player.position = current_scene.get_node(str(spawn)).position #set plyr spawn
 	camera.position = current_scene.get_node(str(spawn)).position #set camera spawn
+	print(path)
 
 func _process(_delta):
 	if Input.is_action_pressed("menu"):
