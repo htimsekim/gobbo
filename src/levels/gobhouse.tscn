@@ -42,6 +42,6 @@ target_spawn = "level/spawns/spawn5"
 associated_trigger = "earthquake_happened"
 
 [node name="saveBox" parent="." instance=ExtResource( 3 )]
-position = Vector2( 86.6262, -128.045 )
+position = Vector2( 88, -128 )
 
 [editable path="level"]
