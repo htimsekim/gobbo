@@ -45,7 +45,8 @@ func _deferred_goto_scene(path, spawn: String):
 		camera.position = previous_scene_x2.get_node(str(spawn)).position #set camera spawn
 		current_scene = previous_scene_x2
 	else:
-		#remove previous_scene_x2
+		if previous_scene_x2:
+			previous_scene_x2.free()
 		var s = ResourceLoader.load(path) # Load the new scene.
 		current_scene = s.instance() # Instance the new scene.
 		get_tree().get_root().add_child(current_scene) # Add it to the active scene, as child of root.
