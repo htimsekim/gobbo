@@ -2,6 +2,10 @@ extends Node
 const playerResource = preload("res://src/Objects/Player.tscn")
 const UIResource = preload("res://src/levels/ui.tscn")
 var current_scene = null
+var previous_scene = null
+var previous_scene_path = null
+var previous_scene_x2 = null
+var previous_scene_x2_path = null
 var camera
 var player
 var ui
@@ -24,13 +28,38 @@ func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res
 	get_tree().call_group("projectile","queue_free")
 	
 func _deferred_goto_scene(path, spawn: String):
-	current_scene.free() # It is now safe to remove the current scene
-	var s = ResourceLoader.load(path) # Load the new scene.
-	current_scene = s.instance() # Instance the new scene.
-	get_tree().get_root().add_child(current_scene) # Add it to the active scene, as child of root.
-	#Optionally, to make it compatible with the SceneTree.change_scene() API.
-	get_tree().set_current_scene(current_scene)
 
-	camera = current_scene.get_node("level/Camera2D")
-	player.position = current_scene.get_node(str(spawn)).position #set plyr spawn
-	camera.position = current_scene.get_node(str(spawn)).position #set camera spawn
+
+
+
+	#current_scene.free() # It is now safe to remove the current scene
+	get_tree().get_root().remove_child(current_scene)
+	previous_scene_x2 = previous_scene
+	previous_scene = current_scene
+	previous_scene_x2_path = previous_scene_path
+	previous_scene_path = current_scene.filename
+	if path == previous_scene_x2_path:
+		get_tree().get_root().add_child(previous_scene_x2)
+		camera = previous_scene_x2.get_node("level/Camera2D")
+		player.position = previous_scene_x2.get_node(str(spawn)).position #set plyr spawn
+		camera.position = previous_scene_x2.get_node(str(spawn)).position #set camera spawn
+		current_scene = previous_scene_x2
+	else:
+		#remove previous_scene_x2
+		var s = ResourceLoader.load(path) # Load the new scene.
+		current_scene = s.instance() # Instance the new scene.
+		get_tree().get_root().add_child(current_scene) # Add it to the active scene, as child of root.
+		#Optionally, to make it compatible with the SceneTree.change_scene() API.
+		get_tree().set_current_scene(current_scene)
+	
+		camera = current_scene.get_node("level/Camera2D")
+		player.position = current_scene.get_node(str(spawn)).position #set plyr spawn
+		camera.position = current_scene.get_node(str(spawn)).position #set camera spawn
+		
+	print("path = ", path)
+	print("prevpath = ", previous_scene_path)
+	print("prevpathx2 = ", previous_scene_x2_path)
+	print("prevx2 = ", previous_scene_x2)
+	print("prev = ", previous_scene)
+	print("current = ", current_scene)
+	print(" ")
