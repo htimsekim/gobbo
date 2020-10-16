@@ -15,6 +15,6 @@ func full_screen():
 	OS.window_fullscreen = true
 	OS.set_borderless_window(true)
 
-func _on_newGameButton_toggled(button_pressed):
+func _on_newGameButton_toggled(_button_pressed):
 	Global.load_player()
 	Global.goto_scene(levelResource, "level/spawns/spawn1")
