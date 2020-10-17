@@ -6,11 +6,9 @@
 [ext_resource path="res://src/UI/saveConfirm.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 128
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 128
 font_data = ExtResource( 3 )
 
 [node name="saveConfirm" type="CanvasLayer"]
@@ -18,10 +16,9 @@ pause_mode = 2
 script = ExtResource( 4 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = 636.934
-margin_top = 213.99
-margin_right = 1336.93
-margin_bottom = 813.99
+margin_right = 100.0
+margin_bottom = 100.0
+rect_scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 patch_margin_left = 16
 patch_margin_top = 16
@@ -32,38 +29,39 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
-margin_left = 24.0
-margin_top = 49.0
-margin_right = 680.0
-margin_bottom = 299.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 234.0
+margin_bottom = 38.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer"]
-margin_right = 656.0
-margin_bottom = 94.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 70.0
+margin_bottom = 70.0
 custom_fonts/font = SubResource( 1 )
-text = "Do you want save?"
+text = "save?"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-margin_top = 98.0
-margin_right = 656.0
-margin_bottom = 192.0
+margin_top = 16.0
+margin_right = 224.0
+margin_bottom = 28.0
 custom_constants/separation = 200
 alignment = 1
 
 [node name="Sprite" type="Sprite" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
 position = Vector2( 410, 70 )
-scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 hframes = 8
 frame = 7
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
-margin_left = 132.0
-margin_right = 244.0
-margin_bottom = 94.0
+margin_right = 14.0
+margin_bottom = 12.0
 custom_fonts/font = SubResource( 2 )
 text = "Yes"
 __meta__ = {
@@ -71,9 +69,9 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
-margin_left = 444.0
-margin_right = 524.0
-margin_bottom = 94.0
+margin_left = 214.0
+margin_right = 224.0
+margin_bottom = 12.0
 custom_fonts/font = SubResource( 2 )
 text = "No"
 align = 2
