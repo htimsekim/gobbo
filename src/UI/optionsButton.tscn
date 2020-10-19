@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/title/button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/button.tscn" type="PackedScene" id=1]
 
 [node name="optionsButton" instance=ExtResource( 1 )]
 

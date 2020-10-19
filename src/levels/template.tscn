@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://src/Objects/camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 [ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
-[ext_resource path="res://src/Objects/camera.gd" type="Script" id=5]
 
 [node name="level" type="Node2D"]
 
@@ -152,4 +151,3 @@ scale = Vector2( 2, 2 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 2 )]
 process_mode = 0
-script = ExtResource( 5 )

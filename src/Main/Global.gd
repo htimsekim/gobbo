@@ -1,6 +1,6 @@
 extends Node
-const playerResource = preload("res://src/Objects/Player.tscn")
-const UIResource = preload("res://src/levels/ui.tscn")
+const playerResource = preload("res://src/characters/Player.tscn")
+const UIResource = preload("res://src/UI/ui.tscn")
 var current_scene = null
 var previous_scene = null
 var previous_scene_path = null
@@ -28,11 +28,6 @@ func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res
 	get_tree().call_group("projectile","queue_free")
 	
 func _deferred_goto_scene(path, spawn: String):
-
-
-
-
-	#current_scene.free() # It is now safe to remove the current scene
 	get_tree().get_root().remove_child(current_scene)
 	previous_scene_x2 = previous_scene
 	previous_scene = current_scene
@@ -56,11 +51,3 @@ func _deferred_goto_scene(path, spawn: String):
 		camera = current_scene.get_node("level/Camera2D")
 		player.position = current_scene.get_node(str(spawn)).position #set plyr spawn
 		camera.position = current_scene.get_node(str(spawn)).position #set camera spawn
-		
-	print("path = ", path)
-	print("prevpath = ", previous_scene_path)
-	print("prevpathx2 = ", previous_scene_x2_path)
-	print("prevx2 = ", previous_scene_x2)
-	print("prev = ", previous_scene)
-	print("current = ", current_scene)
-	print(" ")

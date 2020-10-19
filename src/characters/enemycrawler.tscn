@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/art/enemy/crawler.png" type="Texture" id=1]
-[ext_resource path="res://src/Objects/enemycrawler.gd" type="Script" id=2]
+[ext_resource path="res://src/characters/enemycrawler.gd" type="Script" id=2]
 [ext_resource path="res://src/Objects/Hurtbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]

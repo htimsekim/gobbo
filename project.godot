@@ -24,50 +24,50 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character.gd"
 }, {
-"base": "Character",
+"base": "Reference",
 "class": "Crawler",
 "language": "GDScript",
-"path": "res://src/Objects/enemycrawler.gd"
+"path": "res://src/characters/enemycrawler.gd"
 }, {
 "base": "Node",
 "class": "EditorTheme",
 "language": "GDScript",
 "path": "res://addons/aseprite_importer/classes/EditorTheme.gd"
 }, {
-"base": "Character",
+"base": "Reference",
 "class": "EnemyBat",
 "language": "GDScript",
-"path": "res://src/Objects/enemybat.gd"
+"path": "res://src/characters/enemybat.gd"
 }, {
-"base": "enemypatrolFLY",
+"base": "Reference",
 "class": "Oculon",
 "language": "GDScript",
-"path": "res://src/Objects/enemyoculon.gd"
+"path": "res://src/characters/enemyoculon.gd"
 }, {
-"base": "Character",
+"base": "Reference",
 "class": "Player",
 "language": "GDScript",
-"path": "res://src/Objects/Player.gd"
+"path": "res://src/characters/Player.gd"
 }, {
-"base": "enemypatrol",
+"base": "Reference",
 "class": "Skeleman",
 "language": "GDScript",
-"path": "res://src/Objects/enemyskeleman.gd"
+"path": "res://src/characters/enemyskeleman.gd"
 }, {
-"base": "enemypatrol",
+"base": "Reference",
 "class": "SkelemanWalker",
 "language": "GDScript",
-"path": "res://src/Objects/enemyskeleman-walker.gd"
+"path": "res://src/characters/enemyskeleman-walker.gd"
 }, {
-"base": "Character",
+"base": "Reference",
 "class": "enemypatrol",
 "language": "GDScript",
-"path": "res://src/Objects/enemypatrol.gd"
+"path": "res://src/characters/enemypatrol.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Reference",
 "class": "enemypatrolFLY",
 "language": "GDScript",
-"path": "res://src/Objects/enemypatrolFLY.gd"
+"path": "res://src/characters/enemypatrolFLY.gd"
 } ]
 _global_script_class_icons={
 "AsepriteImportData": "",
@@ -87,7 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="gobbo"
-run/main_scene="res://src/title/titleMenu.tscn"
+run/main_scene="res://src/UI/titleMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -45,7 +45,7 @@ position = Vector2( 239.731, -22.587 )
 target_stage = "res://src/levels/treehouse.tscn"
 target_spawn = "level/spawns/spawn2"
 
-[node name="ParallaxBackground" parent="level" index="5"]
+[node name="ParallaxBackground" parent="level" index="8"]
 offset = Vector2( 1000, -1200 )
 scale = Vector2( 0.25, 0.25 )
 transform = Transform2D( 0.25, 0, 0, 0.25, 1000, -1200 )

@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/art/backgrounds/cavebg_m.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/backgrounds/cavebg_f.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/Objects/enemyoculon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/characters/enemyoculon.tscn" type="PackedScene" id=7]
 
 [node name="gobtown" type="Node2D"]
 

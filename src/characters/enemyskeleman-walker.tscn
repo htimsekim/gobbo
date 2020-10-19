@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/art/enemy/skeleman-walker-short.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Hurtbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Objects/enemyskeleman-walker.gd" type="Script" id=3]
+[ext_resource path="res://src/characters/enemyskeleman-walker.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.07621, 10.7573 )

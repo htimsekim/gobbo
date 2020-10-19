@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://src/levels/UI.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/UI.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/ui/heart.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/ui/ui-bullet.png" type="Texture" id=3]
 
