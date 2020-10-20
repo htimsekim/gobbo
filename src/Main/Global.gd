@@ -14,6 +14,16 @@ var game_data = {}
 var path
 var heart_boxes = []
 
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("Dbullet"): #decrease bullet for TESTING ONLY
+		get_node("plyrInst/BulletHealth").max_value -= 1
+		Global.player.get_node("BulletHealth").value = Global.player.get_node("BulletHealth").max_value
+		get_node("UI/BulletPlyr").update_maxbullet(get_node("plyrInst/BulletHealth").max_value)
+	if Input.is_action_just_pressed("Ibullet"): #increase bullet for TESTING ONLY
+		get_node("plyrInst/BulletHealth").max_value += 1
+		Global.player.get_node("BulletHealth").value = Global.player.get_node("BulletHealth").max_value
+		get_node("UI/BulletPlyr").update_maxbullet(get_node("plyrInst/BulletHealth").max_value)
+
 func load_player():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1) # get current scene to remove/update
