@@ -10,6 +10,8 @@ var camera
 var player
 var ui
 var earthquake_happened = [false, "-prequake", "-postquake"]
+var game_data = {}
+var path
 
 func load_player():
 	var root = get_tree().get_root()
@@ -51,3 +53,29 @@ func _deferred_goto_scene(path, spawn: String):
 		camera = current_scene.get_node("level/Camera2D")
 		player.position = current_scene.get_node(str(spawn)).position #set plyr spawn
 		camera.position = current_scene.get_node(str(spawn)).position #set camera spawn
+
+func save_game(saveName):
+	var f = File.new()
+	if f.open_encrypted_with_pass("user://" + saveName + ".bin", File.WRITE, "mypass") != 0: 
+		print("Can't save file")
+	else:
+		game_data = {"savescene": current_scene.filename}
+		game_data = {"eathquake": earthquake_happened}
+		game_data = {"maxhealth": get_node("plyrInst/TextureProgress").max_value}
+		game_data = {"maxbullet": get_node("plyrInst/BulletHealth").max_value}
+		f.store_var(game_data)
+		f.close()
+			
+func load_game(saveName):
+	var file = File.new()
+	file.open_encrypted_with_pass("user://" + saveName + ".bin", File.READ, "mypass")
+	var game_data = file.get_var()
+	file.close()
+	
+	#load game_data
+	earthquake_happened = game_data.eathquake
+	get_node("UI/HeartBarPlyr").update_maxhealth(game_data.maxhealth)
+	get_node("UI/BulletPlyr").update_maxbullet(game_data.maxbullet)
+	
+	load_player()
+	goto_scene(game_data.savescene,"level/spawns/spawn1")

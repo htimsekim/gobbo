@@ -5,4 +5,11 @@ func _on_heartbox_body_entered(body):
 		Global.player.get_node("TextureProgress").max_value += 1 
 		Global.player.get_node("TextureProgress").value = Global.player.get_node("TextureProgress").max_value
 		Global.player.updatehealth()
-		queue_free()
+		#queue_free()
+		
+		#TreeItem.remove_child(self)
+		#if tree.get_selected() != null: print("d")
+		#.get_parent().remove_child(self)
+		remove_child(self)
+		
+		self.queue_free()
