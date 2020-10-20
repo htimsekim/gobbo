@@ -14,6 +14,10 @@ func _ready():
 	var camleft = limit_left
 	var camright = limit_right
 	
+	#please leave these
+	print(map_limits)
+	print("map ", max(24,abs(camleft-camright)/16), " x ", max(14,(abs(camtop-cambot)+16)/16))
+	
 	if abs(camtop - cambot) <= 224:
 		limit_bottom = ((camtop + cambot)/2) + 108
 		limit_top = ((camtop + cambot)/2) - 108
