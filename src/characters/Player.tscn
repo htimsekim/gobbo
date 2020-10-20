@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/art/ui/animated-cursor-arrow.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.5441, 8.25819 )
+extents = Vector2( 5.544, 8.36 )
 
 [sub_resource type="Animation" id=2]
 length = 0.5
@@ -406,8 +406,8 @@ cast_to = Vector2( 0, 6 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.838, 0.3 )
-scale = Vector2( 0.8, 1.055 )
+position = Vector2( 0.838, 1.2 )
+scale = Vector2( 0.8, 0.95 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
