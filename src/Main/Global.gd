@@ -12,6 +12,7 @@ var ui
 var earthquake_happened = [false, "-prequake", "-postquake"]
 var game_data = {}
 var path
+var heart_boxes = []
 
 func load_player():
 	var root = get_tree().get_root()

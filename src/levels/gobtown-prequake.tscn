@@ -95,5 +95,6 @@ position = Vector2( -208.28, 103.244 )
 
 [node name="heartbox" parent="level" instance=ExtResource( 8 )]
 position = Vector2( -80.6593, 104.319 )
+heartName = "heart1"
 
 [editable path="level"]
