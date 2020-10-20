@@ -57,7 +57,7 @@ __meta__ = {
 [node name="menu" type="VBoxContainer" parent="."]
 margin_left = 240.0
 margin_top = 160.0
-margin_right = 1680.0
+margin_right = 1760.0
 margin_bottom = 920.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -123,19 +123,35 @@ anims/idle = SubResource( 3 )
 [node name="Label" type="Label" parent="menu"]
 margin_top = 595.0
 margin_right = 1520.0
-margin_bottom = 747.0
+margin_bottom = 760.0
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 4 )
 text = "version 0.1
 holy moly it's bad
 gina did most of the work"
 
-[node name="ItemList" type="ItemList" parent="menu"]
-margin_left = 1000.0
-margin_top = 300.0
-margin_right = 1600.0
-margin_bottom = 309.0
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 1309.12
+margin_top = 380.147
+margin_right = 1559.12
+margin_bottom = 880.147
+rect_min_size = Vector2( 200, 500 )
+size_flags_horizontal = 0
+size_flags_vertical = 2
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="ScrollContainer"]
+margin_right = 250.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 250, 500 )
+allow_reselect = true
 auto_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="toggled" from="menu/centerRow/buttons/newGameButton" to="menu/centerRow/buttons/newGameButton" method="_on_newGameButton_toggled"]
 [connection signal="toggled" from="menu/centerRow/buttons/continueButton" to="menu/centerRow/buttons/continueButton" method="_on_continueButton_toggled"]
-[connection signal="item_activated" from="menu/ItemList" to="." method="_on_ItemList_item_activated"]
+[connection signal="item_activated" from="ScrollContainer/ItemList" to="." method="_on_ItemList_item_activated"]

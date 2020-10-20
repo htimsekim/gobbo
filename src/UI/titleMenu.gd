@@ -14,6 +14,8 @@ func full_screen():
 		OS.set_current_screen(0)
 	OS.window_fullscreen = true
 	OS.set_borderless_window(true)
+	
+
 
 func dir_contents(path):
 	dir = Directory.new()
@@ -24,13 +26,16 @@ func dir_contents(path):
 			if dir.current_is_dir():
 				print("Found directory: " + file_name)
 			else:
-				$menu/ItemList.add_item(file_name)
+				$ScrollContainer/ItemList.add_item(file_name)
 			file_name = dir.get_next()
+		print($ScrollContainer/ItemList)
 	else:
 		print("An error occurred when trying to access the path.")
+	
 
 func _on_ItemList_item_activated(index):
-	$menu/ItemList.select()
-	#Global.path = index
+	Global.load_player()
+	Global.goto_scene("res://src/levels/" + $ScrollContainer/ItemList.get_item_text(index),"level/spawns/spawn1")
+	
 
 

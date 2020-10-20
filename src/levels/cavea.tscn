@@ -32,7 +32,7 @@ associated_trigger = "earthquake_happened"
 [node name="ChangeStage2" parent="level/links" index="1" instance=ExtResource( 1 )]
 position = Vector2( -11.1734, -62.8505 )
 scale = Vector2( 1, 1.5 )
-target_stage = "res://src/levels/gobmines.tscn"
+target_stage = "res://src/levels/gobmines-postquake.tscn"
 target_spawn = "level/spawns/spawn2"
 
 [node name="Sprite" parent="level/ParallaxBackground/bg" index="0"]
