@@ -2,8 +2,8 @@
 
 [ext_resource path="res://assets/art/tileset/cave_breaker.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=3]
-script/source = "extends Node2D
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
 
 
 func _ready():
@@ -11,8 +11,9 @@ func _ready():
 	
 func _on_Character_collided(collision):
 
-	if collision.collider.name == \"@RigidBody2D@6\":
-		print(collision.collider.name)
+	if \"breaker\" in collision.collider.name and collision.normal == Vector2(0,-1):
+		collision.collider.queue_free()
+		#print(collision.normal)
 	# KinematicCollision2D object emitted by character
 	#if collision.collider is TileMap:
 #		var tile_pos = collision.collider.world_to_map($Character.position)
@@ -26,7 +27,7 @@ func _on_Character_collided(collision):
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -53,15 +54,12 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[node name="RigidBody2D" type="RigidBody2D" groups=[
+[node name="breaker" type="KinematicBody2D" groups=[
 "lvl",
 ]]
 collision_layer = 2
 collision_mask = 13
-mode = 3
-contacts_reported = 10
-contact_monitor = true
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8, 8 )
@@ -74,4 +72,4 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/break = SubResource( 1 )
+anims/break = SubResource( 3 )
