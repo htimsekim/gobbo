@@ -22,14 +22,15 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		sprite.visible = false
 		blinktimer.start()
 	
-	direction = get_direction() #function determines if player is moving right or left
-		
+	direction = get_direction() #main movement code; determines if player moving right or left	
 	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	var is_on_platform = platform_detector.is_colliding()
+	
 	if Input.is_action_pressed("crouch") and is_on_floor(): #don't move while crouching
 		_velocity = Vector2(0,0)
+	
 	if knockback == true: #knockback code to set velocity
 		_velocity = (Vector2(1,0).rotated(position.angle_to_point(enemyPos))*250)
 		_velocity.y = _velocity.y/2
@@ -148,10 +149,6 @@ func playerdamage(damage,enemyPosition): #damage, blink, and knockback player
 		$TextureProgress.value -= damage
 		get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
 
-func updatehealth():
-	get_node("../UI/HeartBarPlyr").update_maxhealth($TextureProgress.max_value)
-	get_node("../UI/HeartBarPlyr").update_health($TextureProgress.value)
-	
 func _on_BlinkTimer_timeout(): #while knockback enabled, blink player
 	sprite.visible = true
 	knockback = false
