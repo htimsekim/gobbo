@@ -1,7 +1,30 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/art/tileset/cave_breaker.png" type="Texture" id=1]
-[ext_resource path="res://src/Objects/StaticBody2D.gd" type="Script" id=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node2D
+
+
+func _ready():
+	Global.player.connect(\"collided\", self, \"_on_Character_collided\")
+	
+func _on_Character_collided(collision):
+
+	if collision.collider.name == \"@RigidBody2D@6\":
+		print(collision.collider.name)
+	# KinematicCollision2D object emitted by character
+	#if collision.collider is TileMap:
+#		var tile_pos = collision.collider.world_to_map($Character.position)
+	##	tile_pos -= collision.normal  # Colliding tile
+	#	var tile = collision.collider.get_cellv(tile_pos)
+	#	if tile > 0:
+	#		$TileMap.set_cellv(tile_pos, tile-1)
+
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
 
 [sub_resource type="Animation" id=1]
 length = 0.5
@@ -30,10 +53,19 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 8 )
+[node name="RigidBody2D" type="RigidBody2D" groups=[
+"lvl",
+]]
+collision_layer = 2
+collision_mask = 13
+mode = 3
+contacts_reported = 10
+contact_monitor = true
+script = SubResource( 3 )
 
-[node name="breaker_cave" type="Node2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 8 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -43,17 +75,3 @@ region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/break = SubResource( 1 )
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." groups=[
-"lvl",
-]]
-collision_layer = 2
-collision_mask = 13
-mode = 3
-contacts_reported = 10
-contact_monitor = true
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( 8, 8 )
-shape = SubResource( 2 )
