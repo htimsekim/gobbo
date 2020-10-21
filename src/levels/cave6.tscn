@@ -14,6 +14,7 @@ tile_data = PoolIntArray( -1, 10, 0, -65536, 10, 1, -65535, 10, 1, -65534, 10, 1
 
 [node name="breaker" parent="level/tilemaps" index="7"]
 tile_data = PoolIntArray( 655391, 34, 0, 655392, 34, 0, 655393, 34, 0, 655394, 34, 0, 655395, 34, 0, 655396, 34, 0, 655397, 34, 0, 655398, 34, 0 )
+environment = "cave"
 
 [node name="spawn1" type="Node2D" parent="level/spawns" index="0"]
 position = Vector2( 268.572, 206.793 )
