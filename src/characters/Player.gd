@@ -1,6 +1,6 @@
 class_name Player
 extends Character
-
+signal collided
 onready var Bullet = preload("res://src/Objects/projectile.tscn")
 const FLOOR_DETECT_DISTANCE = 8.0 # < sprite height so player doesn't drop so fast from one block
 onready var platform_detector = $PlatformDetector
@@ -38,6 +38,11 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		snap_vector = Vector2(0,0)
 		
 	_velocity = move_and_slide_with_snap(_velocity, snap_vector, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision: 
+			emit_signal('collided', collision)
+	
 	is_shooting = false #to determine if gun needs to be out and which animation to play
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
