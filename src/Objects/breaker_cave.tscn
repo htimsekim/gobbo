@@ -12,16 +12,13 @@ func _ready():
 func _on_Character_collided(collision):
 
 	if \"breaker\" in collision.collider.name and collision.normal == Vector2(0,-1):
-		collision.collider.queue_free()
-		#print(collision.normal)
-	# KinematicCollision2D object emitted by character
-	#if collision.collider is TileMap:
-#		var tile_pos = collision.collider.world_to_map($Character.position)
-	##	tile_pos -= collision.normal  # Colliding tile
-	#	var tile = collision.collider.get_cellv(tile_pos)
-	#	if tile > 0:
-	#		$TileMap.set_cellv(tile_pos, tile-1)
+		
 
+		$Timer.start()
+		print(find_node(collision.collider.name + \"/Sprite/AnimationPlayer\"))
+
+
+# collision.collider.queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -73,3 +70,6 @@ region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/break = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
