@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/UI/camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 [ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
+[ext_resource path="res://src/levels/breaker.gd" type="Script" id=5]
 
 [node name="level" type="Node2D"]
 
@@ -78,6 +79,19 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 13
 format = 1
+
+[node name="breaker" type="TileMap" parent="tilemaps" groups=[
+"breaker",
+"lvl",
+]]
+z_index = 15
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+script = ExtResource( 5 )
 
 [node name="bg_art" type="TileMap" parent="tilemaps"]
 z_index = -10

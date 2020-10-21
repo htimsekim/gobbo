@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Character.gd"
 }, {
-"base": "Reference",
+"base": "Character",
 "class": "Crawler",
 "language": "GDScript",
 "path": "res://src/characters/enemycrawler.gd"
@@ -34,12 +34,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/aseprite_importer/classes/EditorTheme.gd"
 }, {
-"base": "Reference",
+"base": "Character",
 "class": "EnemyBat",
 "language": "GDScript",
 "path": "res://src/characters/enemybat.gd"
 }, {
-"base": "Reference",
+"base": "enemypatrolFLY",
 "class": "Oculon",
 "language": "GDScript",
 "path": "res://src/characters/enemyoculon.gd"
@@ -49,22 +49,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/characters/Player.gd"
 }, {
-"base": "Reference",
+"base": "enemypatrol",
 "class": "Skeleman",
 "language": "GDScript",
 "path": "res://src/characters/enemyskeleman.gd"
 }, {
-"base": "Reference",
+"base": "enemypatrol",
 "class": "SkelemanWalker",
 "language": "GDScript",
 "path": "res://src/characters/enemyskeleman-walker.gd"
 }, {
-"base": "Reference",
+"base": "Character",
 "class": "enemypatrol",
 "language": "GDScript",
 "path": "res://src/characters/enemypatrol.gd"
 }, {
-"base": "Reference",
+"base": "KinematicBody2D",
 "class": "enemypatrolFLY",
 "language": "GDScript",
 "path": "res://src/characters/enemypatrolFLY.gd"
@@ -105,6 +105,29 @@ mouse_cursor/custom_image_hotspot=Vector2( 10, 10 )
 [editor_plugins]
 
 enabled=PoolStringArray( "aseprite_importer" )
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
