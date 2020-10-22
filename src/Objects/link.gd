@@ -1,7 +1,7 @@
 extends Area2D
 
 export(String, FILE, "*.tscn") var target_stage
-export(String) var target_spawn
+export(String) var target_spawn = "level/spawns/spawn"
 export(String) var associated_trigger
 
 func _on_ChangeStage_body_entered(body):

@@ -25,7 +25,7 @@ func _on_Timer_timeout():
 extents = Vector2( 8, 8 )
 
 [sub_resource type="Animation" id=3]
-length = 0.5
+length = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
 tracks/0/interp = 0
@@ -72,5 +72,6 @@ region_rect = Rect2( 0, 0, 16, 16 )
 anims/break = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
