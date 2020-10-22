@@ -413,7 +413,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 128, 64, 64, 64 )
 
 [node name="shootpointx" type="Position2D" parent="Sprite"]
 position = Vector2( 17, 1.727 )
@@ -505,3 +505,4 @@ shape = SubResource( 16 )
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

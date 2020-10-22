@@ -5,20 +5,20 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
 
+var bodytimer
 
 func _ready():
 	Global.player.connect(\"collided\", self, \"_on_Character_collided\")
 	
-func _on_Character_collided(collision):
+func _on_Character_collided(body):
+	if \"breaker\" in body.name:
+		if body.global_position.y > Global.player.global_position.y:
+			bodytimer = body
+			$Timer.start()			
+			body.get_node(\"Sprite/AnimationPlayer\").play(\"break\")
 
-	if \"breaker\" in collision.collider.name and collision.normal == Vector2(0,-1):
-		
-
-		$Timer.start()
-		print(find_node(collision.collider.name + \"/Sprite/AnimationPlayer\"))
-
-
-# collision.collider.queue_free()
+func _on_Timer_timeout():
+	bodytimer.queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -73,3 +73,4 @@ anims/break = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
