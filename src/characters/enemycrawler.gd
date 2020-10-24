@@ -4,6 +4,8 @@ extends Character
 var move = Vector2(0,0)
 var rotating: int
 
+
+	
 func _physics_process(delta):
 	speed = 25
 	if rotating:

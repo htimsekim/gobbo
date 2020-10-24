@@ -5,6 +5,8 @@ onready var direction = Vector2()
 onready var distance = 0
 onready var follow = false
 
+
+
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	direction = Global.player.position - position # get direction / distance of player
 

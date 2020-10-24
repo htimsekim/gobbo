@@ -26,8 +26,11 @@ func _on_Bullet_body_entered(body):
 			var percent = randf()
 			if percent > .5: #50% drop rate of heart regen
 				var heart = load("res://src/Objects/heartpickup.tscn").instance()
+				
 				heart.position = body.position
-				get_parent().call_deferred("add_child", heart)
+				#get_parent().call_deferred("add_child", heart)
+				get_tree().get_root().find_node("level", true, false).add_child(heart)
+
 				
 func _on_invisTimer_timeout():
 	visible = true

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/art/tileset/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/UI/camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/onewayInvis.gd" type="Script" id=3]
 [ext_resource path="res://src/levels/limits.gd" type="Script" id=4]
 [ext_resource path="res://src/levels/breaker.gd" type="Script" id=5]
+[ext_resource path="res://assets/art/tileset/enemies.tres" type="TileSet" id=6]
+[ext_resource path="res://src/levels/enemies.gd" type="Script" id=7]
 
 [node name="level" type="Node2D"]
 
@@ -126,6 +128,13 @@ z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
+
+[node name="enemies" type="TileMap" parent="tilemaps"]
+z_index = 50
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+script = ExtResource( 7 )
 
 [node name="audio" type="Node" parent="."]
 
