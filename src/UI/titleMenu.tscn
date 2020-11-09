@@ -118,6 +118,7 @@ alignment = 1
 margin_right = 758.0
 margin_bottom = 120.0
 toggle_mode = true
+script = null
 
 [node name="continueButton" parent="menu/centerRow/buttons" instance=ExtResource( 3 )]
 margin_top = 140.0
@@ -190,6 +191,5 @@ region_rect = Rect2( 60, 0, 10, 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 5 )
-[connection signal="toggled" from="menu/centerRow/buttons/newGameButton" to="menu/centerRow/buttons/newGameButton" method="_on_newGameButton_toggled"]
 [connection signal="toggled" from="menu/centerRow/buttons/continueButton" to="menu/centerRow/buttons/continueButton" method="_on_continueButton_toggled"]
 [connection signal="item_activated" from="ScrollContainer/ItemList" to="." method="_on_ItemList_item_activated"]
