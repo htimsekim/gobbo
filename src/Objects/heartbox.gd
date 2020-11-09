@@ -2,7 +2,6 @@ extends Area2D
 export var heartName = "" #tracks heartnames that are already picked up
 var playerHealth = Global.player.get_node("TextureProgress")
 
-
 func _ready():
 	if Global.heart_boxes.has(heartName): #if heart is in array, remove it, it's one time use
 		queue_free()

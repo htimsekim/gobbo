@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/levels/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/art/backgrounds/cavebg_m.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/backgrounds/cavebg_f.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/ChangeStage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/bulletbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Objects/heartbox.tscn" type="PackedScene" id=8]
 
 [node name="gobtown" type="Node2D"]
 
@@ -88,5 +90,11 @@ region_rect = Rect2( 0, 0, 960, 180 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 960, 180 )
+
+[node name="heartbox" parent="." instance=ExtResource( 8 )]
+position = Vector2( -82.2233, 103.673 )
+
+[node name="bulletbox" parent="." instance=ExtResource( 7 )]
+position = Vector2( 21.4496, 104.864 )
 
 [editable path="level"]

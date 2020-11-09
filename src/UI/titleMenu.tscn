@@ -118,7 +118,6 @@ alignment = 1
 margin_right = 758.0
 margin_bottom = 120.0
 toggle_mode = true
-script = null
 
 [node name="continueButton" parent="menu/centerRow/buttons" instance=ExtResource( 3 )]
 margin_top = 140.0

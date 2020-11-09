@@ -13,6 +13,7 @@ var earthquake_happened = [false, "-prequake", "-postquake"]
 var game_data = {}
 var path
 var heart_boxes = []
+var bullet_boxes = []
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Dbullet") and get_node("plyrInst/BulletHealth").max_value > 3: #decrease bullet for TESTING ONLY

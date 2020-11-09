@@ -42,7 +42,6 @@ func _process(_delta):
 		if conChoice == "newgame":
 			Global.load_player()
 			Global.goto_scene("res://src/levels/gobtown-prequake.tscn","level/spawns/spawn1")
-		queue_free()
 		
 func full_screen():
 	if IP.get_local_addresses()[0]=="192.168.37.34":
