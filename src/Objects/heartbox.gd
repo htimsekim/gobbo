@@ -9,6 +9,8 @@ func _ready():
 
 func _on_heartbox_body_entered(body):
 	if body.is_in_group("plyr") and playermaxhealth < 10:	#if player on heart, and not maxed out
+		print(playercurhealth)
+		print(playermaxhealth)
 		playermaxhealth += 1 # increase max health
 		playercurhealth = playermaxhealth #set health to max
 		Global.get_node("UI/HeartBarPlyr").update_maxhealth(playermaxhealth) #update ui w/ max health
