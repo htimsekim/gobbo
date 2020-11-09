@@ -28,9 +28,8 @@ func _on_Bullet_body_entered(body):
 				var heart = load("res://src/Objects/heartpickup.tscn").instance()
 				
 				heart.position = body.position
-				#get_parent().call_deferred("add_child", heart)
-				get_tree().get_root().find_node("level", true, false).add_child(heart)
-
+				get_parent().call_deferred("add_child", heart)
+				#get_tree().get_root().find_node("level", true, false).call_deferred("add_child","heart")
 				
 func _on_invisTimer_timeout():
 	visible = true
