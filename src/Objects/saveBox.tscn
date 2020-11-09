@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/art/ui/savebox.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/saveBox.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -30,7 +30,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 length = 1.6
 loop = true
 tracks/0/type = "value"
@@ -74,8 +74,8 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/idle = SubResource( 5 )
-anims/sleeping = SubResource( 6 )
+anims/idle = SubResource( 1 )
+anims/sleeping = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2

@@ -33,11 +33,5 @@
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+2/shapes = [  ]
 2/z_index = 0
