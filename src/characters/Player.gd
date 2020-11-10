@@ -14,10 +14,13 @@ onready var knockback = false
 onready var blink = false
 var direction
 var playeridle = false
+var canMove = true
 var is_shooting
 var enemyPos
 
 func _physics_process(_delta): # Called every frame. _delta isn't used
+	if not canMove:
+		return
 	if blink == true and blinktimer.time_left == 0:
 		sprite.visible = false
 		blinktimer.start()

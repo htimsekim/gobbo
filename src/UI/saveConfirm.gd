@@ -18,5 +18,5 @@ func _process(_delta):
 	if Input.is_action_just_pressed("jump"): 
 		if conChoice == "Yes":
 			Global.save_game(Global.game_name)
-		get_tree().paused = false
+		Global.player.canMove = true
 		queue_free()
