@@ -22,6 +22,10 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		sprite.visible = false
 		blinktimer.start()
 	
+	if $BulletHealth.value != $BulletHealth.max_value: #if bullets have been used, start timer to reload
+		if $reloadTimer.is_stopped():
+			$reloadTimer.start()
+			
 	direction = get_direction() #main movement code; determines if player moving right or left	
 	var is_jump_interrupted = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
@@ -160,3 +164,7 @@ func _on_IdleTimer_timeout():
 
 func _on_Hitbox_body_entered(body):
 	emit_signal('collided', body)
+
+func _on_reloadTimer_timeout():
+	$BulletHealth.value = $BulletHealth.max_value
+	get_node("../UI/BulletPlyr").update_bullet($BulletHealth.value)

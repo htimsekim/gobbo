@@ -1,11 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://src/UI/quitButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/UI/newGameButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/UI/optionButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/titleStart.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/gameButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/art/player/goblin.png" type="Texture" id=4]
 [ext_resource path="res://assets/font/monstertown.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://src/UI/titleMenu.gd" type="Script" id=6]
 [ext_resource path="res://assets/art/ui/animated-cursor-arrow.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -73,11 +71,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
-[node name="titleScreen" type="Control"]
+[node name="titleStart" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -114,21 +112,28 @@ size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
 
-[node name="newGameButton" parent="menu/centerRow/buttons" instance=ExtResource( 2 )]
+[node name="GameAButton" parent="menu/centerRow/buttons" instance=ExtResource( 2 )]
 margin_right = 758.0
 margin_bottom = 120.0
-toggle_mode = true
 
-[node name="optionButton" parent="menu/centerRow/buttons" instance=ExtResource( 3 )]
+[node name="Label" parent="menu/centerRow/buttons/GameAButton" index="0"]
+text = "1. <<EMPTY>>"
+
+[node name="GameBButton" parent="menu/centerRow/buttons" instance=ExtResource( 2 )]
 margin_top = 140.0
 margin_right = 758.0
 margin_bottom = 260.0
-toggle_mode = true
 
-[node name="quitButton" parent="menu/centerRow/buttons" instance=ExtResource( 1 )]
+[node name="Label" parent="menu/centerRow/buttons/GameBButton" index="0"]
+text = "2, <<EMPTY>>"
+
+[node name="GameCButton" parent="menu/centerRow/buttons" instance=ExtResource( 2 )]
 margin_top = 280.0
 margin_right = 758.0
 margin_bottom = 400.0
+
+[node name="Label" parent="menu/centerRow/buttons/GameCButton" index="0"]
+text = "3. <<EMPTY>>"
 
 [node name="CenterContainer" type="CenterContainer" parent="menu/centerRow"]
 margin_left = 762.0
@@ -151,35 +156,12 @@ anims/idle = SubResource( 3 )
 [node name="Label" type="Label" parent="menu"]
 margin_top = 595.0
 margin_right = 1520.0
-margin_bottom = 760.0
+margin_bottom = 813.0
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 4 )
 text = "version 0.1
 holy moly it's bad
 gina did most of the work"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_left = 1309.12
-margin_top = 380.147
-margin_right = 1559.12
-margin_bottom = 880.147
-rect_min_size = Vector2( 200, 500 )
-size_flags_horizontal = 0
-size_flags_vertical = 2
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ItemList" type="ItemList" parent="ScrollContainer"]
-margin_right = 250.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 250, 500 )
-allow_reselect = true
-auto_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 186, 422 )
@@ -190,5 +172,9 @@ region_rect = Rect2( 60, 0, 10, 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 5 )
-[connection signal="toggled" from="menu/centerRow/buttons/optionButton" to="menu/centerRow/buttons/optionButton" method="_on_continueButton_toggled"]
-[connection signal="item_activated" from="ScrollContainer/ItemList" to="." method="_on_ItemList_item_activated"]
+
+[editable path="menu/centerRow/buttons/GameAButton"]
+
+[editable path="menu/centerRow/buttons/GameBButton"]
+
+[editable path="menu/centerRow/buttons/GameCButton"]

@@ -13,36 +13,39 @@ func _process(_delta):
 	if Input.is_action_just_pressed("move_up"):
 		if conChoice == "newgame":
 			get_node("Sprite").position = Vector2(186,700)
-			conChoice = "options"
+			conChoice = "quit"
 			return
-		if conChoice == "continue":
+		if conChoice == "option":
 			get_node("Sprite").position = Vector2(186,422)
 			conChoice = "newgame"
 			return
-		if conChoice == "options":
+		if conChoice == "quit":
 			get_node("Sprite").position = Vector2(186,560)
-			conChoice = "continue"
+			conChoice = "option"
 			return
 
 	if Input.is_action_just_pressed("crouch"): 
 		if conChoice == "newgame":
 			get_node("Sprite").position = Vector2(186,560)
-			conChoice = "continue"
+			conChoice = "option"
 			return
-		if conChoice == "continue":
+		if conChoice == "option":
 			get_node("Sprite").position = Vector2(186,700)
-			conChoice = "options"
+			conChoice = "quit"
 			return
-		if conChoice == "options":
+		if conChoice == "quit":
 			get_node("Sprite").position = Vector2(186,422)
 			conChoice = "newgame"
 			return
 
 	if Input.is_action_just_pressed("jump"): 
 		if conChoice == "newgame":
-			Global.load_player()
-			Global.goto_scene("res://src/levels/gobtown-prequake.tscn","level/spawns/spawn1")
-		
+			get_tree().change_scene("res://src/UI/titleStart.tscn")
+		if conChoice == "option":
+			print("option")
+		if conChoice == "quit":
+			get_tree().quit()
+	
 func full_screen():
 	if IP.get_local_addresses()[0]=="192.168.37.34":
 		OS.set_current_screen(2)

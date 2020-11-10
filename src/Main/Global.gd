@@ -14,6 +14,7 @@ var game_data = {}
 var path
 var heart_boxes = []
 var bullet_boxes = []
+var game_name = ""
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("Dbullet") and get_node("plyrInst/BulletHealth").max_value > 3: #decrease bullet for TESTING ONLY
@@ -75,17 +76,25 @@ func save_game(saveName):
 		game_data = {"eathquake": earthquake_happened}
 		game_data = {"maxhealth": get_node("plyrInst/TextureProgress").max_value}
 		game_data = {"maxbullet": get_node("plyrInst/BulletHealth").max_value}
+		game_data = {"heartName": Global.heart_boxes}
+		game_data = {"bulletName": Global.bullet_boxes}
 		f.store_var(game_data)
 		f.close()
 			
 func load_game(saveName):
 	var file = File.new()
-	file.open_encrypted_with_pass("user://" + saveName + ".bin", File.READ, "mypass")
+	var err = file.open_encrypted_with_pass("user://" + saveName + ".bin", File.READ, "mypass")
+	if err == 7:
+		load_player()
+		goto_scene("res://src/levels/gobtown-prequake.tscn","level/spawns/spawn1")
+		return
 	var game_data = file.get_var()
 	file.close()
 	
 	#load game_data
 	earthquake_happened = game_data.eathquake
+	Global.heart_boxes = game_data.heartName
+	Global.bullet_boxes = game_data.bulletName
 	get_node("UI/HeartBarPlyr").update_maxhealth(game_data.maxhealth)
 	get_node("UI/BulletPlyr").update_maxbullet(game_data.maxbullet)
 	
