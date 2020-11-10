@@ -38,17 +38,17 @@ func load_player():
 	get_node("UI/HeartBarPlyr").update_maxhealth(get_node("plyrInst/TextureProgress").max_value)
 	get_node("UI/BulletPlyr").update_maxbullet(get_node("plyrInst/BulletHealth").max_value)
 		
-func goto_scene(path, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")
-	call_deferred("_deferred_goto_scene", path, spawn)
+func goto_scene(spath, spawn): #main scene switcher call - Global.goto_scene("res://Scene2.tscn")
+	call_deferred("_deferred_goto_scene", spath, spawn)
 	get_tree().call_group("projectile","queue_free")
 	
-func _deferred_goto_scene(path, spawn: String):
+func _deferred_goto_scene(spath, spawn: String):
 	get_tree().get_root().remove_child(current_scene)
 	previous_scene_x2 = previous_scene
 	previous_scene = current_scene
 	previous_scene_x2_path = previous_scene_path
 	previous_scene_path = current_scene.filename
-	if path == previous_scene_x2_path:
+	if spath == previous_scene_x2_path:
 		get_tree().get_root().add_child(previous_scene_x2)
 		camera = previous_scene_x2.get_node("level/Camera2D")
 		player.position = previous_scene_x2.get_node(str(spawn)).position #set plyr spawn
@@ -57,7 +57,7 @@ func _deferred_goto_scene(path, spawn: String):
 	else:
 		if previous_scene_x2:
 			previous_scene_x2.free()
-		var s = ResourceLoader.load(path) # Load the new scene.
+		var s = ResourceLoader.load(spath) # Load the new scene.
 		current_scene = s.instance() # Instance the new scene.
 		get_tree().get_root().add_child(current_scene) # Add it to the active scene, as child of root.
 		#Optionally, to make it compatible with the SceneTree.change_scene() API.
@@ -71,32 +71,37 @@ func save_game(saveName):
 	var f = File.new()
 	if f.open_encrypted_with_pass("user://" + saveName + ".bin", File.WRITE, "mypass") != 0: 
 		print("Can't save file")
-	else:
-		game_data = {"savescene": current_scene.filename}
-		game_data = {"eathquake": earthquake_happened}
-		game_data = {"maxhealth": get_node("plyrInst/TextureProgress").max_value}
-		game_data = {"maxbullet": get_node("plyrInst/BulletHealth").max_value}
-		game_data = {"heartName": Global.heart_boxes}
-		game_data = {"bulletName": Global.bullet_boxes}
+	else: #save game data
+		game_data = {"savescene": current_scene.filename,
+			"earthquake": earthquake_happened,
+			"maxhealth": get_node("plyrInst/TextureProgress").max_value,
+			"maxbullet": get_node("plyrInst/BulletHealth").max_value,
+			"heartName": Global.heart_boxes,
+			"bulletName": Global.bullet_boxes}
 		f.store_var(game_data)
 		f.close()
 			
 func load_game(saveName):
 	var file = File.new()
 	var err = file.open_encrypted_with_pass("user://" + saveName + ".bin", File.READ, "mypass")
-	if err == 7:
+	if err == 7: #no saves exist so load new game
 		load_player()
 		goto_scene("res://src/levels/gobtown-prequake.tscn","level/spawns/spawn1")
 		return
-	var game_data = file.get_var()
+	game_data = file.get_var()
 	file.close()
 	
 	#load game_data
-	earthquake_happened = game_data.eathquake
+	earthquake_happened = game_data.earthquake
 	Global.heart_boxes = game_data.heartName
 	Global.bullet_boxes = game_data.bulletName
-	get_node("UI/HeartBarPlyr").update_maxhealth(game_data.maxhealth)
-	get_node("UI/BulletPlyr").update_maxbullet(game_data.maxbullet)
 	
 	load_player()
+	get_node("plyrInst/TextureProgress").value = game_data.maxhealth
+	get_node("plyrInst/BulletHealth").value = game_data.maxbullet
+	get_node("plyrInst/TextureProgress").max_value = game_data.maxhealth
+	get_node("plyrInst/BulletHealth").max_value = game_data.maxbullet
+	get_node("UI/HeartBarPlyr").update_maxhealth(game_data.maxhealth)
+	get_node("UI/BulletPlyr").update_maxbullet(game_data.maxbullet)
+
 	goto_scene(game_data.savescene,"level/spawns/spawn1")

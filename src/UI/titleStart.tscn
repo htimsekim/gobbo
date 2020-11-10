@@ -156,7 +156,7 @@ anims/idle = SubResource( 3 )
 [node name="Label" type="Label" parent="menu"]
 margin_top = 595.0
 margin_right = 1520.0
-margin_bottom = 813.0
+margin_bottom = 760.0
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 4 )
 text = "version 0.1

@@ -1,10 +1,10 @@
 extends Control
 
 var dir
-onready var conChoice = "GameAButton"
+onready var conChoice = "SaveGameA"
 
 func _ready():
-	dir_contents("user://")
+	dir_contents("user://") #populate saved game names
 
 func _process(_delta):
 	if Input.is_action_just_pressed("move_up"):
@@ -46,7 +46,7 @@ func dir_contents(path): #creates box on main screen listing all levels for codi
 		var file_name = dir.get_next()
 		while file_name != "":
 			if !dir.current_is_dir():
-				if file_name == "SaveGameA.bin":
+				if file_name == "SaveGameA.bin": #if there isn't saved game in slot, list empty
 					$menu/centerRow/buttons/GameAButton/Label.text = "1. " + file_name
 				else:
 					$menu/centerRow/buttons/GameAButton/Label.text = "1. <<EMPTY>>"
