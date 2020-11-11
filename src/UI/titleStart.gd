@@ -48,17 +48,19 @@ func dir_contents(path): #creates box on main screen listing all levels for codi
 			if !dir.current_is_dir():
 				if file_name == "SaveGameA.bin": #if there isn't saved game in slot, list empty
 					$menu/centerRow/buttons/GameAButton/Label.text = "1. " + file_name
+					file_name = dir.get_next()
 				else:
 					$menu/centerRow/buttons/GameAButton/Label.text = "1. <<EMPTY>>"
 				if file_name == "SaveGameB.bin":
 					$menu/centerRow/buttons/GameBButton/Label.text = "2. " + file_name
+					file_name = dir.get_next()
 				else:
 					$menu/centerRow/buttons/GameBButton/Label.text = "2. <<EMPTY>>"
 				if file_name == "SaveGameC.bin":	
 					$menu/centerRow/buttons/GameCButton/Label.text = "3. " + file_name
+					file_name = dir.get_next()
 				else:
 					$menu/centerRow/buttons/GameCButton/Label.text = "3. <<EMPTY>>"
-
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
