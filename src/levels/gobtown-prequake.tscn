@@ -74,7 +74,7 @@ target_spawn = "level/spawns/spawn1"
 [node name="Door" parent="level/doors" index="2" instance=ExtResource( 2 )]
 position = Vector2( -87.9665, 8.14505 )
 target_stage = "res://src/levels/gobhouse.tscn"
-target_spawn = "level/spawns/spawn1"
+target_spawn = "level/spawns/spawn3"
 
 [node name="Sprite" parent="level/ParallaxBackground/bg" index="0"]
 texture = ExtResource( 3 )
