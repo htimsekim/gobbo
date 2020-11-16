@@ -5,6 +5,7 @@
 [ext_resource path="res://src/Objects/saveBox.tscn" type="PackedScene" id=3]
 
 [node name="gobhouse" type="Node2D"]
+z_as_relative = false
 
 [node name="level" parent="." instance=ExtResource( 1 )]
 
