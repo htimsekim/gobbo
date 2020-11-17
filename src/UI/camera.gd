@@ -28,3 +28,6 @@ func _ready():
 	
 func _physics_process(_delta): # Called every frame. _delta isn't used
 	position = get_tree().get_root().get_node("Global/plyrInst").position
+
+func earthquake() -> void:
+	$ScreenShake.start(3, 15, 8, 0)

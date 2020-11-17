@@ -4,13 +4,14 @@ func _on_saveBox_body_entered(body):
 	if body.is_in_group("plyr"):
 		var confirm = load("res://src/UI/saveConfirm.tscn").instance()
 		self.add_child(confirm)
-		
+		Global.player.canShoot = false
 		Global.player.canMove = false
 
 
 func _on_saveBox_body_exited(body):
 	if body.is_in_group("plyr"):
 		$Sprite/AnimationPlayer.play("idle")
+		Global.player.canShoot = true
 
 
 func _on_Timer_timeout():

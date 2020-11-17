@@ -18,4 +18,9 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
+[node name="QuakeTimer" type="Timer" parent="Area2D"]
+wait_time = 3.0
+one_shot = true
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Area2D/QuakeTimer" to="Area2D" method="_on_QuakeTimer_timeout"]

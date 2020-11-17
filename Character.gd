@@ -9,4 +9,5 @@ var _velocity = Vector2.ZERO
 
 # _physics_process is called after the inherited _physics_process function.
 func _physics_process(delta):
-	_velocity.y += gravity * delta
+	if Global.player.canMove:
+		_velocity.y += gravity * delta
