@@ -27,7 +27,7 @@ func update_health(value):
 			get_child(i).get_child(0).frame = 2 #empty
 	
 func update_bullet(value):
-	if reload == true and get_node("../reloadTimer").time_left == 0: #if we need to reload and timer hasn't started, start it
+	if reload == true and get_node("../reloadTimer").time_left < 0: #if we need to reload and timer hasn't started, start it
 		get_node("../reloadTimer").start()
 		
 	for i in get_child_count():
