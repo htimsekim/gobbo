@@ -26,7 +26,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		sprite.visible = false
 		blinktimer.start()
 	
-	if $BulletHealth.value != $BulletHealth.max_value: #if bullets have been used, start timer to reload
+	if $BulletHealth.value != $BulletHealth.max_value and $BulletHealth.value != 0: #if bullets have been used, start timer to reload
 		if $reloadTimer.is_stopped():
 			$reloadTimer.start()
 			
@@ -55,6 +55,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 		if get_node("../UI/reloadTimer").time_left == 0: 
 			is_shooting = true #we are shooting so be sure to play weapon animations
 		if canshoot and $BulletHealth.value > 0: #is true when the timer ends (can shoot and have bullets)
+			$reloadTimer.stop()
 			$BulletHealth.value -= $BulletHealth.step
 			get_node("../UI/BulletPlyr").update_bullet($BulletHealth.value)
 			var b = Bullet.instance()

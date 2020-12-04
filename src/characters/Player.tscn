@@ -504,7 +504,7 @@ scale = Vector2( 1.2, 1.2 )
 shape = SubResource( 16 )
 
 [node name="reloadTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 3.0
 one_shot = true
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
