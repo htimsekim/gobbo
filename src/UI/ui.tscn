@@ -1120,6 +1120,5 @@ anims/full = SubResource( 29 )
 anims/reload = SubResource( 30 )
 
 [node name="reloadTimer" type="Timer" parent="."]
-wait_time = 0.1
 one_shot = true
 [connection signal="timeout" from="reloadTimer" to="BulletPlyr" method="_on_reloadTimer_timeout"]
