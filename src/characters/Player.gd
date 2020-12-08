@@ -15,7 +15,7 @@ onready var blink = false
 var direction
 var playeridle = false
 var canMove = true
-var canShoot = true
+var shootAllowed = true # previously canShoot
 var is_shooting
 var enemyPos
 
@@ -50,7 +50,7 @@ func _physics_process(_delta): # Called every frame. _delta isn't used
 	is_shooting = false #to determine if gun needs to be out and which animation to play
 
 	if Input.is_action_pressed("shoot") or Input.is_action_pressed("stab"):
-		if not canShoot:
+		if not shootAllowed:
 			return
 		if get_node("../UI/reloadTimer").time_left == 0: 
 			is_shooting = true #we are shooting so be sure to play weapon animations
