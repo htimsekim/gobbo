@@ -11,7 +11,7 @@ func _on_saveBox_body_entered(body):
 func _on_saveBox_body_exited(body):
 	if body.is_in_group("plyr"):
 		$Sprite/AnimationPlayer.play("idle")
-		Global.player.canShoot = true
+		Global.player.shootAllowed = true
 
 
 func _on_Timer_timeout():
