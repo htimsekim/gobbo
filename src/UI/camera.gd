@@ -1,5 +1,10 @@
 extends Camera2D
 
+var camtop
+var cambot
+var camleft
+var camright
+
 func _ready():
 	var map_limits = get_node("../tilemaps/limits").get_used_cells()
 	var map_cellsize = get_node("../tilemaps/limits").cell_size
@@ -9,10 +14,10 @@ func _ready():
 	limit_top = map_limits[0].y * map_cellsize.y 
 	limit_bottom = map_limits.back().y * map_cellsize.y 
 	
-	var camtop = limit_top
-	var cambot = limit_bottom
-	var camleft = limit_left
-	var camright = limit_right
+	camtop = limit_top
+	cambot = limit_bottom
+	camleft = limit_left
+	camright = limit_right
 	
 	#please leave these
 	print(map_limits)
