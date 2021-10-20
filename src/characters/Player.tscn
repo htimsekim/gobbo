@@ -406,8 +406,8 @@ cast_to = Vector2( 0, 6 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.838, 1.2 )
-scale = Vector2( 0.8, 0.95 )
+position = Vector2( 0.838, 3 )
+scale = Vector2( 0.8, 0.75 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -506,6 +506,7 @@ shape = SubResource( 16 )
 [node name="reloadTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_ProjectileTimer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
