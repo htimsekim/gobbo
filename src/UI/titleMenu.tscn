@@ -190,5 +190,6 @@ region_rect = Rect2( 60, 0, 10, 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/right = SubResource( 5 )
+
 [connection signal="toggled" from="menu/centerRow/buttons/optionButton" to="menu/centerRow/buttons/optionButton" method="_on_continueButton_toggled"]
 [connection signal="item_activated" from="ScrollContainer/ItemList" to="." method="_on_ItemList_item_activated"]

@@ -44,5 +44,4 @@ region_rect = Rect2( 768, 0, 384, 224 )
 visible = false
 
 [editable path="level"]
-
 [editable path="kingslime"]

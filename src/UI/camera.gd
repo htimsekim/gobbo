@@ -24,8 +24,8 @@ func _ready():
 	print("map ", max(24,abs(camleft-camright)/16), " x ", max(14,(abs(camtop-cambot)+16)/16))
 	
 	if abs(camtop - cambot) <= 224:
-		limit_bottom = ((camtop + cambot)/2) + 108
-		limit_top = ((camtop + cambot)/2) - 108
+		limit_bottom = ((camtop + cambot)/2) + 112
+		limit_top = ((camtop + cambot)/2) - 104
 
 	if abs(camleft - camright) <= 384:
 		limit_right = ((camleft + camright)/2 + 192)
