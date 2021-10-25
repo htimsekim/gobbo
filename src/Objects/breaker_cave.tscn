@@ -1,24 +1,51 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/art/tileset/cave_breaker.png" type="Texture" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends KinematicBody2D
 
+onready var player = get_node(\"/root/Global/plyrInst\")
 var bodytimer
+var triggered = false
 
 func _ready():
 	Global.player.connect(\"collided\", self, \"_on_Character_collided\")
+	$Sprite/AnimationPlayer.seek(0, true)
+	$Sprite/AnimationPlayer.stop()
 	
-func _on_Character_collided(body):
-	if \"breaker\" in body.name:
-		if body.global_position.y > Global.player.global_position.y:
-			bodytimer = body
-			$Timer.start()			
-			body.get_node(\"Sprite/AnimationPlayer\").play(\"break\")
+
+#func _physics_process(delta):
+#	if triggered:
+#		$Timer.start()
+#		bodytimer.get_node(\"Sprite/AnimationPlayer\").play(\"break\")
+
+#func _on_Character_collided(body):
+#	if \"breaker\" in body.name:
+#		if player.is_on_floor() and body.global_position.y > Global.player.global_position.y:
+#			bodytimer = body
+#			triggered = true
+#			self.queue_free()
 
 func _on_Timer_timeout():
-	bodytimer.queue_free()
+	get_node(\".\").visible = false
+	get_node(\"CollisionShape2D\").disabled = true
+	$BlockRespawn.start()
+
+
+func _on_TopDetector_body_entered(body):
+	if body == player and player.is_on_floor():
+		$Timer.start()
+		$Sprite/AnimationPlayer.play(\"break\")
+
+
+func _on_BlockRespawn_timeout():
+	get_node(\".\").visible = true
+	get_node(\"CollisionShape2D\").disabled = false
+	#$Sprite/AnimationPlayer.clear_queue()
+	#$Sprite/AnimationPlayer.queue(\"break\")
+	$Sprite/AnimationPlayer.stop()
+	$Sprite/AnimationPlayer.seek(0, true)
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -51,7 +78,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 4 )
+
 [node name="breaker" type="KinematicBody2D" groups=[
+"breaker",
 "lvl",
 ]]
 collision_layer = 2
@@ -66,12 +97,25 @@ shape = SubResource( 2 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 32, 0, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/break = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.4
 one_shot = true
+
+[node name="TopDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDetector"]
+position = Vector2( 8, 2 )
+shape = SubResource( 4 )
+
+[node name="BlockRespawn" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="TopDetector" to="." method="_on_TopDetector_body_entered"]
+[connection signal="timeout" from="BlockRespawn" to="." method="_on_BlockRespawn_timeout"]

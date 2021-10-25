@@ -14,6 +14,14 @@ func _physics_process(delta):
 		position += transform.x * speed * delta
 	
 func _on_Bullet_body_entered(body):
+	if body.is_in_group("shootable"): #breakable blocks
+		queue_free()
+	
+	if body.is_in_group("breaker"): #e.g. "res://src/Objects/breaker_cave.tscn"
+		var childz = (body.get_node(".").get_children())
+		for i in range(childz.size()):
+			print(childz[i].name())
+	
 	if body.is_in_group("lvl") or body.is_in_group("enemy"): #when bullet enters level or enemy, free it
 		queue_free()
 

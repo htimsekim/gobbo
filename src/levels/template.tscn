@@ -97,6 +97,9 @@ collision_mask = 13
 format = 1
 script = ExtResource( 5 )
 
+[node name="shootable" type="TileMap" parent="tilemaps"]
+format = 1
+
 [node name="bg_art" type="TileMap" parent="tilemaps"]
 z_index = -10
 z_as_relative = false
