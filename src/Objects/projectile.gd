@@ -18,9 +18,7 @@ func _on_Bullet_body_entered(body):
 		body.set_cellv(body.world_to_map(self.position), -1)
 	
 	if body.is_in_group("breaker"): #e.g. "res://src/Objects/breaker_cave.tscn"
-		var childz = (body.get_node(".").get_children())
-		for i in range(childz.size()):
-			print(childz[i])
+		body.get_node(".")._on_Timer_timeout()
 	
 	if body.is_in_group("lvl") or body.is_in_group("enemy"): #when bullet enters level or enemy, free it
 		queue_free()
