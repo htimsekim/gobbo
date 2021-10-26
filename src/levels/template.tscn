@@ -85,7 +85,6 @@ collision_mask = 13
 format = 1
 
 [node name="shootable" type="TileMap" parent="tilemaps" groups=[
-"lvl",
 "shootable",
 ]]
 z_index = 15
@@ -98,7 +97,6 @@ format = 1
 
 [node name="breaker" type="TileMap" parent="tilemaps" groups=[
 "breaker",
-"lvl",
 ]]
 z_index = 15
 z_as_relative = false

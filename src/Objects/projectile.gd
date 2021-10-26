@@ -15,10 +15,12 @@ func _physics_process(delta):
 	
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("shootable"): #breakable blocks
-		body.set_cellv(body.world_to_map(self.position), -1)
+		#offset bullet by 5% (body.position*1.05) to make sure bullet is overlapping with tile
+		body.set_cellv(body.world_to_map(self.position*1.05), -1)
+		queue_free()
 	
 	if body.is_in_group("breaker"): #e.g. "res://src/Objects/breaker_cave.tscn"
-		body.get_node(".")._on_Timer_timeout()
+		body.get_node(".").remove_brick()
 	
 	if body.is_in_group("lvl") or body.is_in_group("enemy"): #when bullet enters level or enemy, free it
 		queue_free()

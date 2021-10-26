@@ -4,6 +4,9 @@ onready var player = Global.get_node("plyrInst")
 var bodytimer
 var triggered = false
 
+
+
+
 func _ready():
 	Global.player.connect("collided", self, "_on_Character_collided")
 	$Sprite/AnimationPlayer.clear_queue()
@@ -24,10 +27,13 @@ func _ready():
 #			triggered = true
 #			self.queue_free()
 
-func _on_Timer_timeout():
+func remove_brick():
 	get_node(".").visible = false
-	get_node("CollisionShape2D").disabled = true
+	get_node("./CollisionShape2D").set_deferred("disabled", true)
 	$BlockRespawn.start()
+	
+func _on_Timer_timeout():
+	remove_brick()
 
 
 func _on_TopDetector_body_entered(body):
