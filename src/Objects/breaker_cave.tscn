@@ -11,6 +11,8 @@ var triggered = false
 
 func _ready():
 	Global.player.connect(\"collided\", self, \"_on_Character_collided\")
+	$Sprite/AnimationPlayer.clear_queue()
+	$Sprite/AnimationPlayer.queue(\"break\")
 	$Sprite/AnimationPlayer.seek(0, true)
 	$Sprite/AnimationPlayer.stop()
 	
