@@ -84,6 +84,18 @@ collision_layer = 2
 collision_mask = 13
 format = 1
 
+[node name="shootable" type="TileMap" parent="tilemaps" groups=[
+"lvl",
+"shootable",
+]]
+z_index = 15
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+
 [node name="breaker" type="TileMap" parent="tilemaps" groups=[
 "breaker",
 "lvl",
@@ -96,9 +108,6 @@ collision_layer = 2
 collision_mask = 13
 format = 1
 script = ExtResource( 5 )
-
-[node name="shootable" type="TileMap" parent="tilemaps"]
-format = 1
 
 [node name="bg_art" type="TileMap" parent="tilemaps"]
 z_index = -10

@@ -15,7 +15,7 @@ func _physics_process(delta):
 	
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("shootable"): #breakable blocks
-		queue_free()
+		body.set_cellv(body.world_to_map(self.position), -1)
 	
 	if body.is_in_group("breaker"): #e.g. "res://src/Objects/breaker_cave.tscn"
 		var childz = (body.get_node(".").get_children())
