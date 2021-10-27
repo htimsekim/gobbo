@@ -12,11 +12,18 @@ func _physics_process(delta):
 		position -= transform.x * speed * delta
 	else:
 		position += transform.x * speed * delta
+
 	
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("shootable"): #breakable blocks
-		#offset bullet by 5% (body.position*1.05) to make sure bullet is overlapping with tile
-		body.set_cellv(body.world_to_map(self.position*1.05), -1)
+#		body.set_cellv(body.world_to_map(self.position), -1)
+#i was using the line above to delete the blocks but it was weird sometimes when
+#the bullet hit a block at a certain position the world_to_map rounding would return
+#the "wrong" block so i just check the area around the impact for blocks 
+		body.set_cellv(body.world_to_map(self.position+Vector2(4,4)), -1)
+		body.set_cellv(body.world_to_map(self.position+Vector2(-4,-4)), -1)
+		body.set_cellv(body.world_to_map(self.position+Vector2(4,-4)), -1)
+		body.set_cellv(body.world_to_map(self.position+Vector2(-4,4)), -1)
 		queue_free()
 	
 	if body.is_in_group("breaker"): #e.g. "res://src/Objects/breaker_cave.tscn"
