@@ -20,10 +20,11 @@ func _on_Bullet_body_entered(body):
 #i was using the line above to delete the blocks but it was weird sometimes when
 #the bullet hit a block at a certain position the world_to_map rounding would return
 #the "wrong" block so i just check the area around the impact for blocks 
-		body.set_cellv(body.world_to_map(self.position+Vector2(4,4)), -1)
-		body.set_cellv(body.world_to_map(self.position+Vector2(-4,-4)), -1)
-		body.set_cellv(body.world_to_map(self.position+Vector2(4,-4)), -1)
-		body.set_cellv(body.world_to_map(self.position+Vector2(-4,4)), -1)
+		var blast = 2 #so i dont have to change it in 8 places below
+		body.set_cellv(body.world_to_map(self.position+Vector2(blast,blast)), -1)
+		body.set_cellv(body.world_to_map(self.position+Vector2(-blast,-blast)), -1)
+		body.set_cellv(body.world_to_map(self.position+Vector2(blast,-blast)), -1)
+		body.set_cellv(body.world_to_map(self.position+Vector2(-blast,blast)), -1)
 		queue_free()
 	
 	if body.is_in_group("breaker"): #e.g. "res://src/Objects/breaker_cave.tscn"
